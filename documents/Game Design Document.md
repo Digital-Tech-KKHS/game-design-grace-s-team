@@ -1,32 +1,28 @@
 # {Title}
 
 # Elevator pitch
+ I am developing an open world RPG game that is set in the medievel time with aspects of norse mythology. The gameplay is strongly story-driven
 
 We're developing an open-world RPG game set in a medieval fantasy world inspired by European folklore. Its gameplay is strongly story-driven and based on the best-selling book "Earl of the Rings". It's "The Witcher" meets "Dark Souls" meets "Game of Thrones".
 
 # Concept Overview
 
-### Genre: Open-world RPG / Action
+### Genre: Open-world RPG / Action:
+the genre is a type of good vs evil and journey type experience that is highly based on fantasy and norse mythology
 
 ### Target audience:
 
 > Age: 15-30
-> 
+> (Teens)
 > Gender: Male/Female
 > 
 > ...
-
 # Theme and setting
 
-![The dark tower](https://cdn.segmentnext.com/wp-content/uploads/2016/08/ttRLShz.jpg)
-
-The Younger Scrolls V is a role-playing game set in a historical fantasy version of medieval Europe. The player takes on the role of the Chosen One and gets to explore an open world of 450 square kilometers. While the geographic setting of the game is historically accurate, the game features many supernatural elements.
-
-Learn more about the , , and  of the game.
-
-...
+The theme of the game is that it is a hystorical type rpg and YOU are the "bad guy" where you go across different lands and get new powers as you go. The character underoges different challenges that need to be completed in sections and sepecific orders, where they fight "enemies" which are vikings and they travel to get there baby back that the vikings stole. As your character travels across the land it encounters different objects that can botth help and make the journey harder. The point of the game is to show the loyalty that the mother kelpie has for its baby and the lengths that it will go to get it back.
 
 # Project scope
+The project should take around 2 terms 
 
 ## Our team
 ... 
@@ -44,14 +40,15 @@ Learn more about the , , and  of the game.
 # Success Criteria
 Considering your intended audience and the objectives of your game come up with 5 or more criteria that you will use to determine if your game has been successful. 
 What evidence will you use to measure each criteria? 
-|     | Criteria | Evidence |
-| --- | -------- | -------- |
-| 1   |          |          |
-| 2   |          |          |
-| 3   |          |          |
-| 4   |          |          |
-| 5   |          |          |
-| ...    |          |          |
+|     | Criteria |                                          | Evidence |
+| --- | -------- | -------- |---------| -------- | -------- | -------- |
+| 1   |  user can instal game and run it                    |          |
+| 2   |  user can understand how to do game                 |          |
+| 3   |  user can complete game                             |          |
+| 4   |  user enjoys playing it                             |          |
+| 5   |  user understood how I wanted the game to           |          |
+|     |  come across                                        |          |
+| 6   |  user enjoyed plaing my game                        |          |
 
 # Game Setting
 
@@ -168,5 +165,3 @@ Choose 3 relevant implications. Discuss how you will ensure these are addressed.
 ## {Implication 1}
 
 ## {Implication 2}
-
-## {Implication 3}
