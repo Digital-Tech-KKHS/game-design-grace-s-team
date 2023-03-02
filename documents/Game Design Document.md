@@ -4,8 +4,9 @@
  I am developing an open world RPG game that is set in the medievel time with aspects of norse mythology. The gameplay is strongly story-driven
 
 We're developing an open-world RPG game set in a medieval fantasy world inspired by European folklore. Its gameplay is strongly story-driven and based on the best-selling book "Earl of the Rings". It's "The Witcher" meets "Dark Souls" meets "Game of Thrones".
-
+ 
 # Concept Overview
+beginning idea was to have a "good guy" that is typically known as a bad guy. this good bad guy would be going on a mission fighting 
 
 ### Genre: Open-world RPG / Action:
 the genre is a type of good vs evil and journey type experience that is highly based on fantasy and norse mythology
@@ -15,25 +16,23 @@ the genre is a type of good vs evil and journey type experience that is highly b
 > Age: 15-30
 > (Teens)
 > Gender: Male/Female
-> 
-> ...
+> People that are interested in fantasy creative games
+> People that want a game that is beautiful and carries a deep meaning 
+
 # Theme and setting
 
 The theme of the game is that it is a hystorical type rpg and YOU are the "bad guy" where you go across different lands and get new powers as you go. The character underoges different challenges that need to be completed in sections and sepecific orders, where they fight "enemies" which are vikings and they travel to get there baby back that the vikings stole. As your character travels across the land it encounters different objects that can botth help and make the journey harder. The point of the game is to show the loyalty that the mother kelpie has for its baby and the lengths that it will go to get it back.
 
 # Project scope
-The project should take around 2 terms 
+The project will be a game that I will design and make art for.
 
 ## Our team
-... 
+I am on a team by myself but will listen to what my classmates and teacher have to offer and what advice I can get from them
 
 
 # Timeline
-
-...
-
-...
-
+The project should take around 2 terms and will start from week 5 term 1 to week 9 term 3 
+The timeline for my game is from around A.D. 800 to the 11th century, and from medieval time. The game is also heavily fantasy based and so 
 ...
 
 
@@ -52,12 +51,13 @@ What evidence will you use to measure each criteria?
 
 # Game Setting
 
-The game is set in the wild west where the local sherif must aprehend bandits living out on the dusty prarie. 
+The game is set in the medievel time and is based somewhere in the british isles, it would be an island that is secluded and alone and isnt accesible easily. it is a set in a dark swam/marsh land
 
-## The old habour 
+## The mysterious marshes/isolated isle 
 General description
 
-The old harbor is a place bustling with activity. It's always full of noise: the shouts of fishermen auctioning their fish, the loud thuds of crates being loaded off the boats, the cries of hungry seagulls.  is located at the heart of the harbor.
+The isolated isle is a place of great struggle and isolation. It is a place of cold harsh envionments and wicked winds. the trees sway and scream there agony as they get pulled and pushed around by the wind. The occasional thud and slither of a creature can be heard as it moves around and hunts for its next victim. 
+A screech above way in the tree tops show that there are all manner of wildlife bustling around and are awaiting for there next meal to scrurry out of its hideaway
 
 In ,  reaches the harbor after surviving a shipwreck and being rescued by a fisherman. 
 
