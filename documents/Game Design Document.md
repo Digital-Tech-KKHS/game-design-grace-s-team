@@ -57,16 +57,14 @@ The game is set in the medievel time and is based somewhere in the british isles
 General description
 
 The isolated isle is a place of great struggle and isolation. It is a place of cold harsh envionments and wicked winds. the trees sway and scream there agony as they get pulled and pushed around by the wind. The occasional thud and slither of a creature can be heard as it moves around and hunts for its next victim. 
-A screech above way in the tree tops show that there are all manner of wildlife bustling around and are awaiting for there next meal to scrurry out of its hideaway
-
-In ,  reaches the harbor after surviving a shipwreck and being rescued by a fisherman. 
-
+A screech above way in the tree tops show that there are all manner of wildlife bustling around and are awaiting for there next meal to scrurry out of its hideaway and be caught in the talons of such beasts
 ...
 
 Inspiration
 ... 
 
 # Story
+The kelpie is a dark mysterious "evil" beast that hunts prey and kills those that apose it and any people 
 
 ## Backstory 
 ...
