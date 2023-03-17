@@ -64,7 +64,7 @@ Inspiration
 ... 
 
 # Story
-The kelpie is a dark mysterious "evil" beast that hunts prey and kills those that apose it and any people 
+The kelpie is a dark mysterious "evil" beast that hunts prey and kills those that apose it and any people that come near it... or is it? maybe its just a single mother trying to protect its baby from the horrors and harshness of man kind 
 
 ## Backstory 
 ...
