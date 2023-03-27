@@ -26,11 +26,11 @@
             "scaleInDock": 1
         },
         "Map_0.tmx": {
-            "scale": 0.09299609375,
-            "selectedLayer": 4,
+            "scale": 5.5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 6403.494770445668,
-                "y": 7441.172764313018
+                "x": 10414.454545454546,
+                "y": 5147.272727272728
             }
         },
         "TileSet_Practice.tsx": {
@@ -50,13 +50,14 @@
     "map.tileWidth": 128,
     "map.width": 100,
     "openFiles": [
+        "TileSet_Practice.tsx",
         "Map_0.tmx"
     ],
     "project": "Map_0.tiled-project",
     "recentFiles": [
-        "//DataServer2/GMcDonald$/dev/arcade-game-design-Grace-McDonald/Main_assets/Map_0.tmx",
-        "Map_0.tmx",
         "TileSet_Practice.tsx",
+        "Map_0.tmx",
+        "//DataServer2/GMcDonald$/dev/arcade-game-design-Grace-McDonald/Main_assets/Map_0.tmx",
         "TileSet_Practice_0.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",

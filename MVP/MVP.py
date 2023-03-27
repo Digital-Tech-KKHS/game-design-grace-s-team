@@ -167,7 +167,7 @@ class GameView(arcade.View):
         self.player.center_y = 1000
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(f'map_{self.level}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
-        self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, self.scene["Ground"])
+        # self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, self.scene["Ground"])
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD = arcade.Scene()
@@ -211,7 +211,7 @@ class GameView(arcade.View):
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
-        self.physics_engine.update()
+        # self.physics_engine.update()
         self.scene.update()
         for coin in self.scene['coins']:
             coin.on_update()
