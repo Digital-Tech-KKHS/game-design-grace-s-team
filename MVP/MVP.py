@@ -273,7 +273,7 @@ class GameView(arcade.View):
 
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
-            self.player.change_y = 20
+            self.player.change_y = 10
             self.jump_sound.play()
         # if symbol == arcade.key.S:
         #     self.player.change_y = -10
