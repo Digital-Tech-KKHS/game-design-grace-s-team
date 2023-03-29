@@ -1,3 +1,4 @@
+
 # Different plugins
 from tracemalloc import start
 import arcade
@@ -145,7 +146,7 @@ class GameView(arcade.View):
         self.tilemap = None
         self.scene = None
         self.HUD = None
-        # self.physics_engine = None
+        self.physics_engine = None
         self.camera = None
         self.HUD_camera = None
         self.score = 0
@@ -162,14 +163,14 @@ class GameView(arcade.View):
     def setup(self):
         # where the character spawns in and which map it uses
         self.player = Player('Character')
-        self.player.center_x = 40
-        self.player.center_y = 1000
-        self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(f'map_{self.level}.tmx'))
+        self.player.center_x = 35
+        self.player.center_y = 100
+        self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{0}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
-        # self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, self.scene["Ground"])
+        # self.physics_engine = arcade.PhysicsEnginePlatformer('self.player, self.scene["Ground"]')
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
-        self.HUD = arcade.Scene()
+        self.HUD = arcade.Scene()   
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
  
@@ -230,23 +231,36 @@ class GameView(arcade.View):
         # making my dragon spawn at the start and lose health when it falls off of map
         
         
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
-        # COLLIDING WITH FIRE
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
+        # COLLIDING WITH BACKDROP
         if colliding:
-            self.score -= 1
-            self.HUD['health'][-1].kill()
-            self.player.change_x *= -1.3
-            self.player.change_y *= -1.3
+            self.player.change_x = 0
+            self.player.change_y = 0
         
-            if len(self.HUD['health']) == 0:
-                self.window.show_view(self.window.end_view)
+
+        #  colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
+        # # COLLIDING WITH FIRE
+        # if colliding:
+        #     self.score -= 1
+        #     self.HUD['health'][-1].kill()
+        #     self.player.change_x *= -1.3
+        #     self.player.change_y *= -1.3
+        
+        #     if len(self.HUD['health']) == 0:
+        #         self.window.show_view(self.window.end_view)
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['coins'])
         if colliding:
             coin.kill()
             self.score += 1
             self.collect_coin_sound.play()
-
+        
+       
+        # # COLLIDING WITH BACKDROP
+        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
+        # if colliding:
+        #     self.player.change_x = 0
+        #     self.player.change_y = 0
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['WIN'])
         if colliding:
@@ -271,20 +285,21 @@ class GameView(arcade.View):
    
 
     def on_key_press(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
-            self.player.change_y = 10
-            self.jump_sound.play()
-        # if symbol == arcade.key.S:
-        #     self.player.change_y = -10
+        # # if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
+        #     self.player.change_y = 10
+        #     self.jump_sound.play()
+        if symbol == arcade.key.W:
+             self.player.change_y = 5
+        if symbol == arcade.key.S:
+             self.player.change_y = -5
         if symbol == arcade.key.A:
-            self.player.change_x = -23
+            self.player.change_x = -7
         if symbol == arcade.key.D:
-            self.player.change_x = 23
-
+            self.player.change_x = 7
 
     def on_key_release(self, symbol: int, modifiers: int):
-        # if symbol == arcade.key.W or symbol == arcade.key.S:
-        #     self.player.change_y = 0
+        if symbol == arcade.key.W or symbol == arcade.key.S:
+            self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
             self.player.change_x = 0
         pass
