@@ -234,8 +234,8 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
         # COLLIDING WITH BACKDROP
         if colliding:
-            self.player.change_x = 0
-            self.player.change_y = 0
+            self.player.change_x = -1 + 1
+            self.player.change_y = -1 + 1
         
 
         #  colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
