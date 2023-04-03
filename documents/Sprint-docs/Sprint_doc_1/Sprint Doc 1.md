@@ -2,13 +2,13 @@
 **Name:**
 Grace McDonald
 **Git Hash:**
-
+572b7f5484ca942fde40c89b886c34c2fba46ba5
 **Sprint Number:**
-
+1
 **Start Date:**
 22nd March 2023
 **End Date:**
-
+03/04/2023
 **Work hard rating**
 ☆☆☆☆☆
 
@@ -19,7 +19,7 @@ Grace McDonald
 ![[Pasted image 20230324125201.png]]
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I basically just wanted to get a solid Mvp
+In this sprint I basically just wanted to get a solid Mvp, I also made sure that I 
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
