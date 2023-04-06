@@ -231,23 +231,23 @@ class GameView(arcade.View):
         # making my dragon spawn at the start and lose health when it falls off of map
         
         
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
-        # COLLIDING WITH BACKDROP
-        if colliding:
-            self.player.change_x = -1 + 1
-            self.player.change_y = -1 + 1
+        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
+        # # COLLIDING WITH BACKDROP
+        # if colliding:
+        #     self.player.change_x = -1 + 1
+        #     self.player.change_y = -1 + 1
         
 
-        #  colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
-        # # COLLIDING WITH FIRE
-        # if colliding:
-        #     self.score -= 1
-        #     self.HUD['health'][-1].kill()
-        #     self.player.change_x *= -1.3
-        #     self.player.change_y *= -1.3
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
+        # COLLIDING WITH FIRE
+        if colliding:
+            self.score -= 1
+            self.HUD['health'][-1].kill()
+            self.player.change_x *= -0.9
+            self.player.change_y *= -0.9
         
-        #     if len(self.HUD['health']) == 0:
-        #         self.window.show_view(self.window.end_view)
+            if len(self.HUD['health']) == 0:
+                self.window.show_view(self.window.end_view)
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['coins'])
         if colliding:
@@ -285,7 +285,7 @@ class GameView(arcade.View):
    
 
     def on_key_press(self, symbol: int, modifiers: int):
-        # # if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
+        # if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
         #     self.player.change_y = 10
         #     self.jump_sound.play()
         if symbol == arcade.key.W:
