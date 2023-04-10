@@ -106,16 +106,15 @@ class EndView(arcade.View):
 class Entity(arcade.Sprite):
     # Character
     def __init__(self, foldername):
-        super().__init__(ROOT_FOLDER.joinpath(foldername, "idle.png"))
+        super().__init__(ROOT_FOLDER.joinpath(foldername, "owl_idle.png"))
         self.walk_textures = []
-        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, "idle.png"))
+        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, "owl_idle.png"))
         self.face_direction = 0
         self.current_texture = 0
         self.cur_texture_index = 0
         self.odo = 0
-        
         for i in range(10):
-            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, f"walk{i}.png"))
+            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, f"owl_walk{i}.png"))
             self.walk_textures.append(tex)
             
     def update_animation(self):
@@ -132,6 +131,14 @@ class Entity(arcade.Sprite):
             if self.odo % 4 ==0:
                 self.current_texture += 1
                 self.current_texture = self.current_texture % 10
+
+    # def update_animation(self):
+    #         self.texture = self.walk_textures[self.current_texture]
+    #         self.odo += 1
+    #         if self.odo % 4 ==0:
+    #             self.current_texture += 1
+    #             self.current_texture = self.current_texture % 10
+
 
 class Player(Entity):
     def __init__(self, foldername):
@@ -176,7 +183,7 @@ class GameView(arcade.View):
  
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
-        self.scene.move_sprite_list_after('Foreground', 'player')
+        self.scene.move_sprite_list_after('Foreground', 'player',)
         self.bullet_list = arcade.SpriteList()
 
         # Adds in health with my own made health art
@@ -285,19 +292,21 @@ class GameView(arcade.View):
    
 
     def on_key_press(self, symbol: int, modifiers: int):
-        # if symbol == arcade.key.SPACE and self.physics_engine.can_jump():
-        #     self.player.change_y = 10
-        #     self.jump_sound.play()
+        if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
+            self.player.change_y = 10
+            self.jump_sound.play()
         if symbol == arcade.key.W:
-             self.player.change_y = 5
+             self.player.change_y = 4
         if symbol == arcade.key.S:
-             self.player.change_y = -5
+             self.player.change_y = -4
         if symbol == arcade.key.A:
-            self.player.change_x = -7
+            self.player.change_x = -4
         if symbol == arcade.key.D:
-            self.player.change_x = 7
+            self.player.change_x = 4
 
     def on_key_release(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.SPACE:
+            self.player.change_y = -10
         if symbol == arcade.key.W or symbol == arcade.key.S:
             self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
