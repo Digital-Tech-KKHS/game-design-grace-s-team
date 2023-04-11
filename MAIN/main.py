@@ -4,6 +4,7 @@ from tracemalloc import start
 import arcade
 import random
 from pathlib import Path
+from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 
 # where to get files from
 ROOT_FOLDER = Path(__file__).parent
@@ -20,6 +21,7 @@ class Window(arcade.Window):
         super().__init__(WIDTH, HEIGHT, TITLE)
         self.start_view = StartView()
         self.game_view = GameView()
+        self.wall_list = None
         self.end_view = EndView()
         self.win_view = WINView()
         self.show_view(self.start_view)
@@ -185,6 +187,7 @@ class GameView(arcade.View):
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         self.scene.move_sprite_list_after('Foreground', 'player',)
         self.bullet_list = arcade.SpriteList()
+        self.wall_list = arcade.SpriteList()
 
         # Adds in health with my own made health art
         for i in range(STARTING_HEALTH):
@@ -194,6 +197,34 @@ class GameView(arcade.View):
             self.HUD['health'].append(grass)
             # health = [0, 1, 2, 3, 4]
             # index = health.index[ health-1 ]
+
+        # for x in range(0, WIDTH + 1, ):
+        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+        #     wall.center_x = x
+        #     wall.center_y = 0
+        #     self.wall_list.append(wall)
+
+        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+        #     wall.center_x = x
+        #     wall.center_y = HEIGHT
+        #     self.wall_list.append(wall)
+
+        # # Set up the walls
+        # for y in range( HEIGHT):
+        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+        #     wall.center_x = 0
+        #     wall.center_y = y
+        #     self.wall_list.append(wall)
+
+        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+        #     wall.center_x = WIDTH
+        #     wall.center_y = y
+        #     self.wall_list.append(wall)
+
+        #     # self.physics_engine.add_sprite_list(self.wall_list,
+        #     #                                 friction=0.6,
+        #     #                                 collision_type="wall",
+        #     #                                 body_type=PymunkPhysicsEngine.STATIC)
         
     def update_animation(self):
         super().update_animation()
@@ -207,6 +238,7 @@ class GameView(arcade.View):
         # self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
+        self.wall_list.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
     
     def on_show_view(self):
@@ -306,7 +338,7 @@ class GameView(arcade.View):
 
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE:
-            self.player.change_y = -10
+            self.player.change_y = 0
         if symbol == arcade.key.W or symbol == arcade.key.S:
             self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
