@@ -145,6 +145,12 @@ class Entity(arcade.Sprite):
 class Player(Entity):
     def __init__(self, foldername):
         super().__init__(foldername)
+        self.in_bounds = True
+
+    @property
+    def out_of_bounds(self):
+        return not self.in_bounds
+    
 
 class GameView(arcade.View): 
     def __init__(self):
@@ -176,7 +182,7 @@ class GameView(arcade.View):
         self.player.center_y = 100
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{0}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
-        # self.physics_engine = arcade.PhysicsEnginePlatformer('self.player, self.scene["Ground"]')
+        self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD = arcade.Scene()   
@@ -198,36 +204,36 @@ class GameView(arcade.View):
             # health = [0, 1, 2, 3, 4]
             # index = health.index[ health-1 ]
 
-        # for x in range(0, WIDTH + 1, ):
-        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-        #     wall.center_x = x
-        #     wall.center_y = 0
-        #     self.wall_list.append(wall)
+    #     for x in range(0, WIDTH + 1, ):
+    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+    #         wall.center_x = x
+    #         wall.center_y = 0
+    #         self.wall_list.append(wall)
 
-        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-        #     wall.center_x = x
-        #     wall.center_y = HEIGHT
-        #     self.wall_list.append(wall)
+    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+    #         wall.center_x = x
+    #         wall.center_y = HEIGHT
+    #         self.wall_list.append(wall)
 
-        # # Set up the walls
-        # for y in range( HEIGHT):
-        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-        #     wall.center_x = 0
-        #     wall.center_y = y
-        #     self.wall_list.append(wall)
+    #     # Set up the walls
+    #     for y in range( HEIGHT):
+    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+    #         wall.center_x = 0
+    #         wall.center_y = y
+    #         self.wall_list.append(wall)
 
-        #     wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-        #     wall.center_x = WIDTH
-        #     wall.center_y = y
-        #     self.wall_list.append(wall)
+    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+    #         wall.center_x = WIDTH
+    #         wall.center_y = y
+    #         self.wall_list.append(wall)
 
-        #     # self.physics_engine.add_sprite_list(self.wall_list,
-        #     #                                 friction=0.6,
-        #     #                                 collision_type="wall",
-        #     #                                 body_type=PymunkPhysicsEngine.STATIC)
+    #         self.physics_engine.add_sprite_list(self.wall_list,
+    #                                      friction=0.6,
+    #                                         collision_type="wall",
+    #                                          body_type=PymunkPhysicsEngine.STATIC)
         
-    def update_animation(self):
-        super().update_animation()
+    # def update_animation(self):
+    #     super().update_animation()
 
     def on_draw(self):
         # adding back round for game view   
@@ -250,7 +256,7 @@ class GameView(arcade.View):
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
-        # self.physics_engine.update()
+        self.physics_engine.update()
         self.scene.update()
         for coin in self.scene['coins']:
             coin.on_update()
@@ -267,6 +273,8 @@ class GameView(arcade.View):
             self.player.center_y = 1000
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
+
+        self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
         # making my dragon spawn at the start and lose health when it falls off of map
         
         

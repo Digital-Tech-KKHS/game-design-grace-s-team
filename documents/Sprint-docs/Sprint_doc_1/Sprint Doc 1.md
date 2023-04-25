@@ -19,7 +19,7 @@ Grace McDonald
 ![[Pasted image 20230324125201.png]]
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I basically just wanted to get a solid Mvp, I also made sure that I 
+In this sprint I basically just wanted to get a solid Mvp, I also made sure that my code can work and 
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
