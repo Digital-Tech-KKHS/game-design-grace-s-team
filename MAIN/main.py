@@ -21,10 +21,10 @@ class Window(arcade.Window):
         super().__init__(WIDTH, HEIGHT, TITLE)
         self.start_view = StartView()
         self.game_view = GameView()
-        self.wall_list = None
         self.end_view = EndView()
         self.win_view = WINView()
         self.show_view(self.start_view)
+
 
         
 # starting menu window
@@ -134,18 +134,10 @@ class Entity(arcade.Sprite):
                 self.current_texture += 1
                 self.current_texture = self.current_texture % 10
 
-    # def update_animation(self):
-    #         self.texture = self.walk_textures[self.current_texture]
-    #         self.odo += 1
-    #         if self.odo % 4 ==0:
-    #             self.current_texture += 1
-    #             self.current_texture = self.current_texture % 10
-
-
 class Player(Entity):
     def __init__(self, foldername):
-        super().__init__(foldername)
-        self.in_bounds = True
+         super().__init__(foldername)
+         self.in_bounds = True
 
     @property
     def out_of_bounds(self):
@@ -160,6 +152,7 @@ class GameView(arcade.View):
         self.player = None
         self.tilemap = None
         self.scene = None
+        # self.walls = None
         self.HUD = None
         self.physics_engine = None
         self.camera = None
@@ -188,12 +181,12 @@ class GameView(arcade.View):
         self.HUD = arcade.Scene()   
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
- 
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         self.scene.move_sprite_list_after('Foreground', 'player',)
         self.bullet_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
+
 
         # Adds in health with my own made health art
         for i in range(STARTING_HEALTH):
@@ -217,7 +210,7 @@ class GameView(arcade.View):
 
     #     # Set up the walls
     #     for y in range( HEIGHT):
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
+    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",)
     #         wall.center_x = 0
     #         wall.center_y = y
     #         self.wall_list.append(wall)
@@ -241,14 +234,16 @@ class GameView(arcade.View):
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
         self.camera.use()
         self.scene.draw()
-        # self.player.draw_hit_box((255, 0,0,255), 2)
+        self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
         self.wall_list.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
+        self.wall.draw_hit_box((255, 0,0,255), 2)
     
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
+
 
 
 
@@ -274,7 +269,9 @@ class GameView(arcade.View):
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
 
-        self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
+        # self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
+        
+        
         # making my dragon spawn at the start and lose health when it falls off of map
         
         
@@ -336,9 +333,9 @@ class GameView(arcade.View):
             self.player.change_y = 10
             self.jump_sound.play()
         if symbol == arcade.key.W:
-             self.player.change_y = 4
+            self.player.change_y = 4
         if symbol == arcade.key.S:
-             self.player.change_y = -4
+            self.player.change_y = -4
         if symbol == arcade.key.A:
             self.player.change_x = -4
         if symbol == arcade.key.D:
