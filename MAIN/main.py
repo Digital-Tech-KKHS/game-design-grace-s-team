@@ -13,6 +13,7 @@ WIDTH = 1200
 HEIGHT = 700
 TITLE = "Game"
 STARTING_HEALTH = 5
+PLAYER_JUMP_SPEED = 10
 
 # Main class
 class Window(arcade.Window):
@@ -114,6 +115,9 @@ class Entity(arcade.Sprite):
         self.face_direction = 0
         self.current_texture = 0
         self.cur_texture_index = 0
+        self.jumping = False
+        self.can_jump = True
+        self.acc_y = 0
         self.odo = 0
         for i in range(10):
             tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, f"owl_walk{i}.png"))
@@ -133,6 +137,22 @@ class Entity(arcade.Sprite):
             if self.odo % 4 ==0:
                 self.current_texture += 1
                 self.current_texture = self.current_texture % 10
+    
+    def jump(self):
+        self.jumping = True
+        self.change_y = PLAYER_JUMP_SPEED
+        self.acc_y = -0.2
+
+    def update(self):
+        print(self.change_y)
+        if self.jumping:
+            self.change_y += self.acc_y
+            if self.change_y <= -PLAYER_JUMP_SPEED: # caution not a good choice of logic
+                self.jumping = False
+                self.can_jump = True
+                self.change_y = 0
+                self.acc_y = 0
+        super().update()
 
 class Player(Entity):
     def __init__(self, foldername):
@@ -184,8 +204,9 @@ class GameView(arcade.View):
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         self.scene.move_sprite_list_after('Foreground', 'player',)
+        self.scene.add_sprite_list('shadows')
         self.bullet_list = arcade.SpriteList()
-        self.wall_list = arcade.SpriteList()
+        # self.wall_list = arcade.SpriteList()
 
 
         # Adds in health with my own made health art
@@ -237,21 +258,18 @@ class GameView(arcade.View):
         self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
-        self.wall_list.draw()
+        # self.wall_list.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
-        self.wall.draw_hit_box((255, 0,0,255), 2)
     
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
-
-
-
 
 # FOR SPRITE ON COINS
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
-        self.physics_engine.update()
+        if not self.player.jumping: # THIS IS A BAD IDEA
+            self.physics_engine.update()
         self.scene.update()
         for coin in self.scene['coins']:
             coin.on_update()
@@ -284,7 +302,7 @@ class GameView(arcade.View):
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
         # COLLIDING WITH FIRE
-        if colliding:
+        if colliding and not self.player.jumping:
             self.score -= 1
             self.HUD['health'][-1].kill()
             self.player.change_x *= -0.9
@@ -329,26 +347,40 @@ class GameView(arcade.View):
    
 
     def on_key_press(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
-            self.player.change_y = 10
-            self.jump_sound.play()
-        if symbol == arcade.key.W:
-            self.player.change_y = 4
-        if symbol == arcade.key.S:
-            self.player.change_y = -4
-        if symbol == arcade.key.A:
-            self.player.change_x = -4
-        if symbol == arcade.key.D:
-            self.player.change_x = 4
+        if symbol == arcade.key.SPACE:
+            self.player.jump()
+            shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
+            shadow.center_x = self.player.center_x
+            shadow.center_y = self.player.center_y - 32
+            self.scene['shadows'].append(shadow)
+        # if key == arcade.key.UP or key == arcade.key.W:
+        #      if self.physics_engine.can_jump():
+        #          self.player_sprite.change_y = PLAYER_JUMP_SPEED
+        #     self.jump_sound.play()
+        if not self.player.jumping:
+            if symbol == arcade.key.W:
+                self.player.change_y = 4
+                # self.player.change_x = 5.6
+            if symbol == arcade.key.S:
+                self.player.change_y = -4
+                # self.player.change_x = -2.8
+            if symbol == arcade.key.A:
+                self.player.change_y = -1
+                self.player.change_x = -2.8
+            if symbol == arcade.key.D:
+                self.player.change_y = 1
+                self.player.change_x = 2.8
 
     def on_key_release(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.SPACE:
-            self.player.change_y = 0
-        if symbol == arcade.key.W or symbol == arcade.key.S:
-            self.player.change_y = 0
-        if symbol == arcade.key.A or symbol == arcade.key.D:
-            self.player.change_x = 0
-        pass
+        if not self.player.jumping:
+            if symbol == arcade.key.SPACE:
+                self.player.change_y = 0
+            if symbol == arcade.key.W or symbol == arcade.key.S:
+                self.player.change_y = 0
+                self.player.change_x = 0
+            if symbol == arcade.key.A or symbol == arcade.key.D:
+                self.player.change_x = 0
+                self.player.change_y = 0
         
 if __name__ == "__main__":
     game = Window()
