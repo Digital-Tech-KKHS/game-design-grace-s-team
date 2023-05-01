@@ -1,4 +1,5 @@
 
+
 # Different plugins
 from tracemalloc import start
 import arcade
@@ -7,8 +8,8 @@ from pathlib import Path
 from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 
 # where to get files from
-ROOT_FOLDER = Path(__file__).parent
 
+ROOT_FOLDER = Path(__file__).parent
 WIDTH = 1200
 HEIGHT = 700
 TITLE = "Game"
@@ -25,8 +26,6 @@ class Window(arcade.Window):
         self.end_view = EndView()
         self.win_view = WINView()
         self.show_view(self.start_view)
-
-
         
 # starting menu window
 class StartView(arcade.View):
@@ -37,7 +36,6 @@ class StartView(arcade.View):
         self.clear()
         self.bullet_list = None
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
-
         # text on start screen
         arcade.draw_text("WELCOME TO MY GAME", WIDTH/2, HEIGHT/2 -100, arcade.color.ALMOND)
         arcade.draw_text("PUSH TO START THE GAME ALREADY!!!", WIDTH/2, HEIGHT/2 - 150, arcade.color.ALMOND)
@@ -52,59 +50,49 @@ class StartView(arcade.View):
             game_view = GameView()
             game_view.setup()
             self.window.show_view(game_view)
-
     # starts game
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         game_view = GameView()
         game_view.setup()
         self.window.show_view(game_view)
-
 # Win Menu Window
 class WINView(arcade.View):
     def __init__(self):
         """ This is run once when we switch to this view """
         super().__init__()
         self.texture = arcade.load_texture(ROOT_FOLDER.joinpath("win.png"))
-
         # Reset the viewport, necessary if we have a scrolling game and we need
         # to reset the viewport back to the start so we can see what we draw.
         arcade.set_viewport(0, WIDTH - 1, 0, HEIGHT - 1)
-
     def on_draw(self):
         """ Draw this view """
         self.clear()
         self.texture.draw_sized(WIDTH / 2, HEIGHT / 2,
                                 WIDTH, HEIGHT)
-
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """ If the user presses the mouse button, re-start the game. """
         start_view = StartView()
         # start_view.setup()
         self.window.show_view(start_view)
 
-
 class EndView(arcade.View):
     def __init__(self):
         """ This is run once when we switch to this view """
         super().__init__()
         self.texture = arcade.load_texture(ROOT_FOLDER.joinpath("game_over.png"))
-
         # Reset the viewport, necessary if we have a scrolling game and we need
         # to reset the viewport back to the start so we can see what we draw.
         arcade.set_viewport(0, WIDTH - 1, 0, HEIGHT - 1)
-
     def on_draw(self):
         """ Draw this view """
         self.clear()
         self.texture.draw_sized(WIDTH / 2, HEIGHT / 2,
                                 WIDTH, HEIGHT)
-
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """ If the user presses the mouse button, re-start the game. """
         game_view = GameView()
         game_view.setup()
         self.window.show_view(game_view)
-
 
 class Entity(arcade.Sprite):
     # Character
@@ -137,14 +125,14 @@ class Entity(arcade.Sprite):
             if self.odo % 4 ==0:
                 self.current_texture += 1
                 self.current_texture = self.current_texture % 10
-    
+
     def jump(self):
         self.jumping = True
         self.change_y = PLAYER_JUMP_SPEED
         self.acc_y = -0.2
 
     def update(self):
-        # print(self.change_y)
+        print(self.change_y)
         if self.jumping:
             self.change_y += self.acc_y
             if self.change_y <= -PLAYER_JUMP_SPEED: # caution not a good choice of logic
@@ -158,12 +146,10 @@ class Player(Entity):
     def __init__(self, foldername):
          super().__init__(foldername)
          self.in_bounds = True
-
     @property
     def out_of_bounds(self):
         return not self.in_bounds
     
-
 class GameView(arcade.View): 
     def __init__(self):
         super().__init__()
@@ -186,8 +172,6 @@ class GameView(arcade.View):
         self.setup()
     
     
-
-
     def setup(self):
         # where the character spawns in and which map it uses
         self.player = Player('Character')
@@ -206,6 +190,7 @@ class GameView(arcade.View):
         self.scene.move_sprite_list_after('Foreground', 'player',)
         self.scene.add_sprite_list('shadows')
         self.bullet_list = arcade.SpriteList()
+        self.wall_list = arcade.SpriteList()
         # self.wall_list = arcade.SpriteList()
 
 
@@ -217,30 +202,25 @@ class GameView(arcade.View):
             self.HUD['health'].append(grass)
             # health = [0, 1, 2, 3, 4]
             # index = health.index[ health-1 ]
-
     #     for x in range(0, WIDTH + 1, ):
     #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
     #         wall.center_x = x
     #         wall.center_y = 0
     #         self.wall_list.append(wall)
-
     #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
     #         wall.center_x = x
     #         wall.center_y = HEIGHT
     #         self.wall_list.append(wall)
-
     #     # Set up the walls
     #     for y in range( HEIGHT):
     #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",)
     #         wall.center_x = 0
     #         wall.center_y = y
     #         self.wall_list.append(wall)
-
     #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
     #         wall.center_x = WIDTH
     #         wall.center_y = y
     #         self.wall_list.append(wall)
-
     #         self.physics_engine.add_sprite_list(self.wall_list,
     #                                      friction=0.6,
     #                                         collision_type="wall",
@@ -259,15 +239,20 @@ class GameView(arcade.View):
         self.HUD_camera.use()
         self.HUD.draw()
         # self.wall_list.draw()
+        # self.wall_list.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
-    
+
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
+
+
+
 
 # FOR SPRITE ON COINS
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
+        self.physics_engine.update()
         if not self.player.jumping: # THIS IS A BAD IDEA
             self.physics_engine.update()
         self.scene.update()
@@ -286,7 +271,6 @@ class GameView(arcade.View):
             self.player.center_y = 1000
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
-
         # self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
         
         
@@ -302,16 +286,17 @@ class GameView(arcade.View):
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
         # COLLIDING WITH FIRE
-        if colliding and not self.player.jumping:
-            self.score -= 1
-            self.HUD['health'][-1].kill()
-            self.player.change_x *= -0.9
-            self.player.change_y *= -0.9
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.score -= 1
+                self.HUD['health'][-1].kill()
+                self.player.change_x *= -0.9
+                self.player.change_y *= -0.9
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
-
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['coins'])
+
         if colliding:
             coin.kill()
             self.score += 1
@@ -334,7 +319,6 @@ class GameView(arcade.View):
             self.window.show_view(self.window.win_view)
             self.setup()
 
-
     def center_camera_on_player(self):
         camera_x = self.player.center_x - WIDTH / 2
         camera_y = self.player.center_y - HEIGHT / 2
@@ -344,9 +328,20 @@ class GameView(arcade.View):
         if self.player.center_y < HEIGHT / 2:
             camera_y = 2
         self.camera.move_to((camera_x, camera_y))
-   
+
 
     def on_key_press(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
+            self.player.change_y = 10
+            self.jump_sound.play()
+        if symbol == arcade.key.W:
+            self.player.change_y = 4
+        if symbol == arcade.key.S:
+            self.player.change_y = -4
+        if symbol == arcade.key.A:
+            self.player.change_x = -4
+        if symbol == arcade.key.D:
+            self.player.change_x = 4
         if symbol == arcade.key.SPACE:
             self.player.jump()
             shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
@@ -360,18 +355,21 @@ class GameView(arcade.View):
         if not self.player.jumping:
             if symbol == arcade.key.W:
                 self.player.change_y = 4
-                # self.player.change_x = 5.6
             if symbol == arcade.key.S:
                 self.player.change_y = -4
-                # self.player.change_x = -2.8
             if symbol == arcade.key.A:
-                self.player.change_y = -1
                 self.player.change_x = -2.8
             if symbol == arcade.key.D:
-                self.player.change_y = 1
                 self.player.change_x = 2.8
 
     def on_key_release(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.SPACE:
+            self.player.change_y = 0
+        if symbol == arcade.key.W or symbol == arcade.key.S:
+            self.player.change_y = 0
+        if symbol == arcade.key.A or symbol == arcade.key.D:
+            self.player.change_x = 0
+        pass
         if not self.player.jumping:
             if symbol == arcade.key.SPACE:
                 self.player.change_y = 0
@@ -381,7 +379,7 @@ class GameView(arcade.View):
             if symbol == arcade.key.A or symbol == arcade.key.D:
                 self.player.change_x = 0
                 self.player.change_y = 0
-        
+
 if __name__ == "__main__":
     game = Window()
     arcade.run()
