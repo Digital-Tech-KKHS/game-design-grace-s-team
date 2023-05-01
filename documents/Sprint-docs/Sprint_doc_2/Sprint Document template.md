@@ -2,30 +2,30 @@
 **Name:**
 Grace McDonald
 **Git Hash:**
-572b7f5484ca942fde40c89b886c34c2fba46ba5
+
 **Sprint Number:**
-1
+2
 **Start Date:**
-22nd March 2023
+26th of April 2023
 **End Date:**
-03/04/2023
+
 **Work hard rating**
 ☆☆☆☆☆
 
 # Project at the start of the sprint
 ## **KANBAN board at the start of the sprint**
-![[Pasted image 20230324125130.png]]
+![[Pasted image 20230501143104.png]]
 ## **Screenshot of the game at the start of the sprint**
-![[Pasted image 20230324125201.png]]
+![[Pasted image 20230501143318.png]]
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I basically just wanted to get a solid Mvp, I also made sure that my code can work and 
+In this sprint I did massive amounts of testing and trialing. Over the holidays I did most of the art that I origanially that I would use, and I tested how my character would move on my isometric map. I also changed my code in a way so that when I pressed the "D" button it would move my character in a diagonal way that is parallel to the sides of the gorund. I also ran into a lot of issues trying to make my character able to "hit" walls or collide with them and then stop moving all together. By the end of the entire sprint I decided that I would make my game be oblique
 ## **Briefly describe other team members contributions**
-- No team mates
+- No teamates
 ## **Major Changes and Achievements Described**
-- not many specific changes except the character for my MVP and my tilesets
+
 ## **Brief Description of your testing**
-- I tested how my 
+
 ## **Link to testing results/tables**
 
 

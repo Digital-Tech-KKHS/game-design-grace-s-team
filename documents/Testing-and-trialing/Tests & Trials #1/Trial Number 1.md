@@ -10,8 +10,8 @@ Involved in the trial
 >- jasper sharp
 
 ## Trial goal:
->The goal for this trial was to determine weither or not 
-
+>The goal for this trial was to determine wether or not 
+ I would do my game in isometric or 
 
 ## Describe the trail
 > We loaded the main menu of our app and asked our 3 candidates to navigate to the game. After this we asked each candidate what they though each button did and if they liked the colour scheme. 

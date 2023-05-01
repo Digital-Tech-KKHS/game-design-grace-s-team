@@ -144,7 +144,7 @@ class Entity(arcade.Sprite):
         self.acc_y = -0.2
 
     def update(self):
-        print(self.change_y)
+        # print(self.change_y)
         if self.jumping:
             self.change_y += self.acc_y
             if self.change_y <= -PLAYER_JUMP_SPEED: # caution not a good choice of logic
