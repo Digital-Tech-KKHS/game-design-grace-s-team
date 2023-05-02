@@ -15,6 +15,7 @@ HEIGHT = 700
 TITLE = "Game"
 STARTING_HEALTH = 5
 PLAYER_JUMP_SPEED = 10
+GRAVITY = -0.2
 
 # Main class
 class Window(arcade.Window):
@@ -126,13 +127,14 @@ class Entity(arcade.Sprite):
                 self.current_texture += 1
                 self.current_texture = self.current_texture % 10
 
+    # Character jumping:   
     def jump(self):
         self.jumping = True
         self.change_y = PLAYER_JUMP_SPEED
-        self.acc_y = -0.2
+        self.acc_y = GRAVITY
 
     def update(self):
-        print(self.change_y)
+        # print(self.change_y)
         if self.jumping:
             self.change_y += self.acc_y
             if self.change_y <= -PLAYER_JUMP_SPEED: # caution not a good choice of logic
@@ -182,7 +184,7 @@ class GameView(arcade.View):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
-        self.HUD = arcade.Scene()   
+        self.HUD = arcade.Scene()    
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
@@ -347,7 +349,7 @@ class GameView(arcade.View):
             shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
             shadow.center_x = self.player.center_x
             shadow.center_y = self.player.center_y - 32
-            self.scene['shadows'].append(shadow)
+            # self.scene['shadows'].append(shadow)
         # if key == arcade.key.UP or key == arcade.key.W:
         #      if self.physics_engine.can_jump():
         #          self.player_sprite.change_y = PLAYER_JUMP_SPEED
@@ -369,8 +371,8 @@ class GameView(arcade.View):
             self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
             self.player.change_x = 0
-        pass
-        if not self.player.jumping:
+        # pass
+        # if not self.player.jumping:
             if symbol == arcade.key.SPACE:
                 self.player.change_y = 0
             if symbol == arcade.key.W or symbol == arcade.key.S:
