@@ -151,6 +151,15 @@ class Player(Entity):
     @property
     def out_of_bounds(self):
         return not self.in_bounds
+
+# class Enemy(Entity):
+#     def __init__(self, foldername):
+#         super().__init__(foldername)`
+#         self.walk_textures = []
+#         self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, "Enemy.png"))
+#         self.face_direction = 0
+#         self.current_texture = 0
+#         self.cur_texture_index = 0
     
 class GameView(arcade.View): 
     def __init__(self):
@@ -159,6 +168,7 @@ class GameView(arcade.View):
         # def on_show_view(self):
         self.player = None
         self.tilemap = None
+        self.enemy_list = None
         self.scene = None
         # self.walls = None
         self.HUD = None
@@ -184,7 +194,8 @@ class GameView(arcade.View):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
-        self.HUD = arcade.Scene()    
+        self.HUD = arcade.Scene() 
+        self.enemy_list = arcade.SpriteList()   
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
@@ -204,32 +215,28 @@ class GameView(arcade.View):
             self.HUD['health'].append(grass)
             # health = [0, 1, 2, 3, 4]
             # index = health.index[ health-1 ]
-    #     for x in range(0, WIDTH + 1, ):
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = x
-    #         wall.center_y = 0
-    #         self.wall_list.append(wall)
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = x
-    #         wall.center_y = HEIGHT
-    #         self.wall_list.append(wall)
-    #     # Set up the walls
-    #     for y in range( HEIGHT):
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",)
-    #         wall.center_x = 0
-    #         wall.center_y = y
-    #         self.wall_list.append(wall)
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = WIDTH
-    #         wall.center_y = y
-    #         self.wall_list.append(wall)
-    #         self.physics_engine.add_sprite_list(self.wall_list,
-    #                                      friction=0.6,
-    #                                         collision_type="wall",
-    #                                          body_type=PymunkPhysicsEngine.STATIC)
-        
-    # def update_animation(self):
-    #     super().update_animation()
+
+        # -- Draw an enemy on the ground
+        enemy = arcade.Sprite(":resources:images/enemies/wormGreen.png")
+
+        enemy.bottom = 34
+        enemy.left = 34 * 2
+
+        # Set enemy initial speed
+        enemy.change_x = 2
+        self.enemy_list(enemy)
+
+        # -- Draw a enemy on the platform
+        enemy = arcade.Sprite(":resources:images/enemies/wormGreen.png")
+
+        enemy.bottom = 34 * 4
+        enemy.left = 34 * 4
+
+        # Set boundaries on the left/right the enemy can't cross
+        enemy.boundary_right = 34 * 8
+        enemy.boundary_left = 34 * 3
+        enemy.change_x = 2
+        self.enemy_list(enemy)
 
     def on_draw(self):
         # adding back round for game view   
@@ -237,7 +244,7 @@ class GameView(arcade.View):
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
         self.camera.use()
         self.scene.draw()
-        self.player.draw_hit_box((255, 0,0,255), 2)
+        # self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
         # self.wall_list.draw()
@@ -258,6 +265,8 @@ class GameView(arcade.View):
         if not self.player.jumping: # THIS IS A BAD IDEA
             self.physics_engine.update()
         self.scene.update()
+        
+        # Coins
         for coin in self.scene['coins']:
             coin.on_update()
         self.center_camera_on_player()
@@ -266,7 +275,7 @@ class GameView(arcade.View):
             coin.kill()
             self.score += 1
             self.collect_coin_sound.play()
-  
+        # Health
         if self.player.center_y <0:
             self.HUD['health'][-1].kill()
             self.player.center_x = 40
@@ -283,10 +292,28 @@ class GameView(arcade.View):
         # # COLLIDING WITH BACKDROP
         # if colliding:
         #     self.player.change_x = -1 + 1
-        #     self.player.change_y = -1 + 1
+        #     self.player.change_y = -1 + 1 
         
+        # Enemy:
+            self.enemy_list.update()
 
+            # Check each enemy
+            for enemy in self.enemy_list:
+                # If the enemy hit a wall, reverse
+                if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
+                    enemy.change_x *= -1
+                # If the enemy hit the left boundary, reverse
+                elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
+                    enemy.change_x *= -1
+                # If the enemy hit the right boundary, reverse
+                elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
+                    enemy.change_x *= -1
+
+        
+       
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
+
+
         # COLLIDING WITH FIRE
         if colliding:
             if colliding and not self.player.jumping:
@@ -311,11 +338,13 @@ class GameView(arcade.View):
         #     self.player.change_x = 0
         #     self.player.change_y = 0
 
+        # colliding with win tile and changing level
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['WIN'])
         if colliding:
             self.level += 1
             self.setup()
 
+        # colliding with winner tile to create a win_view
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['WINNER'])
         if colliding:
             self.window.show_view(self.window.win_view)
@@ -331,7 +360,7 @@ class GameView(arcade.View):
             camera_y = 2
         self.camera.move_to((camera_x, camera_y))
 
-
+    # Pressing keys
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
             self.player.change_y = 10
@@ -363,7 +392,7 @@ class GameView(arcade.View):
                 self.player.change_x = -2.8
             if symbol == arcade.key.D:
                 self.player.change_x = 2.8
-
+    #   When keys are released
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE:
             self.player.change_y = 0
@@ -371,8 +400,8 @@ class GameView(arcade.View):
             self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
             self.player.change_x = 0
-        # pass
-        # if not self.player.jumping:
+        pass
+        if not self.player.jumping:
             if symbol == arcade.key.SPACE:
                 self.player.change_y = 0
             if symbol == arcade.key.W or symbol == arcade.key.S:
