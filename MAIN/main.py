@@ -10,8 +10,8 @@ from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 # where to get files from
 
 ROOT_FOLDER = Path(__file__).parent
-WIDTH = 1200
-HEIGHT = 700
+WIDTH = 1490
+HEIGHT = 1000
 TITLE = "Game"
 STARTING_HEALTH = 5
 PLAYER_JUMP_SPEED = 10
@@ -177,7 +177,6 @@ class GameView(arcade.View):
         self.HUD_camera = None
         self.score = 0
         self.level = 0
-        player_sprite = 0
         self.background = None
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
@@ -224,7 +223,7 @@ class GameView(arcade.View):
 
         # Set enemy initial speed
         enemy.change_x = 2
-        self.enemy_list(enemy)
+        self.enemy_list.append(enemy)
 
         # -- Draw a enemy on the platform
         enemy = arcade.Sprite(":resources:images/enemies/wormGreen.png")
@@ -236,7 +235,7 @@ class GameView(arcade.View):
         enemy.boundary_right = 34 * 8
         enemy.boundary_left = 34 * 3
         enemy.change_x = 2
-        self.enemy_list(enemy)
+        self.enemy_list.append(enemy)
 
     def on_draw(self):
         # adding back round for game view   
@@ -276,6 +275,7 @@ class GameView(arcade.View):
             self.score += 1
             self.collect_coin_sound.play()
         # Health
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
         if self.player.center_y <0:
             self.HUD['health'][-1].kill()
             self.player.center_x = 40
@@ -311,7 +311,7 @@ class GameView(arcade.View):
 
         
        
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
+
 
 
         # COLLIDING WITH FIRE
