@@ -186,8 +186,8 @@ class GameView(arcade.View):
     def setup(self):
         # where the character spawns in and which map it uses
         self.player = Player('Character')
-        self.player.center_x = 35
-        self.player.center_y = 100
+        self.player.center_x = 52
+        self.player.center_y = 420
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{0}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
