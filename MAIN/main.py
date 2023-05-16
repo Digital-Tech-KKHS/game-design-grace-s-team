@@ -188,7 +188,7 @@ class GameView(arcade.View):
         self.player = Player('Character')
         self.player.center_x = 52
         self.player.center_y = 420
-        self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{0}.tmx'))
+        self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{self.level}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
         self.camera = arcade.Camera(WIDTH, HEIGHT)
@@ -342,6 +342,11 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['WIN'])
         if colliding:
             self.level += 1
+            self.setup()
+                
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['TOUCH_ME'])
+        if colliding:
+            self.level = 0
             self.setup()
 
         # colliding with winner tile to create a win_view
