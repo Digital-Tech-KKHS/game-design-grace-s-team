@@ -177,11 +177,11 @@ class GameView(arcade.View):
     def setup(self):
         # where the character spawns in and which map it uses
         self.player = Player('Character')
-        self.player.center_x = 35
-        self.player.center_y = 100
+        self.player.center_x = 100
+        self.player.center_y = 500
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{self.level}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
-        self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["water"], gravity_constant=0)
+        self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["Water"], gravity_constant=0)
         self.camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
         self.HUD = arcade.Scene()
@@ -258,10 +258,10 @@ class GameView(arcade.View):
         if not self.player.jumping: # THIS IS A BAD IDEA
             self.physics_engine.update()
         self.scene.update()
-        for coin in self.scene['coins']:
+        for coin in self.scene['Coins']:
             coin.on_update()
         self.center_camera_on_player()
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['coins'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins'])
         for coin in colliding:
             coin.kill()
             self.score += 1
@@ -286,7 +286,7 @@ class GameView(arcade.View):
         #     self.player.change_y = -1 + 1
         
 
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['DONT_TOUCH'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Dont_touch'])
         # COLLIDING WITH FIRE
         if colliding:
             if colliding and not self.player.jumping:
@@ -297,7 +297,7 @@ class GameView(arcade.View):
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['coins'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins'])
 
         if colliding:
             coin.kill()
@@ -311,12 +311,16 @@ class GameView(arcade.View):
         #     self.player.change_x = 0
         #     self.player.change_y = 0
 
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['WIN'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Win'])
         if colliding:
             self.level += 1
             self.setup()
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Change'])
+        if colliding:
+            self.level = 2
+            self.setup()
 
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['WINNER'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
         if colliding:
             self.window.show_view(self.window.win_view)
             self.setup()
@@ -345,7 +349,7 @@ class GameView(arcade.View):
         if symbol == arcade.key.D:
             self.player.change_x = 4
         if symbol == arcade.key.SPACE:
-            self.player.jump(gravity_constant=0) 
+            self.player.jump()
             shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
             shadow.center_x = self.player.center_x
             shadow.center_y = self.player.center_y - 32
