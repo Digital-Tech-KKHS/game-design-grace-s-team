@@ -10,8 +10,8 @@ from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 # where to get files from
 
 ROOT_FOLDER = Path(__file__).parent
-WIDTH = 2000
-HEIGHT = 1000
+WIDTH = 1200
+HEIGHT = 700
 TITLE = "Game"
 STARTING_HEALTH = 5
 PLAYER_JUMP_SPEED = 10
@@ -318,6 +318,10 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Change'])
         if colliding:
             self.level = 2
+            self.setup()
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Original_layer'])
+        if colliding:
+            self.level = 0
             self.setup()
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
