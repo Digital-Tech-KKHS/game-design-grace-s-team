@@ -10,12 +10,13 @@ from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 # where to get files from
 
 ROOT_FOLDER = Path(__file__).parent
-WIDTH = 1200
-HEIGHT = 700
+WIDTH = 1800
+HEIGHT = 1000
 TITLE = "Game"
 STARTING_HEALTH = 5
 PLAYER_JUMP_SPEED = 10
 GRAVITY = -0.2
+DEFAULT_FONT_SIZE = 20
 
 # Main class
 class Window(arcade.Window):
@@ -203,33 +204,6 @@ class GameView(arcade.View):
             grass = arcade.Sprite(ROOT_FOLDER.joinpath('health.png'), 0.5, center_x=x, center_y=y)
             self.HUD['health'].append(grass)
             # health = [0, 1, 2, 3, 4]
-            # index = health.index[ health-1 ]
-    #     for x in range(0, WIDTH + 1, ):
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = x
-    #         wall.center_y = 0
-    #         self.wall_list.append(wall)
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = x
-    #         wall.center_y = HEIGHT
-    #         self.wall_list.append(wall)
-    #     # Set up the walls
-    #     for y in range( HEIGHT):
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",)
-    #         wall.center_x = 0
-    #         wall.center_y = y
-    #         self.wall_list.append(wall)
-    #         wall = arcade.Sprite(ROOT_FOLDER.joinpath("water_background.png",))
-    #         wall.center_x = WIDTH
-    #         wall.center_y = y
-    #         self.wall_list.append(wall)
-    #         self.physics_engine.add_sprite_list(self.wall_list,
-    #                                      friction=0.6,
-    #                                         collision_type="wall",
-    #                                          body_type=PymunkPhysicsEngine.STATIC)
-        
-    # def update_animation(self):
-    #     super().update_animation()
 
     def on_draw(self):
         # adding back round for game view   
@@ -240,9 +214,8 @@ class GameView(arcade.View):
         self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
-        # self.wall_list.draw()
-        # self.wall_list.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
+        arcade.draw_text("Welcome!", WIDTH/2, HEIGHT/2 - 150, arcade.color.ALMOND)
 
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
@@ -287,13 +260,13 @@ class GameView(arcade.View):
         
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Dont_touch'])
-        # COLLIDING WITH FIRE
+        # COLLIDING WITH Danger
         if colliding:
             if colliding and not self.player.jumping:
                 self.score -= 1
                 self.HUD['health'][-1].kill()
-                self.player.change_x *= -0.9
-                self.player.change_y *= -0.9
+                self.player.change_x *= -1
+                self.player.change_y *= -1
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
@@ -303,22 +276,22 @@ class GameView(arcade.View):
             coin.kill()
             self.score += 1
             self.collect_coin_sound.play()
-        
-       
-        # # COLLIDING WITH BACKDROP
-        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
-        # if colliding:
-        #     self.player.change_x = 0
-        #     self.player.change_y = 0
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Win'])
         if colliding:
             self.level += 1
             self.setup()
+
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
+        if colliding:
+            arcade.draw_text("PUSH TO START THE GAME ALREADY!!!", WIDTH/2, HEIGHT/2 - 560, arcade.color.CHARCOAL)
+            
+
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Change'])
         if colliding:
             self.level = 2
             self.setup()
+
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Original_layer'])
         if colliding:
             self.level = 0
@@ -344,6 +317,8 @@ class GameView(arcade.View):
         if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
             self.player.change_y = 10
             self.jump_sound.play()
+        # if symbol == arcade.key.G:
+
         if symbol == arcade.key.W:
             self.player.change_y = 4
         if symbol == arcade.key.S:
@@ -371,6 +346,7 @@ class GameView(arcade.View):
                 self.player.change_x = -2.8
             if symbol == arcade.key.D:
                 self.player.change_x = 2.8
+            
 
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE:
