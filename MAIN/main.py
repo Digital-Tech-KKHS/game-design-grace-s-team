@@ -10,7 +10,7 @@ from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 # where to get files from
 
 ROOT_FOLDER = Path(__file__).parent
-WIDTH = 1800
+WIDTH = 1400
 HEIGHT = 1000
 TITLE = "Game"
 STARTING_HEALTH = 5
@@ -258,7 +258,11 @@ class GameView(arcade.View):
 
         self.shaddow = arcade.Sprite(ROOT_FOLDER / 'Character' / 'shaddow.png')
         self.scene.add_sprite_list_before('shaddow', 'player')
+
         self.scene.add_sprite('shaddow', self.shaddow)
+
+    def on_show_view(self):
+        self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
 
     def on_draw(self):
         # adding back round for game view   
@@ -266,14 +270,18 @@ class GameView(arcade.View):
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
         self.camera.use()
         self.scene.draw()
-        self.player.draw_hit_box((255, 0,0,255), 2)
+        # self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
         arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
-        arcade.draw_text("Welcome!", WIDTH/2, HEIGHT/2 - 150, arcade.color.ALMOND)
+        
 
-    def on_show_view(self):
-        self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
+        if colliding:
+            arcade.draw_text("PUSH TO START THE GAME ALREADY!!!\n",
+             530, 400, arcade.color.CHARCOAL)
+
+
 
 
 
@@ -311,7 +319,7 @@ class GameView(arcade.View):
             self.shaddow.center_y = self.player.center_y - 85
             self.shaddow.scale = 1
         else:
-            self.shaddow.scale += self.player.change_y * 0.005
+            self.shaddow.scale += self.player.change_y * -0.005
         # self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
         
         
@@ -348,9 +356,7 @@ class GameView(arcade.View):
             self.level += 1
             self.setup()
 
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
-        if colliding:
-            arcade.draw_text("PUSH TO START THE GAME ALREADY!!!", WIDTH/2, HEIGHT/2 - 560, arcade.color.CHARCOAL)
+
             
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Change'])
@@ -390,9 +396,9 @@ class GameView(arcade.View):
         if symbol == arcade.key.S:
             self.player.change_y = -4
         if symbol == arcade.key.A:
-            self.player.change_x = -4
+            self.player.change_x = -5
         if symbol == arcade.key.D:
-            self.player.change_x = 4
+            self.player.change_x = 5
         if symbol == arcade.key.SPACE:
             self.player.jump()
         #     shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
