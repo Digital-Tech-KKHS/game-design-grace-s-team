@@ -278,8 +278,8 @@ class GameView(arcade.View):
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
-            arcade.draw_text("PUSH TO START THE GAME ALREADY!!!\n",
-             530, 400, arcade.color.CHARCOAL)
+            arcade.draw_text("This looks dangerous....",
+             570, 340, arcade.color.WHITE, 20)
 
 
 
@@ -341,6 +341,9 @@ class GameView(arcade.View):
                 self.HUD['health'][-1].kill()
                 self.player.change_x *= -1
                 self.player.change_y *= -1
+                self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath ("owl_idle_hurt.png"))
+            else:
+                self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath ("owl_idle.png"))
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
