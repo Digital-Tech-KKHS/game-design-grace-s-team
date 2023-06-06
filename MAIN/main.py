@@ -98,10 +98,10 @@ class EndView(arcade.View):
 
 class Entity(arcade.Sprite):
     # Character
-    def __init__(self, foldername):
-        super().__init__(ROOT_FOLDER.joinpath(foldername, "owl_idle.png"))
+    def __init__(self, foldername, filename):
+        super().__init__(ROOT_FOLDER.joinpath(foldername, filename + "_idle.png"))
         self.walk_textures = []
-        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, "owl_idle.png"))
+        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + "_idle.png"))
         self.face_direction = 0
         self.current_texture = 0
         self.cur_texture_index = 0
@@ -110,7 +110,7 @@ class Entity(arcade.Sprite):
         self.acc_y = 0
         self.odo = 0
         for i in range(10):
-            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, f"owl_walk{i}.png"))
+            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + f"_walk{i}.png"))
             self.walk_textures.append(tex)
         self.start_jump_y = None
             
@@ -149,42 +149,41 @@ class Entity(arcade.Sprite):
                 self.start_jump_y = None
                 print('landed')
 
-class Enemy(arcade.Sprite):
-    def __init__(self, foldername):
-        super().__init__(ROOT_FOLDER.joinpath(foldername, "enemy_idle.png"))
-        enemy_root_folder = ROOT_FOLDER / 'Enemy'
-        self.walk_textures = []
-        self.idle_textures = arcade.load_texture_pair(enemy_root_folder / "enemy_idle.png")
-        self.face_direction = 0
-        self.current_texture = 0
-        self.cur_texture_index = 0
-        self.jumping = False
-        self.can_jump = True
-        self.acc_y = 0
-        self.odo = 0
-        for i in range(10):
-            tex = arcade.load_texture_pair(enemy_root_folder / f"enemy{i}.png")
-            self.walk_textures.append(tex)
-            
-    def update_animation(self):
-        if self.change_x > 0:
-             self.face_direction = 1
-        if self.change_x < 0:
-             self.face_direction = 0
-        
-        if self.change_x ==0:
-            self.texture = self.idle_textures[self.face_direction]
-        else:
-            self.texture = self.walk_textures[self.current_texture][self.face_direction]
-            self.odo += 1
-            if self.odo % 4 ==0:
-                self.current_texture += 1
-                self.current_texture = self.current_texture % 10
+class Enemy(Entity):
+    def __init__(self, properties=None):
+        super().__init__("Enemy", "enemy")
+        print(properties)
+        if properties is not None:
+            for key, value in properties.items():
+                setattr(self, key, value)
+
+        try:
+            self.speed
+        except: # fix this!
+            raise KeyError("enemy without speed custom property found. Check tilemap")
+        self.target = (0, 0)
+    
+    def update(self):
+        super().update()
+        if self.center_x - self.target[0] < 0:
+            self.change_x = self.speed 
+        if self.center_x - self.target[0] > 0:
+            self.change_x = -self.speed 
+        if self.center_y - self.target[1] < 0:
+            self.change_y = self.speed 
+        if self.center_y - self.target[1] > 0:
+            self.change_y = -self.speed 
+
+    
+    def set_target(self, x, y):
+        self.target = (x, y)
+
+
 
 
 class Player(Entity):
-    def __init__(self, foldername):
-        super().__init__(foldername)
+    def __init__(self):
+        super().__init__('Character', "owl")
         self.in_bounds = True
         # self.shaddow.texture. add opacity...
 
@@ -219,12 +218,13 @@ class GameView(arcade.View):
     
     def setup(self):
         # where the character spawns in and which map it uses
-        self.player = Player('Character')
+        self.player = Player()
         self.player.center_x = 100
         self.player.center_y = 500
 
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{self.level}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
+        
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["Water"], gravity_constant=0)
         #self.physics_engine = PymunkPhysicsEngine(gravity=gravity)
         
@@ -243,9 +243,9 @@ class GameView(arcade.View):
         self.bullet_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
         
-        self.enemy = Enemy("Enemy")
-        self.player.center_x = 100
-        self.player.center_y = 500
+        # self.enemy = Enemy()
+        # self.player.center_x = 100
+        # self.player.center_y = 500
 
 
         # Adds in health with my own made health art
@@ -258,8 +258,16 @@ class GameView(arcade.View):
 
         self.shaddow = arcade.Sprite(ROOT_FOLDER / 'Character' / 'shaddow.png')
         self.scene.add_sprite_list_before('shaddow', 'player')
+        self.scene.add_sprite_list_before('Enemies', 'player')
 
         self.scene.add_sprite('shaddow', self.shaddow)
+
+        for enemy in self.scene["Enemy_tokens"]:
+            new_enemy = Enemy(enemy.properties)
+            new_enemy.center_x = enemy.center_x
+            new_enemy.center_y = enemy.center_y
+            self.scene["Enemies"].append(new_enemy)
+            enemy.kill()
 
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
@@ -279,8 +287,7 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
             arcade.draw_text("This looks dangerous....",
-             570, 340, arcade.color.WHITE, 20)
-
+             570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
 
 
 
@@ -290,9 +297,7 @@ class GameView(arcade.View):
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
-        
-        self.enemy.update()
-        self.enemy.update_animation()
+
         
         self.physics_engine.update()
         if not self.player.jumping: # THIS IS A BAD IDEA
@@ -376,6 +381,9 @@ class GameView(arcade.View):
         if colliding:
             self.window.show_view(self.window.win_view)
             self.setup()
+
+        for enemy in self.scene["Enemies"]:
+            enemy.set_target(self.player.center_x, self.player.center_y)
 
     def center_camera_on_player(self):
         camera_x = self.player.center_x - WIDTH / 2
