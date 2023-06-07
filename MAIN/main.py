@@ -162,6 +162,13 @@ class Enemy(Entity):
         except: # fix this!
             raise KeyError("enemy without speed custom property found. Check tilemap")
         self.target = (0, 0)
+
+        self.in_bounds = True
+        # self.shaddow.texture. add opacity...
+
+    @property
+    def out_of_bounds(self):
+        return not self.in_bounds
     
     def update(self):
         super().update()
@@ -288,7 +295,11 @@ class GameView(arcade.View):
         if colliding:
             arcade.draw_text("This looks dangerous....",
              570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
-
+        
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins_Text'])
+        if colliding:
+            arcade.draw_text("This looks dangerous....",
+             570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
 
 
 
