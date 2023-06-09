@@ -101,6 +101,7 @@ class Entity(arcade.Sprite):
     def __init__(self, foldername, filename):
         super().__init__(ROOT_FOLDER.joinpath(foldername, filename + "_idle.png"))
         self.walk_textures = []
+        self.breathe_textures = []
         self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + "_idle.png"))
         self.face_direction = 0
         self.current_texture = 0
@@ -109,9 +110,15 @@ class Entity(arcade.Sprite):
         self.can_jump = True
         self.acc_y = 0
         self.odo = 0
+        
         for i in range(10):
             tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + f"_walk{i}.png"))
             self.walk_textures.append(tex)
+
+        for i in range(14):
+            idl = arcade.load_texture_pair (ROOT_FOLDER.joinpath(f"{foldername}", f"{filename}_breathe{i}.png"))
+            self.breathe_textures.append(idl)
+        
         self.start_jump_y = None
             
     def update_animation(self):
@@ -193,6 +200,37 @@ class Player(Entity):
         super().__init__('Character', "owl")
         self.in_bounds = True
         # self.shaddow.texture. add opacity...
+        self.idle_animating = False
+        self.idle_odo = 1
+        self.current_breathe_texture = 0
+        self.active = False
+
+    def update_animation(self):
+        super().update_animation()
+
+        if self.change_x == 0:
+            if self.idle_animating:
+                self.texture = self.breathe_textures[self.current_breathe_texture][self.face_direction]
+                self.idle_odo += 1
+                if self.idle_odo % 4 == 0: 
+                    self.current_breathe_texture += 1600
+                    if self.current_breathe_texture >= 4:
+                        self.idle_animating = False
+                        self.idle_odo = 0
+                        self.current_breathe_texture = 0
+
+            else:
+                self.texture = self.idle_textures[self.face_direction]
+                self.idle_odo += 1
+                if self.idle_odo >= 160:
+                    self.idle_animating  = True 
+        else:
+            self.idle_odo = 0
+            self.current_blink_texture = 0
+            self.adle_animating = False
+
+
+
 
     @property
     def out_of_bounds(self):
@@ -235,8 +273,8 @@ class GameView(arcade.View):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["Water"], gravity_constant=0)
         #self.physics_engine = PymunkPhysicsEngine(gravity=gravity)
         
-        self.camera = arcade.Camera(WIDTH, HEIGHT)
-        self.HUD_camera = arcade.Camera(WIDTH, HEIGHT)
+        self.camera = arcade.Camera()
+        self.HUD_camera = arcade.Camera()
         self.HUD = arcade.Scene()
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
@@ -295,11 +333,7 @@ class GameView(arcade.View):
         if colliding:
             arcade.draw_text("This looks dangerous....",
              570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
-        
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins_Text'])
-        if colliding:
-            arcade.draw_text("This looks dangerous....",
-             570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
+
 
 
 
@@ -357,9 +391,8 @@ class GameView(arcade.View):
                 self.HUD['health'][-1].kill()
                 self.player.change_x *= -1
                 self.player.change_y *= -1
-                self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath ("owl_idle_hurt.png"))
-            else:
-                self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath ("owl_idle.png"))
+                
+            
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
