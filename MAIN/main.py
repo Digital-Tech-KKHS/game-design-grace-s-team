@@ -1,11 +1,9 @@
 
 
 # Different plugins
-from tracemalloc import start
 import arcade
 import random
 from pathlib import Path
-from arcade.pymunk_physics_engine import PymunkPhysicsEngine
 
 # where to get files from
 
