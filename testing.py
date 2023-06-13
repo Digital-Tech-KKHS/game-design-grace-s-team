@@ -6,7 +6,7 @@ ROOT_FOLDER = Path(__file__).parent
 
 class Cutscene(CV2PlayerView):
     def __init__(self):
-        super().__init__(ROOT_FOLDER.joinpath("screen-capture.webm"))
+        super().__init__(ROOT_FOLDER.joinpath("breathe_shrink_animation.webm"))
 
 game = arcade.Window()
 cutscene = Cutscene()

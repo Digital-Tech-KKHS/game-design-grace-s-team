@@ -115,7 +115,7 @@ class Entity(arcade.Sprite):
             tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + f"_walk{i}.png"))
             self.walk_textures.append(tex)
 
-        for i in range(14):
+        for i in range(8):
             idl = arcade.load_texture_pair (ROOT_FOLDER.joinpath(f"{foldername}", f"{filename}_breathe{i}.png"))
             self.breathe_textures.append(idl)
         
@@ -212,7 +212,7 @@ class Player(Entity):
             if self.idle_animating:
                 self.texture = self.breathe_textures[self.current_breathe_texture][self.face_direction]
                 self.idle_odo += 1
-                if self.idle_odo % 4 == 0: 
+                if self.idle_odo % 10 == 0: 
                     self.current_breathe_texture += 1600
                     if self.current_breathe_texture >= 4:
                         self.idle_animating = False
@@ -332,7 +332,7 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
             arcade.draw_text("This looks dangerous....",
-             570, 340, arcade.color.WHITE, 20, 0, "left", "merlin")
+             570, 340, arcade.color.WHITE, 20, 0)
 
 
 
