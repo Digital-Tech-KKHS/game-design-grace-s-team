@@ -1,15 +1,11 @@
-_Name:_ Grace McDonald
 ## Test 1 EXAMPLE:
 # Getting user input
 
-Date: 1/1/2022
+Date: 
+03/04/2023
 
 ```python
-if arcade.check_for_collisions_with_list(player, enemies):
-	player.health -= 1
-	if player.health <= 0:
-		player.kill()
-		Game.restart()
+
 ```
 
 | Test Data                  | Expected                        | Observed                        |
@@ -26,11 +22,7 @@ if arcade.check_for_collisions_with_list(player, enemies):
 Date: 1/1/2022
 
 ```python
-if arcade.check_for_collisions_with_list(player, enemies):
-	player.health -= 1
-	if player.health <= 0:
-		player.kill()
-		Game.restart()
+
 ```
 
 | Test Data                  | Expected                        | Observed                        |

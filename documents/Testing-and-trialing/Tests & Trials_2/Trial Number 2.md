@@ -10,15 +10,14 @@ Involved in the trial
 >- jasper sharp
 
 ## Trial goal:
->The goal for this trial was to determine wether or not 
- I would do my game in isometric or 
+This trial was to determine weather or not my game would benefit from the art being made in a isometric angle or an oblique angle.
 
 ## Describe the trail
-> We loaded the main menu of our app and asked our 3 candidates to navigate to the game. After this we asked each candidate what they though each button did and if they liked the colour scheme. 
-
-![[Pasted image 20230403144207.png]]
-![[Pasted image 20230403145738.png]]
-
+>The trail consisted of me getting feedback from my peers and 
+![[Pasted image 20230616124456.png]]
+ISOMETRIC ^
+![[Pasted image 20230616124321.png]]
+OBLIQUE^
 ## Results
 > - Te Kahu resized the screen causing the image to be laid out in a less desireable layout. 
 > - Jimmy was unsure what the difference between the buttons were and was confused by the 3 options. 

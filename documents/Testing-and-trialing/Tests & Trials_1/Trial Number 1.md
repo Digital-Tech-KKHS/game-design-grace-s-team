@@ -33,4 +33,3 @@ Involved in the trial
 > - I changed the art and how the tiles were orientated within the Tiled map
 > - I changed the resolution of my tiles and made them more detailed
 > - I disenabled gravity so that I would be able to walk around freely so that I would be able to determine how I wanted the character to interact
-> - Go with orange colour
