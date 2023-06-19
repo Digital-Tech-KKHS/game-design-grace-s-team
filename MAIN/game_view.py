@@ -60,11 +60,11 @@ class GameView(arcade.View):
         for i in range(STARTING_HEALTH):
             x = 25 + 60 * i
             y = HEIGHT - 40
-            grass = arcade.Sprite(ROOT_FOLDER.joinpath('health.png'), 0.5, center_x=x, center_y=y)
+            grass = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
             self.HUD['health'].append(grass)
             # health = [0, 1, 2, 3, 4]
 
-        self.shaddow = arcade.Sprite(ROOT_FOLDER / 'Character' / 'shaddow.png')
+        self.shaddow = arcade.Sprite(ROOT_FOLDER.joinpath(  'Character' , 'shaddow.png'))
         self.scene.add_sprite_list_before('shaddow', 'player')
         self.scene.add_sprite_list_before('Enemies', 'player')
 
@@ -78,7 +78,7 @@ class GameView(arcade.View):
             enemy.kill()
 
     def on_show_view(self):
-        self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background2.png'))
+        self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background2.png'))
 
     def on_draw(self):
         # adding back round for game view   

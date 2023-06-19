@@ -17,7 +17,7 @@ class StartView(arcade.View):
     
     # loads background
     def on_show_view(self):
-        self.background = arcade.load_texture(ROOT_FOLDER.joinpath('background.png'))
+        self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background.png'))
         # arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
     # starts game 
     def on_key_press(self, symbol:int, modifiers:int):
