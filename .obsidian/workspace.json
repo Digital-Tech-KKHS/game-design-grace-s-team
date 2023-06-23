@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
+                "file": "documents/Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
+                "file": "documents/Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
+                "file": "documents/Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md"
+                "file": "documents/Sprint-docs/Sprint_doc_4/Sprint Document 4.md"
               }
             }
           }
@@ -146,28 +146,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bc94167c9265394e",
+  "active": "09bc08d1b96bfc37",
   "lastOpenFiles": [
-    "MAIN/__pycache__/enemy.cpython-311.pyc",
-    "MAIN/__pycache__/player.cpython-311.pyc",
-    "MAIN/__pycache__/win_view.cpython-311.pyc",
-    "MAIN/__pycache__/end_view.cpython-311.pyc",
-    "MAIN/__pycache__/entity.cpython-311.pyc",
-    "MAIN/__pycache__/game_view.cpython-311.pyc",
-    "MAIN/player.py",
-    "MAIN/enemy.py",
-    "MAIN/entity.py",
-    "MAIN/game_view.py",
-    "MAIN/win_view.py",
-    "Pasted image 20230616124456.png",
-    "Pasted image 20230616124321.png",
-    "Pasted image 20230616124153.png",
+    "MAIN/Map_0.tmx.yGLSdS",
+    "MAIN/Map_0.tmx.LYbTTu",
+    "MAIN/Map_0.tmx.LDgiqV",
+    "MAIN/Map_0.tmx.rzPcvl",
+    "MAIN/Map_0.tmx.qcAqAO",
+    "MAIN/Map_0.tmx.AkRbhr",
+    "MAIN/Map_0.tmx.bAKSEu",
+    "MAIN/Map_0.tmx.QHSkBI",
+    "MAIN/Map_0.tmx.jrNsQX",
+    "MAIN/Map_0.tmx.mGuuxL",
+    "MAIN/Map_0.tmx.KBkfmg",
+    "MAIN/Enemy/enemy_walk4.png",
+    "MAIN/Enemy/enemy_walk3.png",
+    "MAIN/Enemy/enemy_walk2.png",
+    "MAIN/Enemy/enemy_walk9.png",
+    "MAIN/Enemy/enemy_walk8.png",
+    "MAIN/Enemy/enemy_walk7.png",
+    "MAIN/Enemy/enemy_walk6.png",
+    "MAIN/Enemy/enemy_walk5.png",
+    "MAIN/Enemy/enemy_walk14.png",
+    "MAIN/Enemy/enemy_walk13.png",
+    "documents/Kanban.md",
+    "documents/Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
+    "README.md",
+    "documents/Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
+    "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
     "documents/Testing-and-trialing/Tests & Trials_2/Testing Number 2.md",
     "documents/Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
-    "documents/Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
     "documents/Testing-and-trialing/Tests & Trials_1/Trial Number 1.md",
     "documents/Testing-and-trialing/Tests & Trials_1/Testing Number 1.md",
-    "documents/Testing-and-trialing/Tests & Trials_1/Screenshot 2023-04-03 144427.png",
     "documents/Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
     "documents/Testing-and-trialing/Tests & Trials_4/Testing Number 4.md",
     "documents/Testing-and-trialing/Example Tests and Trials/testing.md",
@@ -178,7 +188,6 @@
     "documents/Testing-and-trialing/Tests & Trials #1/Trial Number 1.md",
     "documents/Testing-and-trialing/Tests & Trials #1/Testing Number 1.md",
     "documents/Testing-and-trialing/Tests & Trials_3/Trial Number 3.md",
-    "documents/Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
-    "documents/Testing-and-trialing/Tests & Trials #1/Screenshot 2023-04-03 144101.png"
+    "documents/Testing-and-trialing/Tests & Trials_3/Testing Number 3.md"
   ]
 }

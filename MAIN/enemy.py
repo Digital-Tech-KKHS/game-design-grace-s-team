@@ -32,6 +32,9 @@ class Enemy(Entity):
             self.change_y = self.speed 
         if self.center_y - self.target[1] > 0:
             self.change_y = -self.speed 
+       
+        # if self.target.change_x == 0:
+        #     if -200 < self.target.center_x - 
 
     
     def set_target(self, x, y):

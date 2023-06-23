@@ -77,6 +77,13 @@ class GameView(arcade.View):
             self.scene["Enemies"].append(new_enemy)
             enemy.kill()
 
+        for enemy in self.scene["Enemy_tokens"]:
+            new_enemy = Enemy(enemy.properties)
+            new_enemy.center_x = enemy.center_x
+            new_enemy.center_y = enemy.center_y
+            self.scene["Enemies"].append(new_enemy)
+            enemy.kill()
+
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background2.png'))
 

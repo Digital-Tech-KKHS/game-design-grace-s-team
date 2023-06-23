@@ -3,7 +3,7 @@ from constants import *
 class Entity(arcade.Sprite):
     # Character
     def __init__(self, foldername, filename):
-        super().__init__(ROOT_FOLDER.joinpath(foldername, filename + "_idle.png"))
+        super().__init__(ROOT_FOLDER.joinpath( foldername, filename + "_idle.png"))
         self.walk_textures = []
         self.breathe_textures = []
         self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + "_idle.png"))
@@ -16,11 +16,11 @@ class Entity(arcade.Sprite):
         self.odo = 0
         
         for i in range(10):
-            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + f"_walk{i}.png"))
+            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath ( foldername, filename + f"_walk{i}.png"))
             self.walk_textures.append(tex)
 
         for i in range(8):
-            idl = arcade.load_texture_pair (ROOT_FOLDER.joinpath(f"{foldername}", f"{filename}_breathe{i}.png"))
+            idl = arcade.load_texture_pair (ROOT_FOLDER.joinpath( f"{foldername}", f"{filename}_breathe{i}.png"))
             self.breathe_textures.append(idl)
         
         self.start_jump_y = None
