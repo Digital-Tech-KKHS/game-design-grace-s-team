@@ -5,13 +5,9 @@ _Date:_ 03/04/2023
 Involved in the trial
 >- Gabby Smythe
 >- Sylvie McDonald
->- Charley kate
->- josiah beale
->- jasper sharp
 
 ## Trial goal:
->The goal for this trial was to determine wether or not 
- I would do my game in isometric or 
+>The goal for this trail was to determine whether
 
 ## Describe the trail
 > We loaded the main menu of our app and asked our 3 candidates to navigate to the game. After this we asked each candidate what they though each button did and if they liked the colour scheme. 
