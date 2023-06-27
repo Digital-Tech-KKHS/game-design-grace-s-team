@@ -1,4 +1,4 @@
-# Details
+![[sprint_4.webm]]# Details
 **Name:**
 Grace McDonald
 **Git Hash:**
@@ -20,7 +20,7 @@ Grace McDonald
 ![[Pasted image 20230607100508.png]]
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I got a lot of code work done. I got speech pop ups to work so that when my character came into contact with a skull and bones, a speech message, "This looks dangerous...." would pop up whilst the player was in contact with it. I also re orgnaized my entire code which meant that I made 9 new files where I split up the classes from main.py. This meant that for ever class I made I had a seperate file that I had to poop my pants
+In this sprint I got a lot of code work done. I got speech pop ups to work so that when my character came into contact with a skull and bones, a speech message, "This looks dangerous...." would pop up whilst the player was in contact with it. I also re organized my entire code which meant that I made 9 new files where I split up the classes from main.py. This meant that for ever class I made I had a separate file that I had to make, and then import them back into main so that It could work. Doing this took me a lesson or two because it was sometimes hard to figure out how and which files to import into main.py and window.py. I also noticed that as I was moving my classes around I got a better understanding of the different parts of my code
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
@@ -37,6 +37,6 @@ In this sprint I got a lot of code work done. I got speech pop ups to work so th
 ![[Pasted image 20230626144129.png]]
 
 ## Link to **Video of the game at the end of the sprint**
-
+![[sprint_4.webm]]
 
 ## **Notes for next time, future improvements**

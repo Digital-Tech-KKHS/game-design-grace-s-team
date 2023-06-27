@@ -3,8 +3,8 @@
  <properties>
   <property name="Width" type="int" value="100"/>
  </properties>
- <tileset firstgid="1" source="Tileset_2.tsx"/>
- <tileset firstgid="241" source="Trees.tsx"/>
+ <tileset firstgid="1" source="Assets/Tileset_2.tsx"/>
+ <tileset firstgid="241" source="Assets/Trees.tsx"/>
  <layer id="12" name="Image_background" width="50" height="50">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
