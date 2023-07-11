@@ -11,9 +11,11 @@
             "id": "b54fb2082f0ac774",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "Kanban.md"
+                "file": "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban.md",
+                "file": "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban.md",
+                "file": "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban.md"
+                "file": "Sprint-docs/Sprint_doc_4/Sprint Document 4.md"
               }
             }
           },
@@ -160,7 +162,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-spaced-repetition:Review flashcards": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,13 +171,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c861859dd6adf83c",
+  "active": "b54fb2082f0ac774",
   "lastOpenFiles": [
-    "Sprint-docs/Sprint_doc_examples/Sprint Document template.md",
+    "Pasted image 20230626144129.png.md",
+    "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
+    "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
+    "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
+    "Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
     "Sprint-docs/Sprint_doc_2/Sprint Document template.md",
+    "Testing-and-trialing/Tests & Trials_4/Testing Number 4.md",
+    "Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
+    "Kanban.md",
+    "Sprint-docs/Sprint_doc_examples/Sprint Document template.md",
     "Pasted image 20230501143318.png",
     "Pasted image 20230501143104.png",
-    "Kanban.md",
     "Game Design Document.md",
     "Flash cards.md",
     "Final Review.md",
@@ -189,7 +197,6 @@
     "Testing-and-trialing/Example Tests and Trials/Trialing Example.md",
     "Testing-and-trialing/Tests & Trials #2",
     "Testing-and-trialing/Example Tests and Trials/main_menu.png",
-    "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
     "Testing-and-trialing/Example Tests and Trials/testing.md",
     "Testing-and-trialing/Tests & Trials/testing.md",
     "Testing-and-trialing/Tests & Trials #1",
@@ -205,11 +212,6 @@
     "Sprint-docs/Sprint_doc_examples/Sprint Tracking_ student template.docx",
     "Sprint-docs/Sprint_doc_examples/Sprint doc 1.docx",
     "Sprint-docs/Sprint_doc_examples",
-    "Sprint-docs/Sprint_doc_2",
-    "testing-and-trialing/Trialing Example copy.md",
-    "testing-and-trialing/Example Tests/TESTING GAME.md",
-    "testing-and-trialing/Example Tests/testing.md",
-    "sprint-docs/Sprint_doc_examples/What is a Sprint.md",
-    "sprint-docs/Sprint_doc_examples/Sprint Document template.md"
+    "Sprint-docs/Sprint_doc_2"
   ]
 }

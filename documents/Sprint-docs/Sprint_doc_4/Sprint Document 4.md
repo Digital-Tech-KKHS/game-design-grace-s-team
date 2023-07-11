@@ -1,4 +1,4 @@
-![[sprint_4.webm]]# Details
+# Details
 **Name:**
 Grace McDonald
 **Git Hash:**
@@ -34,7 +34,7 @@ In this sprint I got a lot of code work done. I got speech pop ups to work so th
 ## **KANBAN board at the end of the sprint**
 
 ## **Screenshot of the game at the end of the sprint**
-![[Pasted image 20230626144129.png]]
+
 
 ## Link to **Video of the game at the end of the sprint**
 ![[sprint_4.webm]]
