@@ -1,4 +1,4 @@
-## Test 1 EXAMPLE:
+
 # Getting user input
 
 Date: 

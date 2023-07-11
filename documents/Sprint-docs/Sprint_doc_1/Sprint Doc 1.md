@@ -23,7 +23,7 @@ In this sprint I basically just wanted to get a solid Mvp, I also made sure that
 ## **Briefly describe other team members contributions**
 - No team mates
 ## **Major Changes and Achievements Described**
-- not many specific changes except the character for my MVP and my tilesets, I also changed my original 
+-there were a few specific changes that I had to change, including my character for my MVP and my tilesets, I also changed my original idea from a kelpie to a an owl that the ability to fly and so must journey to go get its wings back "metaphorically". The reason that I decided to go with the the owl was because the owl made more sense when it came to actually coding the game and getting its legistics done. however changing the whole concept of my game meant that the art that I had started making had to be redone into an owl so that took me a while to re-think how I was gunna do my project.
 ## **Brief Description of your testing**
 - I tested how my 
 ## **Link to testing results/tables**
@@ -39,3 +39,6 @@ In this sprint I basically just wanted to get a solid Mvp, I also made sure that
 
 
 ## **Notes for next time, future improvements**
+- Next time I want to make sure that I work on my tilesets more, and how my character will functions for my story
+- I want to improve how I record information in my sprint docs
+- 

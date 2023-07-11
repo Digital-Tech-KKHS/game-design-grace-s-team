@@ -29,4 +29,4 @@ Involved in the trial
 > - Leaving the title as is
 > - Fix layout issue with different screen sizes
 > - Fix Button bug
-> - Go with orange colour
+> - Go with orange colour 

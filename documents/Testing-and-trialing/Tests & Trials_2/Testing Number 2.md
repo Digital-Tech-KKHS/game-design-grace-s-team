@@ -1,5 +1,4 @@
 _Name:_ Grace McDonald
-## Test 1 EXAMPLE:
 # Getting user input
 
 Date: 1/1/2022

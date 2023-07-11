@@ -1,21 +1,23 @@
 _Name:_ Grace McDonald
-## Test 1 EXAMPLE:
 # Getting user input
 
 Date: 1/1/2022
 
 ```python
-if arcade.check_for_collisions_with_list(player, enemies):
-	player.health -= 1
-	if player.health <= 0:
-		player.kill()
-		Game.restart()
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Dont_touch'])
+        # COLLIDING WITH Danger
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.score -= 1
+                self.HUD['health'][-1].kill()
+                self.player.change_x *= -1
+                self.player.change_y *= -1
 ```
 
 | Test Data                  | Expected                        | Observed                        |
 | -------------------------- | ------------------------------- | ------------------------------- |
-| Player not touching enemy  | nothing                         | nothing                         |
-| Player touching health = 3 | health set to 2, heart disapear | health became 2, heart remained |
+| Player hasn't been damaged | hearts remain at 5  | No change |
+| Player touching danger | health set to 4, heart disappear | health became 4, heart disappered |
 | Player touching health = 1 | Game restarts                   | As expected                     |
 |                            |                                 |                                 |
 |                            |                                 |                                 |
@@ -30,7 +32,7 @@ if arcade.check_for_collisions_with_list(player, enemies):
 	player.health -= 1
 	if player.health <= 0:
 		player.kill()
-		Game.restart()
+		Game.restart()  
 ```
 
 | Test Data                  | Expected                        | Observed                        |
