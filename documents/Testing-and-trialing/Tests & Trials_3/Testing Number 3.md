@@ -18,21 +18,15 @@ Date: 1/1/2022
 | -------------------------- | ------------------------------- | ------------------------------- |
 | Player hasn't been damaged | hearts remain at 5  | No change |
 | Player touching danger | health set to 4, heart disappear | health became 4, heart disappered |
-| Player touching health = 1 | Game restarts                   | As expected                     |
-|                            |                                 |                                 |
-|                            |                                 |                                 |
-|                            |                                 |                                 |
+| Player loses heart | player y and x moves back -1 per hit of damage | As expected                     |
+
 ## Test 2 EXAMPLE:
 # Getting user input
 
 Date: 1/1/2022
 
 ```python
-if arcade.check_for_collisions_with_list(player, enemies):
-	player.health -= 1
-	if player.health <= 0:
-		player.kill()
-		Game.restart()  
+
 ```
 
 | Test Data                  | Expected                        | Observed                        |

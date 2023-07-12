@@ -19,11 +19,11 @@ ISOMETRIC ^
 ![[Pasted image 20230616124321.png]]
 OBLIQUE^
 ## Results
-> - Te Kahu resized the screen causing the image to be laid out in a less desireable layout. 
-> - Jimmy was unsure what the difference between the buttons were and was confused by the 3 options. 
-> - All candidates knew to push one of the buttons to proceed
-> - No one liked the blue colour
-> - Mrs Teacher did not understand the title
+> - There was some confusion as to what the difference between oblique and 2D was 
+> - about 50% liked the oblique over the isometric design 
+> - Everyone understood that oblique would be easier and more practical to do in code and art
+> - They liked the idea of very earthy and natural themes that would help my story
+> - My teacher agreed that oblique would be easier to use to code my game in instead of isometiric
 > - Bug found when buttons are still active after being selected
 
 ## Breifly describe the changes you have made based on this trial
