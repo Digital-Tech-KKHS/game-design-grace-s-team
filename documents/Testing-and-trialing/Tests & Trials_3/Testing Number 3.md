@@ -1,7 +1,8 @@
-_Name:_ Grace McDonald
+   _Name:_ Grace McDonald
 # Getting user input
 
-Date: 1/1/2022
+Date: 15/05/2023
+
 
 ```python
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Dont_touch'])
@@ -23,7 +24,7 @@ Date: 1/1/2022
 ## Test 2 EXAMPLE:
 # Getting user input
 
-Date: 1/1/2022
+Date: 02/06/2023
 
 ```python
 

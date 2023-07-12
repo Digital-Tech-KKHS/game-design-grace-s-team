@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
+                "file": "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
+                "file": "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
+                "file": "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md"
+                "file": "Sprint-docs/Sprint_doc_3/Sprint Document 3.md"
               }
             }
           },
@@ -173,26 +173,31 @@
   },
   "active": "b54fb2082f0ac774",
   "lastOpenFiles": [
-    "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
     "Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
-    "Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
-    "Testing-and-trialing/Tests & Trials_2/Testing Number 2.md",
-    "Testing-and-trialing/Tests & Trials_1/Trial Number 1.md",
+    "readme.md",
+    "sprint_3.webm",
+    "sprint_4.webm",
+    "Kanban.md",
+    "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
+    "Sprint-docs/Sprint_doc_1/Pasted image 20230324125201.png",
+    "Sprint-docs/Sprint_doc_1/Pasted image 20230324125130.png",
+    "Game Design Document.md",
     "Testing-and-trialing/Tests & Trials_1/Testing Number 1.md",
-    "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
-    "Testing-and-trialing/Tests & Trials_4/Testing Number 4.md",
-    "Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
+    "Testing-and-trialing/Tests & Trials_1/Trial Number 1.md",
     "Testing-and-trialing/Tests & Trials_3/Trial Number 3.md",
     "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
-    "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
+    "Testing-and-trialing/Tests & Trials_4/Testing Number 4.md",
+    "Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
+    "Testing-and-trialing/Tests & Trials_3/Testing Number 3.md",
+    "Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
+    "Testing-and-trialing/Tests & Trials_2/Testing Number 2.md",
+    "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
     "Testing-and-trialing/Example Tests and Trials/TESTING GAME.md",
     "Pasted image 20230626144129.png.md",
     "Sprint-docs/Sprint_doc_2/Sprint Document template.md",
-    "Kanban.md",
     "Sprint-docs/Sprint_doc_examples/Sprint Document template.md",
     "Pasted image 20230501143318.png",
     "Pasted image 20230501143104.png",
-    "Game Design Document.md",
     "Flash cards.md",
     "Final Review.md",
     "Final Hand in statement .md",
@@ -200,18 +205,14 @@
     "Testing-and-trialing/Tests & Trials #1/Trial Number 1.md",
     "Testing-and-trialing/Tests & Trials #1/Testing Number 1 1.md",
     "Testing-and-trialing/Tests & Trials #2/Testing Number 2.md",
-    "Testing-and-trialing/Tests & Trials #1/Testing Number 1.md",
     "Testing-and-trialing/Tests & Trials #2",
     "Testing-and-trialing/Example Tests and Trials/main_menu.png",
     "Testing-and-trialing/Tests & Trials #1",
-    "Sprint-docs/Sprint_doc_1/Pasted image 20230324125201.png",
     "Testing-and-trialing/Tests",
     "Testing-and-trialing/Example Tests and Trials",
     "Testing-and-trialing",
     "Sprint-docs/Sprint_doc_examples/What is a sprint_ notes for students.docx",
     "Sprint-docs/Sprint_doc_examples/Sprint Tracking_ student template.docx",
-    "Sprint-docs/Sprint_doc_examples/Sprint doc 1.docx",
-    "Sprint-docs/Sprint_doc_examples",
-    "Sprint-docs/Sprint_doc_2"
+    "Sprint-docs/Sprint_doc_examples/Sprint doc 1.docx"
   ]
 }

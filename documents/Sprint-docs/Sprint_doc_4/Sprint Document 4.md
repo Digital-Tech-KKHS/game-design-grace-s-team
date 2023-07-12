@@ -8,7 +8,7 @@ Grace McDonald
 **Start Date:**
 07/06/2023
 **End Date:**
-23;/06/2023
+23/06/2023
 **Work hard rating**
 ☆☆☆☆☆
 

@@ -9,7 +9,6 @@ kanban-plugin: basic
 - [ ] make more levels
 - [ ] Map design
 - [ ] working on extra features of map
-- [ ] working on jump function of map
 
 
 ## Doing
@@ -25,7 +24,7 @@ kanban-plugin: basic
 ## Testing \ Trialing
 
 - [ ] Testing art designs
-- [ ] Changing my code to accommodate
+- [ ] Changing my code to accommodate for oblique
 - [ ] Testing interactives
 
 
@@ -33,6 +32,7 @@ kanban-plugin: basic
 
 - [ ] Top down vs 2D
 - [ ] Tiled vs Godot
+- [ ] working on jump function of character
 
 
 ## 
