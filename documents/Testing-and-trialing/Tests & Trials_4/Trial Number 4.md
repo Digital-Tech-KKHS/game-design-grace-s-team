@@ -10,13 +10,13 @@ Involved in the trial
 >- Sylvie McDonald
 
 ## Trial goal:
->The goal for this trail was to determine whether
+>The goal for this trail was to determine whether or not I would have my enemies set in a fixed pattern of moving either from side to side, or top to bottom, or be free moving and be able to follow the player.
 
 ## Describe the trail
-> We loaded the main menu of our app and asked our 3 candidates to navigate to the game. After this we asked each candidate what they though each button did and if they liked the colour scheme. 
-
-![[Pasted image 20230403144207.png]]
-![[Pasted image 20230403145738.png]]
+> I loaded up my game and asked people of my class about which style they prefered. I showed them the free moving enemies by loading my first map and moving my character around so that they followed it. I then explained how if they would have a 
+> 
+![[Pasted image 20230714165002.png]]
+![[Pasted image 20230714165120.png]]
 
 ## Results
 > - Te Kahu resized the screen causing the image to be laid out in a less desireable layout. 

@@ -162,6 +162,16 @@ class GameView(arcade.View):
                 self.player.change_x *= -1
                 self.player.change_y *= -1
                 
+        # Ememy DAMAGE:
+        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemy_tokens'])
+        # # COLLIDING WITH Danger
+        # if colliding:
+        #     if colliding and not self.player.jumping:
+        #         self.score -= 1
+        #         self.HUD['health'][-1].kill()
+        #         self.player.change_x *= -1
+        #         self.player.change_y *= -1
+                
             
         
             if len(self.HUD['health']) == 0:
@@ -214,8 +224,6 @@ class GameView(arcade.View):
         if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
             self.player.change_y = 10
             self.jump_sound.play()
-        # if symbol == arcade.key.G:
-
         if symbol == arcade.key.W:
             self.player.change_y = 4
         if symbol == arcade.key.S:

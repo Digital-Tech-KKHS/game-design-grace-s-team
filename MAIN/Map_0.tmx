@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="128" tileheight="128" infinite="0" backgroundcolor="#1e7082" nextlayerid="20" nextobjectid="40">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="128" tileheight="128" infinite="0" backgroundcolor="#1e7082" nextlayerid="20" nextobjectid="40">
  <tileset firstgid="1" source="Assets/Tileset_2.tsx"/>
  <tileset firstgid="241" source="Assets/items.tsx"/>
  <tileset firstgid="261" source="Assets/coins.tsx"/>
