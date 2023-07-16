@@ -26,18 +26,18 @@ In this sprint I tested going to different levels and I tested how trees would b
 ## **Major Changes and Achievements Described**
 I changed my map and some of my art, and also was able to get a jumping function working to an extent.
 ## **Brief Description of your testing**
-I tested how my character would jump and land, I tested how it would get damaged against my barbed wire, I tested how I wanted my 
+I tested how my character would jump and land, I tested how it would get damaged against my barbed wire. I also tested how I wanted my character to jump backwards once damaged
 
 ## **Link to testing results/tables**
 
 
 # Project at the end of the sprint
 ## **KANBAN board at the end of the sprint**
-
+![[Pasted image 20230607100439.png]]
 ## **Screenshot of the game at the end of the sprint**
 ![[Pasted image 20230529141204.png]]
 
 ## Link to **Video of the game at the end of the sprint**
-![[screen-capture.webm]]
+![[sprint_3.webm]]
 
 ## **Notes for next time, future improvements**

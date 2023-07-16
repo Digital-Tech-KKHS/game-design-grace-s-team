@@ -6,9 +6,11 @@ kanban-plugin: basic
 
 ## To do
 
-- [ ] make more levels
+- [ ] Make more levels
 - [ ] Map design
-- [ ] working on extra features of map
+- [ ] Working on extra features of map
+- [ ] Make enemy art
+- [ ] Make character idle animation
 
 
 ## Doing
@@ -16,9 +18,10 @@ kanban-plugin: basic
 - [ ] making kanban
 - [ ] making my game MVP
 - [ ] making art for game
-- [ ] making art for oblique
+- [ ] Making oblique art
 - [ ] Deciding how I want my game to be designed
 - [ ] make enemies functions and damage
+- [ ] Getting write up, up too date
 
 
 ## Testing \ Trialing
@@ -26,6 +29,8 @@ kanban-plugin: basic
 - [ ] Testing art designs
 - [ ] Changing my code to accommodate for oblique
 - [ ] Testing interactives
+- [ ] Testing map features
+- [ ] Testing character features
 
 
 ## Complete 🎈🎉✨
@@ -33,6 +38,9 @@ kanban-plugin: basic
 - [ ] Top down vs 2D
 - [ ] Tiled vs Godot
 - [ ] working on jump function of character
+- [ ] Adding enemy
+- [ ] Adding first level
+- [ ] Adding second level
 
 
 ## 

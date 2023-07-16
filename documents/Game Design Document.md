@@ -1,27 +1,25 @@
 # {Title}
 
 # Elevator pitch
- I am developing an open world RPG game that is set in the medievel time with aspects of norse mythology. The gameplay is strongly story-driven
-
-We're developing an open-world RPG game set in a medieval fantasy world inspired by European folklore. Its gameplay is strongly story-driven and based on the best-selling book "Earl of the Rings". It's "The Witcher" meets "Dark Souls" meets "Game of Thrones".
+ I am developing an open world RPG game that is set in the medievel time with aspects of real time. The gameplay is story driven and is centered around an owl.
  
 # Concept Overview
-beginning idea was to have a "good guy" that is typically known as a bad guy. this good bad guy would be going on a mission fighting 
+The beginning concept of the game was for there to be an owl that has its ability to fly taken away from it by humans, and so it ventures to get its "wings" back. Along the way it will face challenges and obstacles that it must face and avoid to continue onwards. The way the levels will work is that it is up to the player which way they go but eventually all the levels will lead back to either the beginning level or the end level.
 
 ### Genre: Open-world RPG / Action:
-the genre is a type of good vs evil and journey type experience that is highly based on fantasy and norse mythology
+the genre is a type of good vs evil and journey type experience that is highly based on humans vs nature. It will have aspects of action and journey.
 
 ### Target audience:
 
 > Age: 15-30
 > (Teens)
 > Gender: Male/Female
-> People that are interested in fantasy creative games
-> People that want a game that is beautiful and carries a deep meaning 
+> People that are interested in animal games, or fantasy and adventure
+> People that want a game with cute graphics and characters
 
 # Theme and setting
 
-The theme of the game is that it is a hystorical type rpg and YOU are the "bad guy" where you go across different lands and get new powers as you go. The character underoges different challenges that need to be completed in sections and sepecific orders, where they fight "enemies" which are vikings and they travel to get there baby back that the vikings stole. As your character travels across the land it encounters different objects that can botth help and make the journey harder. The point of the game is to show the loyalty that the mother kelpie has for its baby and the lengths that it will go to get it back.
+The theme of the game is that it is an adventure type RPG and you are the good guy and you travel across the lands. The setting of the game is light and natural with ocean and forests.  It also has sections of desserts and Tundra's. I wanted to make it so that throughout the nature there are hints of man made items that don't look like they belong or like they are trashed there and the owl has to avoid them because it can get caught in it and die. I wanted the theme to be not only be adventure but also mystery in a way so that the player can search unknown territories and find new things.
 
 # Project scope
 The project will be a game that I will design and make art for.
@@ -32,26 +30,25 @@ I am on a team by myself but will listen to what my classmates and teacher have 
 
 # Timeline
 The project should take around 2 terms and will start from week 5 term 1 to week 9 term 3 
-The timeline for my game is from around A.D. 800 to the 11th century, and from medieval time. The game is also heavily fantasy based and so 
-...
+The timeline for my game is from around medieval time. The game relies heavily on the art and story so I have to make sure that I allow enough time for those aspects to be to be completed to the best of my ability and to a quality that I am happy with
 
 
 # Success Criteria
 Considering your intended audience and the objectives of your game come up with 5 or more criteria that you will use to determine if your game has been successful. 
 What evidence will you use to measure each criteria? 
-|     | Criteria |                                          | Evidence |
+|     | Criteria |                                                            | Evidence |
 | --- | -------- | -------- |---------| -------- | -------- | -------- |
-| 1   |  user can instal game and run it                    |          |
-| 2   |  user can understand how to do game                 |          |
-| 3   |  user can complete game                             |          |
-| 4   |  user enjoys playing it                             |          |
-| 5   |  user understood how I wanted the game to           |          |
-|     |  come across                                        |          |
-| 6   |  user enjoyed plaing my game                        |          |
+| 1   |  user can instal game and run it                       |           |
+| 2   |  user can understand how to do game            |           |
+| 3   |  user can complete game                                 |           |
+| 4   |  user enjoys playing it                                      |            |
+| 5   |  user understood how I wanted the game to  |            |
+|      |  come across                                                    |            |
+| 6   |  user enjoyed playing my game                       |            |
 
 # Game Setting
 
-The game is set in the medievel time and is based somewhere in the british isles, it would be an island that is secluded and alone and isnt accesible easily. it is a set in a dark swam/marsh land
+The game is set in the medievel time and is based somewhere in the B ritish isles, it would be an island that is secluded and alone and isnt accesible easily. it is a set in a normal summer day and has many trees and natural items. the 
 
 ## The mysterious marshes/isolated isle 
 General description
