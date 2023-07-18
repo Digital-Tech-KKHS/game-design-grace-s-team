@@ -9,4 +9,4 @@ from window import Window
 
 if __name__ == "__main__":
     game = Window()
-    arcade.run()  
+    arcade.run()
