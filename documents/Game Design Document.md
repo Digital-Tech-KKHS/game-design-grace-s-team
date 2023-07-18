@@ -36,6 +36,7 @@ The timeline for my game is from around medieval time. The game relies heavily o
 # Success Criteria
 Considering your intended audience and the objectives of your game come up with 5 or more criteria that you will use to determine if your game has been successful. 
 What evidence will you use to measure each criteria? 
+
 |     | Criteria |                                                            | Evidence |
 | --- | -------- | -------- |---------| -------- | -------- | -------- |
 | 1   |  user can instal game and run it                       |           |
@@ -48,13 +49,15 @@ What evidence will you use to measure each criteria?
 
 # Game Setting
 
-The game is set in the medievel time and is based somewhere in the B ritish isles, it would be an island that is secluded and alone and isnt accesible easily. it is a set in a normal summer day and has many trees and natural items. the 
+The game is set in the medievel time and is based somewhere in the British isles, it would be an island that is secluded and alone and isnt accesible easily. it is a set in a normal summer day and has many trees and natural items.
 
-## The mysterious marshes/isolated isle 
-General description
+## The Isolated Isle 
+General description:
 
-The isolated isle is a place of great struggle and isolation. It is a place of cold harsh envionments and wicked winds. the trees sway and scream there agony as they get pulled and pushed around by the wind. The occasional thud and slither of a creature can be heard as it moves around and hunts for its next victim. 
+The isolated isle is a place of isolation. It is a place of 
+the trees sway and scream there agony as they get pulled and pushed around by the wind. The occasional thud and slither of a creature can be heard as it moves around and hunts for its next victim. 
 A screech above way in the tree tops show that there are all manner of wildlife bustling around and are awaiting for there next meal to scrurry out of its hideaway and be caught in the talons of such beasts
+
 ...
 
 Inspiration

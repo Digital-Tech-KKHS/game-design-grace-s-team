@@ -14,7 +14,7 @@ class Player(Entity):
         self.active = False
         self.breathe_textures = []
 
-        for i in range(10):
+        for i in range(9):
             idl = arcade.load_texture_pair(ROOT_FOLDER.joinpath( 'Character', f"owl_breathe{i}.png"))
             self.breathe_textures.append(idl)
     

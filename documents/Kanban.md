@@ -22,6 +22,7 @@ kanban-plugin: basic
 - [ ] Deciding how I want my game to be designed
 - [ ] make enemies functions and damage
 - [ ] Getting write up, up too date
+- [ ] finishing up components
 
 
 ## Testing \ Trialing
