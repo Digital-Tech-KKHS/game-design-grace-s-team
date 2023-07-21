@@ -161,6 +161,45 @@ class GameView(arcade.View):
                 self.HUD['health'][-1].kill()
                 self.player.change_x *= -1
                 self.player.change_y *= -1
+
+
+        # SPEED POWERUPS..............
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topright"])
+        # Speed
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.player.change_y = 6
+                self.player.change_x = 6
+
+                
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topleft"])
+        # Speed
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.player.change_y = 6
+                self.player.change_x = -6
+
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemright"])
+        # Speed
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.player.change_y = -6
+                self.player.change_x = 6
+
+                
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemleft"])
+        # Speed
+        if colliding:
+            if colliding and not self.player.jumping:
+                self.player.change_y = -6
+                self.player.change_x = -6
+
+                
+                
+                
+                
+            
+            
                 
         # Ememy DAMAGE:
         # colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemy_tokens'])
