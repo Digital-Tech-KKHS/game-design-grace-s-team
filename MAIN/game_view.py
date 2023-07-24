@@ -96,19 +96,19 @@ class GameView(arcade.View):
         # self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
-        arcade.draw_text(f"Coins: {self.score}", WIDTH-100, HEIGHT-50)
+        arcade.draw_text(f"Feathers: {self.score} / 7", WIDTH-150, HEIGHT-50)
         
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
-            arcade.draw_text("This looks dangerous....",
+            arcade.draw_text("Hello adventurer! I am emmy, your goal is too collect feathers throughout the levels so that you can get your wings back!",
              570, 340, arcade.color.WHITE, 20, 0)
 
 
 
 
 
-# FOR SPRITE ON COINS
+# FOR SPRITE ON FEATHERS
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
@@ -118,10 +118,10 @@ class GameView(arcade.View):
         if not self.player.jumping: # THIS IS A BAD IDEA
             self.physics_engine.update()
         self.scene.update()
-        for coin in self.scene['Coins']:
+        for coin in self.scene['Feather']:
             coin.on_update()
         self.center_camera_on_player()
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather'])
         for coin in colliding:
             coin.kill()
             self.score += 1
@@ -215,7 +215,7 @@ class GameView(arcade.View):
         
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Coins'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather'])
 
         if colliding:
             coin.kill()
