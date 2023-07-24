@@ -60,8 +60,8 @@ class GameView(arcade.View):
         for i in range(STARTING_HEALTH):
             x = 25 + 60 * i
             y = HEIGHT - 40
-            grass = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
-            self.HUD['health'].append(grass)
+            health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
+            self.HUD['health'].append(health)
             # health = [0, 1, 2, 3, 4]
 
         self.shaddow = arcade.Sprite(ROOT_FOLDER.joinpath(  'Character' , 'shaddow.png'))
@@ -131,7 +131,7 @@ class GameView(arcade.View):
             self.HUD['health'][-1].kill()
             self.player.center_x = 40
             self.player.center_y = 1000
-            if len(self.HUD['health']) == 0:
+        if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
         
         self.shaddow.center_x = self.player.center_x + 20
@@ -202,14 +202,14 @@ class GameView(arcade.View):
             
                 
         # Ememy DAMAGE:
-        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemy_tokens'])
-        # # COLLIDING WITH Danger
-        # if colliding:
-        #     if colliding and not self.player.jumping:
-        #         self.score -= 1
-        #         self.HUD['health'][-1].kill()
-        #         self.player.change_x *= -1
-        #         self.player.change_y *= -1
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemy_tokens'])
+        # COLLIDING WITH Danger
+        if colliding:
+            if colliding:
+                self.score -= 1
+                self.HUD['health'][-1].kill()
+                self.player.change_x *= -1
+                self.player.change_y *= -1
                 
             
         

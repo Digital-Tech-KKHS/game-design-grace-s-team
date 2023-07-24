@@ -19,7 +19,7 @@
 
 # Sprint Summary
 ## **Sprint Reflection and summary**
-
+I tested my game out on a potential end user - Gabby - and she gave it a 69.56/100 she tested
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
