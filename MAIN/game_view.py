@@ -101,8 +101,29 @@ class GameView(arcade.View):
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
-            arcade.draw_text("Hello adventurer! I am emmy, your goal is too collect feathers throughout the levels so that you can get your wings back!",
-             570, 340, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("Hello adventurer! I am emmy,",
+             220, 550, arcade.color.WHITE, 20, 0)
+            
+            arcade.draw_text("your goal is too collect feathers",
+             220, 520, arcade.color.WHITE, 20, 0)
+            
+            arcade.draw_text("throughout the levels so that ",
+             220, 490, arcade.color.WHITE, 20, 0)
+            
+            arcade.draw_text("you can get your wings back!",
+             220, 460, arcade.color.WHITE, 20, 0)
+
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
+        if colliding:
+            arcade.draw_text("You must find 7 Feathers like these,",
+             770, 550, arcade.color.WHITE, 20, 0)
+            
+            arcade.draw_text("collect all feathers to unlock wings",
+             770, 520, arcade.color.WHITE, 20, 0)
+            
+            arcade.draw_text("and be free.",
+             770, 490, arcade.color.WHITE, 20, 0)
+
 
 
 
