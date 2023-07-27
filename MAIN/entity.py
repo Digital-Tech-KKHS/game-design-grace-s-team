@@ -6,7 +6,7 @@ class Entity(arcade.Sprite):
         super().__init__(ROOT_FOLDER.joinpath( foldername, filename + "_idle.png"))
         self.walk_textures = []
 
-        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath (foldername, filename + "_idle.png"))
+        self.idle_textures = arcade.load_texture_pair(ROOT_FOLDER.joinpath(foldername, filename + "_idle.png"))
         self.face_direction = 0
         self.current_texture = 0
         self.cur_texture_index = 0
@@ -16,7 +16,7 @@ class Entity(arcade.Sprite):
         self.odo = 0
         
         for i in range(10):
-            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath ( foldername, filename + f"_walk{i}.png"))
+            tex = arcade.load_texture_pair(ROOT_FOLDER.joinpath( foldername, filename + f"_walk{i}.png"))
             self.walk_textures.append(tex)
 
 
@@ -29,9 +29,11 @@ class Entity(arcade.Sprite):
         if self.change_x < 0:
              self.face_direction = 0
         
+        print('wtf', self.change_x)
         if self.change_x == 0:
             self.handle_idle_animation()
         else:
+            print('wholy bajeezuz')
             self.handle_move_animation()
 
 
@@ -39,6 +41,7 @@ class Entity(arcade.Sprite):
         self.texture = self.idle_textures[self.face_direction]
 
     def handle_move_animation(self):
+        print('handle animation firing')
         self.texture = self.walk_textures[self.current_texture][self.face_direction]
         self.odo += 1
         if self.odo % 4 ==0:
@@ -63,4 +66,4 @@ class Entity(arcade.Sprite):
                 self.change_y = 0
                 self.acc_y = 0
                 self.start_jump_y = None
-                print('landed')
+                print('landed') 

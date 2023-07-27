@@ -38,9 +38,6 @@ class Player(Entity):
                 self.current_breathe_texture = 0
                 self.texture = self.breathe_textures[self.current_breathe_texture][self.face_direction]
 
-    def handle_move_animation(self):
-            self.idle_odo = 0
-            self.idle_animating = False
 
 
 

@@ -314,6 +314,7 @@ class GameView(arcade.View):
             
 
     def on_key_release(self, symbol: int, modifiers: int):
+        print('on_key release firing')
         if symbol == arcade.key.SPACE:
             self.player.change_y = 0
         if symbol == arcade.key.W or symbol == arcade.key.S:
