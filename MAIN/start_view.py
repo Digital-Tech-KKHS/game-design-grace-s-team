@@ -12,8 +12,8 @@ class StartView(arcade.View):
         self.bullet_list = None
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
         # text on start screen
-        arcade.draw_text("WELCOME TO MY GAME", WIDTH/2, HEIGHT/2 -100, arcade.color.ALMOND)
-        arcade.draw_text("PUSH TO START THE GAME ALREADY!!!", WIDTH/2, HEIGHT/2 - 150, arcade.color.ALMOND)
+        arcade.draw_text("Click to begin!", 1000, 450, arcade.color.BLACK,20,0,"left","arial",True)
+        
     
     # loads background
     def on_show_view(self):

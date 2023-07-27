@@ -41,7 +41,7 @@ class Enemy(Entity):
         self.target = (x, y)
 
     def update_animation(self):
-        if self.center_x > self.target:
+        if self.change_x > 0:
              self.face_direction = 1
-        if self.center_x < self.target:
+        if self.change_x < 0:
              self.face_direction = 0

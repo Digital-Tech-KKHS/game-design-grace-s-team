@@ -29,7 +29,6 @@ class Entity(arcade.Sprite):
         if self.change_x < 0:
              self.face_direction = 0
         
-        print('wtf', self.change_x)
         if self.change_x == 0:
             self.handle_idle_animation()
         else:
