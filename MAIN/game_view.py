@@ -179,9 +179,9 @@ class GameView(arcade.View):
         if colliding:
             if colliding and not self.player.jumping:
                 self.score -= 1
-                self.HUD['health'][-1].kill()
                 self.player.change_x *= -1
                 self.player.change_y *= -1
+                self.HUD['health'][-1].kill()
 
 
         # SPEED POWERUPS..............
@@ -223,14 +223,13 @@ class GameView(arcade.View):
             
                 
         # Ememy DAMAGE:
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemy_tokens'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemies'])
         # COLLIDING WITH Danger
         if colliding:
             if colliding:
-                self.score -= 1
                 self.HUD['health'][-1].kill()
-                self.player.change_x *= -1
-                self.player.change_y *= -1
+                self.player.change_x *= -2
+                self.player.change_y *= -2
                 
             
         
@@ -314,7 +313,6 @@ class GameView(arcade.View):
             
 
     def on_key_release(self, symbol: int, modifiers: int):
-        print('on_key release firing')
         if symbol == arcade.key.SPACE:
             self.player.change_y = 0
         if symbol == arcade.key.W or symbol == arcade.key.S:
