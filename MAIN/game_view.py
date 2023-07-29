@@ -178,7 +178,6 @@ class GameView(arcade.View):
         # COLLIDING WITH Danger
         if colliding:
             if colliding and not self.player.jumping:
-                self.score -= 1
                 self.player.change_x *= -1
                 self.player.change_y *= -1
                 self.HUD['health'][-1].kill()
@@ -293,14 +292,8 @@ class GameView(arcade.View):
             self.player.change_x = 5
         if symbol == arcade.key.SPACE:
             self.player.jump()
-        #     shadow = arcade.SpriteSolidColor(32, 32, (0, 0, 0))
-        #     shadow.center_x = self.player.center_x
-        #     shadow.center_y = self.player.center_y - 32
-        #       self.scene['shadows'].append(shadow)
-        #     if key == arcade.key.UP or key == arcade.key.W:
-        #     if self.physics_engine.can_jump():
-        #       self.player_sprite.change_y = PLAYER_JUMP_SPEED
-        #       self.jump_sound.play()
+  
+
         if not self.player.jumping:
             if symbol == arcade.key.W:
                 self.player.change_y = 4
@@ -310,6 +303,25 @@ class GameView(arcade.View):
                 self.player.change_x = -2.8
             if symbol == arcade.key.D:
                 self.player.change_x = 2.8
+        
+        if symbol == arcade.key.ENTER:
+            self.handle_interact()
+
+    def handle_interact(self):
+            interactables = arcade.check_for_collision_with_list(self.player, self.scene["interactables"])
+            for interactable in interactables:
+                getattr(self, interactable.properties["on_interact"])(interactable)
+
+    def toggle_lever(self, interactable):
+            levers = (l for l in self.scene["interactables"] if l.properties["type"] == "lever")
+            toggled = not interactable.properties["toggled"]
+            for lever in levers:
+                lever.properties["toggled"] = toggled
+                if toggled:
+                    lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"LeverLeft.png"))
+                else:
+                    lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"Leverright.png"))
+
             
 
     def on_key_release(self, symbol: int, modifiers: int):

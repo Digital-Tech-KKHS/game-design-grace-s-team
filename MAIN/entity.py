@@ -32,7 +32,6 @@ class Entity(arcade.Sprite):
         if self.change_x == 0:
             self.handle_idle_animation()
         else:
-            print('wholy bajeezuz')
             self.handle_move_animation()
 
 
@@ -40,7 +39,6 @@ class Entity(arcade.Sprite):
         self.texture = self.idle_textures[self.face_direction]
 
     def handle_move_animation(self):
-        print('handle animation firing')
         self.texture = self.walk_textures[self.current_texture][self.face_direction]
         self.odo += 1
         if self.odo % 4 ==0:
