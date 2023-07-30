@@ -2,6 +2,8 @@ import arcade
 from constants import *
 from game_view import GameView
 class EndView(arcade.View):
+   
+        # Draws view and puts in PNG
     def __init__(self):
         """ This is run once when we switch to this view """
         super().__init__()
@@ -14,6 +16,8 @@ class EndView(arcade.View):
         self.clear()
         self.texture.draw_sized(WIDTH / 2, HEIGHT / 2,
                                 WIDTH, HEIGHT)
+        
+        # Switches to "GameView"
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """ If the user presses the mouse button, re-start the game. """
         game_view = GameView()

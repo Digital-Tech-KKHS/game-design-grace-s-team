@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# All constants in my game that other files will pull from
 ROOT_FOLDER = Path(__file__).parent
 WIDTH = 1400
 HEIGHT = 1000

@@ -43,4 +43,4 @@ There were a few specific changes that I had to change, including my character f
 - Next time I want to make sure that I work on my tilesets more, and how my character will functions for my story
 - I want to improve how I record information in my sprint docs
 - I want to keep note of all the new things I want to make and things that I have made, in my Kanban board
-- 
+- I want to get a lot of feed back from my class mates and peers so that I know how I can make the game more interesting and enjoyable for end users

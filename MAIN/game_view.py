@@ -156,6 +156,8 @@ class GameView(arcade.View):
             self.score += 1
             self.collect_coin_sound.play()
 
+            if len(self.HUD['health']) == 0:
+                self.window.show_view(self.window.end_view)
         
         # Draws shadow on characters center
         self.shaddow.center_x = self.player.center_x + 20
@@ -173,9 +175,9 @@ class GameView(arcade.View):
                 self.player.change_y *= -1
                 self.HUD['health'][-1].kill()
                     
-        # if healthe == EndView / ending screen will appear
+        # if health == EndView / ending screen will appear
         if self.player.center_y <0:
-            self.HUD['health'][-1].kill()
+            self.HUD['health'][-1].kill()  
             self.player.center_x = 40
             self.player.center_y = 1000
         if len(self.HUD['health']) == 0:
@@ -183,7 +185,6 @@ class GameView(arcade.View):
 
         # Speed potion (topright)
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topright"])
-        # Speed
         if colliding:
             if colliding and not self.player.jumping:
                 self.player.change_y = 6
@@ -191,7 +192,6 @@ class GameView(arcade.View):
 
         #  Speed potion (topleft)       
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topleft"])
-        # Speed
         if colliding:
             if colliding and not self.player.jumping:
                 self.player.change_y = 6
@@ -199,7 +199,6 @@ class GameView(arcade.View):
 
         #  Speed potion (bottemright) 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemright"])
-        # Speed
         if colliding:
             if colliding and not self.player.jumping:
                 self.player.change_y = -6
@@ -207,22 +206,13 @@ class GameView(arcade.View):
 
          #  Speed potion (bottemleft)        
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemleft"])
-        # Speed
         if colliding:
             if colliding and not self.player.jumping:
                 self.player.change_y = -6
                 self.player.change_x = -6
-
                 
-                
-                
-                
-            
-            
-                
-        # Ememy DAMAGE:
+        # Player collides with an enemy and loses "health"
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemies'])
-        # COLLIDING WITH Danger
         if colliding:
             if colliding:
                 self.HUD['health'][-1].kill()
@@ -230,16 +220,8 @@ class GameView(arcade.View):
                 self.player.change_y *= -2
                 
             
-        
-            if len(self.HUD['health']) == 0:
-                self.window.show_view(self.window.end_view)
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather'])
 
-        if colliding:
-            coin.kill()
-            self.score += 1
-            self.collect_coin_sound.play()
-
+        # Player finishes levels and goes to "WinView"
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Win'])
         if colliding:
             self.level += 1
@@ -251,23 +233,27 @@ class GameView(arcade.View):
         # if colliding:
         #     self.level = 1
         #     self.setup()
-
+         
+        #  Changes to Map_2 when colliding
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['to_level_2'])
         if colliding:
             self.level = 2
             self.setup()
-        
+
+        #  Changes to Map_3 when colliding
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['to_level_3'])
         if colliding:
             print("colliding")
             self.level = 3
             self.setup()
-
+        
+        # Changes to original layor when colliding
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Original_layer'])
         if colliding:
             self.level = 0
             self.setup()
 
+        # When colliding with Winner tile "Win_view" will appear
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
         if colliding:
             self.window.show_view(self.window.win_view)
@@ -275,7 +261,8 @@ class GameView(arcade.View):
 
         for enemy in self.scene["Enemies"]:
             enemy.set_target(self.player.center_x, self.player.center_y)
-
+        
+        # Centers camera onto player 
     def center_camera_on_player(self):
         camera_x = self.player.center_x - WIDTH / 2
         camera_y = self.player.center_y - HEIGHT / 2
@@ -286,9 +273,9 @@ class GameView(arcade.View):
             camera_y = 2
         self.camera.move_to((camera_x, camera_y))
 
-
+        # When a key is pressed the character will move a certain amount in a specific direction
     def on_key_press(self, symbol: int, modifiers: int):
-        if symbol == arcade.key.SPACE: # and self.physics_engine.can_jump():
+        if symbol == arcade.key.SPACE:
             self.player.change_y = 10
             self.jump_sound.play()
         if symbol == arcade.key.W:
@@ -302,7 +289,6 @@ class GameView(arcade.View):
         if symbol == arcade.key.SPACE:
             self.player.jump()
   
-
         if not self.player.jumping:
             if symbol == arcade.key.W:
                 self.player.change_y = 4
@@ -313,6 +299,7 @@ class GameView(arcade.View):
             if symbol == arcade.key.D:
                 self.player.change_x = 2.8
         
+    #    INTERACTABLES.....
         if symbol == arcade.key.ENTER:
             self.handle_interact()
 
@@ -332,7 +319,7 @@ class GameView(arcade.View):
                     lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"Leverright.png"))
 
             
-
+        # When a key is released the character will stop moving
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.SPACE:
             self.player.change_y = 0
@@ -340,13 +327,3 @@ class GameView(arcade.View):
             self.player.change_y = 0
         if symbol == arcade.key.A or symbol == arcade.key.D:
             self.player.change_x = 0
-        # pass
-        # if not self.player.jumping:
-        # if symbol == arcade.key.SPACE:
-        #     self.player.change_y = 0
-        # if symbol == arcade.key.W or symbol == arcade.key.S:
-        #     self.player.change_y = 0aa
-        #     self.player.change_x = 0
-        # if symbol == arcade.key.A or symbol == arcade.key.D:
-        #     self.player.change_x = 0
-        #     self.player.change_y = 0

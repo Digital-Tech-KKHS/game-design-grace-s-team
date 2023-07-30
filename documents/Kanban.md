@@ -16,10 +16,7 @@ kanban-plugin: basic
 ## Doing
 
 - [ ] making kanban
-- [ ] making my game MVP
 - [ ] making art for game
-- [ ] Making oblique art
-- [ ] Deciding how I want my game to be designed
 - [ ] make enemies functions and damage
 - [ ] Getting write up, up too date
 - [ ] finishing up components
@@ -41,7 +38,10 @@ kanban-plugin: basic
 - [ ] working on jump function of character
 - [ ] Adding enemy
 - [ ] Adding first level
+- [ ] making my game MVP
 - [ ] Adding second level
+- [ ] Making oblique art
+- [ ] Deciding how I want my game to be designed
 
 
 ## 

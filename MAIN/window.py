@@ -1,9 +1,11 @@
+# Imports all views
 import arcade
 from constants import *
 from start_view import StartView
 from end_view import EndView
 from win_view import WINView
 from game_view import GameView
+
 # Main class
 class Window(arcade.Window):
     # identifys classes

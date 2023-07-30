@@ -1,6 +1,6 @@
 # Details
 **Name:**
-
+Grace McDonald
 **Git Hash:**
 
 **Sprint Number:**
@@ -8,18 +8,18 @@
 **Start Date:**
 17/07/2023
 **End Date:**
-
+04/08/2023
 **Work hard rating**
 ☆☆☆☆☆
 
 # Project at the start of the sprint
 ## **KANBAN board at the start of the sprint**
-
+![[Pasted image 20230730214723.png]]
 ## **Screenshot of the game at the start of the sprint**
 
 # Sprint Summary
 ## **Sprint Reflection and summary**
-I tested my game out on a potential end user - Gabby - and she gave it a 69.56/100 she tested
+In this sprint I tested my game a lot on potential end users and class mates. I asked Gabby, Erin, Sylvie 
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
