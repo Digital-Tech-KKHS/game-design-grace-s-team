@@ -19,7 +19,7 @@ Grace McDonald
 
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I tested my game a lot on potential end users and class mates. I asked Gabby, Erin, Sylvie 
+In this sprint I tested my game a lot on potential end users and class mates. I asked Gabby, Erin, Sylvie, and Zane to test my game and give me feedback. I learnt that both Gabby and Zane had issues doing a jump so I used this to make my jumps easier to jump across so that the game was more enjoyable. I wondered if it would be better to increase the speed of my character or shorten the jump. After testing the increasing speed idea I ended up going with making the jump shorter because I saw that if I increased the speed of the character it threw of the speed of it naturally and didn't look and feel as good to use. I also asked them what they thought of the art and they liked it however Erin said that she wanted me to add more small details so that it would feel more complete. I also spent the sprint making sure that all my art and game was up to date to be ready for hand in on the 4th. I 
 ## **Briefly describe other team members contributions**
 
 ## **Major Changes and Achievements Described**
