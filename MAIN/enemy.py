@@ -1,10 +1,13 @@
 import arcade
 from entity import Entity
 
+# makes enemy class
 class Enemy(Entity):
     def __init__(self, properties=None):
         super().__init__("Enemy", "enemy")
-        print(properties)
+       
+        # Making speed properties of enemy
+        # print(properties)
         if properties is not None:
             for key, value in properties.items():
                 setattr(self, key, value)
@@ -22,6 +25,7 @@ class Enemy(Entity):
     def out_of_bounds(self):
         return not self.in_bounds
     
+    # Making player tracker for enemy
     def update(self):
         super().update()
         if self.center_x - self.target[0] < 0:

@@ -19,13 +19,15 @@ class StartView(arcade.View):
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background.png'))
         # arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
-    # starts game 
+   
+    # starts game from game veiw when symbol enter is pressed
     def on_key_press(self, symbol:int, modifiers:int):
         if symbol == arcade.key.ENTER:
             game_view = GameView()
             game_view.setup()
             self.window.show_view(game_view)
-    # starts game
+    
+    # starts game when left mouse butten is clicked
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         game_view = GameView()
         game_view.setup()

@@ -2,6 +2,8 @@ import arcade
 from constants import *
 from player import Player
 from enemy import Enemy
+
+# Making main class "Gameview"
 class GameView(arcade.View): 
     def __init__(self):
         super().__init__()
@@ -23,8 +25,9 @@ class GameView(arcade.View):
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         self.setup()
     
-    
+    # Game set up 
     def setup(self):
+        
         # where the character spawns in and which map it uses
         self.player = Player()
         self.player.center_x = 100
@@ -34,7 +37,6 @@ class GameView(arcade.View):
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
         
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["Water"], gravity_constant=0)
-        #self.physics_engine = PymunkPhysicsEngine(gravity=gravity)
         
         self.camera = arcade.Camera()
         self.HUD_camera = arcade.Camera()
@@ -42,6 +44,7 @@ class GameView(arcade.View):
         self.scene.add_sprite('player', self.player)
         self.HUD.add_sprite_list('health')
         
+        # Characteristic sounds
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         
@@ -51,18 +54,6 @@ class GameView(arcade.View):
         self.bullet_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
         
-        # self.enemy = Enemy()
-        # self.player.center_x = 100
-        # self.player.center_y = 500
-
-
-        # Adds in health with my own made health art
-        for i in range(STARTING_HEALTH):
-            x = 25 + 60 * i
-            y = HEIGHT - 40
-            health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
-            self.HUD['health'].append(health)
-            # health = [0, 1, 2, 3, 4]
 
         self.shaddow = arcade.Sprite(ROOT_FOLDER.joinpath(  'Character' , 'shaddow.png'))
         self.scene.add_sprite_list_before('shaddow', 'player')
@@ -70,6 +61,17 @@ class GameView(arcade.View):
 
         self.scene.add_sprite('shaddow', self.shaddow)
 
+
+        # Adds in health and my health bar icons that I made
+        for i in range(STARTING_HEALTH):
+            x = 25 + 60 * i
+            y = HEIGHT - 40
+            health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
+            self.HUD['health'].append(health)
+            # health = [0, 1, 2, 3, 4]
+
+        
+        # Enemy in scene in tile map
         for enemy in self.scene["Enemy_tokens"]:
             new_enemy = Enemy(enemy.properties)
             new_enemy.center_x = enemy.center_x
@@ -84,21 +86,24 @@ class GameView(arcade.View):
             self.scene["Enemies"].append(new_enemy)
             enemy.kill()
 
+        # Background
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background2.png'))
 
+        # Draw functions
     def on_draw(self):
         # adding back round for game view   
         self.clear()
         arcade.draw_lrwh_rectangle_textured(0, 0, WIDTH, HEIGHT, self.background)
         self.camera.use()
         self.scene.draw()
-        # self.player.draw_hit_box((255, 0,0,255), 2)
         self.HUD_camera.use()
         self.HUD.draw()
-        arcade.draw_text(f"Feathers: {self.score} / 7", WIDTH-150, HEIGHT-50)
+        
+        arcade.draw_text(f"Feathers: {self.score}", WIDTH-150, HEIGHT-50)
         
 
+        # Text my npc will say about the point of the game, on my first level
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
             arcade.draw_text("Hello adventurer! I am emmy,",
@@ -113,9 +118,10 @@ class GameView(arcade.View):
             arcade.draw_text("you can get your wings back!",
              220, 460, arcade.color.WHITE, 20, 0)
 
+        # Text my npc will say about the point of feathers
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
         if colliding:
-            arcade.draw_text("You must find 7 Feathers like these,",
+            arcade.draw_text("You must find Feathers like these,",
              770, 550, arcade.color.WHITE, 20, 0)
             
             arcade.draw_text("collect all feathers to unlock wings",
@@ -129,61 +135,53 @@ class GameView(arcade.View):
 
 
 
-# FOR SPRITE ON FEATHERS
+        # Function for things to update in this view
     def on_update(self, delta_time: float):
         self.player.update()
         self.player.update_animation()
-
-        
         self.physics_engine.update()
-        if not self.player.jumping: # THIS IS A BAD IDEA
+        
+        if not self.player.jumping:
             self.physics_engine.update()
         self.scene.update()
+       
         for coin in self.scene['Feather']:
             coin.on_update()
         self.center_camera_on_player()
+        
+        # Collison with coin adding to score and then deleting from map
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather'])
         for coin in colliding:
             coin.kill()
             self.score += 1
             self.collect_coin_sound.play()
-  
-        if self.player.center_y <0:
-            self.HUD['health'][-1].kill()
-            self.player.center_x = 40
-            self.player.center_y = 1000
-        if len(self.HUD['health']) == 0:
-                self.window.show_view(self.window.end_view)
+
         
+        # Draws shadow on characters center
         self.shaddow.center_x = self.player.center_x + 20
         if not self.player.jumping:
             self.shaddow.center_y = self.player.center_y - 85
             self.shaddow.scale = 1
         else:
             self.shaddow.scale += self.player.change_y * -0.005
-        # self.player.in_bounds = arcade.check_for_collision_with_list(self.player, self.scene['background'])
-        
-        
-        # making my dragon spawn at the start and lose health when it falls off of map
-        
-        
-        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['CANT_TOUCH'])
-        # # COLLIDING WITH BACKDROP
-        # if colliding:
-        #     self.player.change_x = -1 + 1
-        #     self.player.change_y = -1 + 1
-        
 
+        # Damage to player when colliding
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Dont_touch'])
-        # COLLIDING WITH Danger
         if colliding:
             if colliding and not self.player.jumping:
                 self.player.change_x *= -1
                 self.player.change_y *= -1
                 self.HUD['health'][-1].kill()
+                    
+        # if healthe == EndView / ending screen will appear
+        if self.player.center_y <0:
+            self.HUD['health'][-1].kill()
+            self.player.center_x = 40
+            self.player.center_y = 1000
+        if len(self.HUD['health']) == 0:
+                self.window.show_view(self.window.end_view)
 
-
-        # SPEED POWERUPS..............
+        # Speed potion (topright)
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topright"])
         # Speed
         if colliding:
@@ -191,7 +189,7 @@ class GameView(arcade.View):
                 self.player.change_y = 6
                 self.player.change_x = 6
 
-                
+        #  Speed potion (topleft)       
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_topleft"])
         # Speed
         if colliding:
@@ -199,6 +197,7 @@ class GameView(arcade.View):
                 self.player.change_y = 6
                 self.player.change_x = -6
 
+        #  Speed potion (bottemright) 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemright"])
         # Speed
         if colliding:
@@ -206,7 +205,7 @@ class GameView(arcade.View):
                 self.player.change_y = -6
                 self.player.change_x = 6
 
-                
+         #  Speed potion (bottemleft)        
         colliding = arcade.check_for_collision_with_list(self.player, self.scene["Speed_boost_bottemleft"])
         # Speed
         if colliding:
@@ -248,10 +247,20 @@ class GameView(arcade.View):
 
 
             
+        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['to_level_1'])
+        # if colliding:
+        #     self.level = 1
+        #     self.setup()
 
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Change'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['to_level_2'])
         if colliding:
             self.level = 2
+            self.setup()
+        
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['to_level_3'])
+        if colliding:
+            print("colliding")
+            self.level = 3
             self.setup()
 
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Original_layer'])
