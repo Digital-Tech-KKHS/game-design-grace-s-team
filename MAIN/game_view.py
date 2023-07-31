@@ -2,6 +2,7 @@ import arcade
 from constants import *
 from player import Player
 from enemy import Enemy
+import time
 
 # Making main class "Gameview"
 class GameView(arcade.View): 
@@ -23,9 +24,38 @@ class GameView(arcade.View):
         self.background = None
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
+        
+        self.music_list = []
+        self.current_song_index = 0
+        self.current_song = None
+        self.music = None
+
         self.setup()
+        self.play_song()
+
+    def advance_song(self):
+        "change song to next pne the list"
+        self.current_song_index += 1
+        if self.current_song_index >= len(self.music_list):
+            self.current_song_index = 0
+
+    def play_song(self):
+        "play hthh msuco"
+        if self.music:
+            self.music.stop(self.current_song)
+        self.music = arcade.Sound(self.music_list[self.current_song_index], streaming = True)
+        self.current_song = self.music.play(1)
+        time.sleep(0.005)
+    
+    def on_show_view(self):
+        self.play_song()
+    
+    
+    
     
     # Game set up 
+    
+    
     def setup(self):
         
         # where the character spawns in and which map it uses
@@ -47,6 +77,13 @@ class GameView(arcade.View):
         # Characteristic sounds
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
+        
+        # music
+        self.music_list = [(ROOT_FOLDER.joinpath("Assets", "BeepBox-song.mp3")),
+                            (ROOT_FOLDER.joinpath("Assets", "BeepBox-song.mp3"))]
+        
+        self.current_song_index = 0
+        
         
         self.scene.move_sprite_list_after('Foreground', 'player',)
         self.scene.add_sprite_list('shadows')
@@ -144,6 +181,15 @@ class GameView(arcade.View):
         if not self.player.jumping:
             self.physics_engine.update()
         self.scene.update()
+
+        # music
+        position = self.music.get_stream_position(self.current_song)
+        if not self.music:
+            self.play_song()
+
+        if position == 0.0:
+            self.advance_song()
+            self.play_song()
        
         for coin in self.scene['Feather']:
             coin.on_update()
@@ -304,18 +350,18 @@ class GameView(arcade.View):
             self.handle_interact()
 
     def handle_interact(self):
-            interactables = arcade.check_for_collision_with_list(self.player, self.scene["interactables"])
-            for interactable in interactables:
-                getattr(self, interactable.properties["on_interact"])(interactable)
+        interactables = arcade.check_for_collision_with_list(self.player, self.scene["interactables"])
+        for interactable in interactables:
+            getattr(self, interactable.properties["on_interact"])(interactable)
 
     def toggle_lever(self, interactable):
-            levers = (l for l in self.scene["interactables"] if l.properties["type"] == "lever")
-            toggled = not interactable.properties["toggled"]
-            for lever in levers:
-                lever.properties["toggled"] = toggled
-                if toggled:
+        levers = (l for l in self.scene["interactables"] if l.properties["type"] == "lever")
+        toggled = not interactable.properties["toggled"]
+        for lever in levers:
+            lever.properties["toggled"] = toggled
+            if toggled:
                     lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"LeverLeft.png"))
-                else:
+            else:
                     lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"Leverright.png"))
 
             
