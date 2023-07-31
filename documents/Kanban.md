@@ -11,6 +11,12 @@ kanban-plugin: basic
 - [ ] Working on extra features of map
 - [ ] Make enemy art
 - [ ] Make character idle animation
+- [ ] Finish sprint doc 1, 2, 3, 4, 5
+- [ ] Finish test 1, 2, 3, 4, 5
+- [ ] finish trail 1, 2, 3, 4, 5
+- [ ] finish game design document
+- [ ] finish final review document
+- [ ] Do final hand in statement
 
 
 ## Doing

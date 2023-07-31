@@ -47,8 +47,8 @@ class GameView(arcade.View):
         self.current_song = self.music.play(1)
         time.sleep(0.005)
     
-    def on_show_view(self):
-        self.play_song()
+    # def on_game_view(self):
+    #     self.play_song()
     
     
     
@@ -79,8 +79,8 @@ class GameView(arcade.View):
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         
         # music
-        self.music_list = [(ROOT_FOLDER.joinpath("Assets", "BeepBox-song.mp3")),
-                            (ROOT_FOLDER.joinpath("Assets", "BeepBox-song.mp3"))]
+        self.music_list = [(ROOT_FOLDER.joinpath("Assets", "Main_Song.mp3")),
+                            (ROOT_FOLDER.joinpath("Assets", "Main_Song.mp3"))]
         
         self.current_song_index = 0
         
@@ -268,7 +268,7 @@ class GameView(arcade.View):
             
 
         # Player finishes levels and goes to "WinView"
-        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Win'])
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Next_level'])
         if colliding:
             self.level += 1
             self.setup()

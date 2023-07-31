@@ -25,7 +25,7 @@ In this sprint I did a bit of testing and trialing. Over the holidays I did most
 ## **Major Changes and Achievements Described**
 I changed my game from isometric to oblique and I therefore had to change all of my art that I had previously done. I achieved getting my walls working and I also made my art compatible with the rest of my code.
 ## **Brief Description of your testing**
-
+I tested how
 ## **Link to testing results/tables**
 
 

@@ -1,5 +1,6 @@
 Review your initial game design document. Compare and contrast the game you had initially planned and your final outcome. 
 ... 
+At the beginning of the year when I first started making my game I was very set on what I wanted to get done and what features my game would end up having, however like most things I ended up completely changing my game and story line with new art ideas and all. I wanted the original story to be based on a kelpie from Celtic mythology that was the protagonist and have humans be the antagonists. However I quickly came to the idea of my main character being an owl instead because I believed that it was a more acheiveable and realistic goal. Although I changed the idea the concept basically stayed the same with the functions I wanted to enable and all together I am happy with what I have been able to make in the time.  
 
 Given each of the initial success criteria that you determined when designing your project, was your game a success? Why or why not? 
 ...
