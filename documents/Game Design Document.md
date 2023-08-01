@@ -37,15 +37,15 @@ The timeline for my game is from around medieval time. The game relies heavily o
 Considering your intended audience and the objectives of your game come up with 5 or more criteria that you will use to determine if your game has been successful. 
 What evidence will you use to measure each criteria? 
 
-|     | Criteria |                                                            | Evidence |
-| --- | -------- | -------- |---------| -------- | -------- | -------- |
-| 1   |  user can instal game and run it                       |           |
-| 2   |  user can understand how to do game            |           |
-| 3   |  user can complete game                                 |           |
-| 4   |  user enjoys playing it                                      |            |
-| 5   |  user understood how I wanted the game to  |            |
-|      |  come across                                                    |            |
-| 6   |  user enjoyed playing my game                       |            |
+|     | Criteria                                             | Evidence                                                                                                                                                                                                                          |
+| --- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | user can instal game and run it                      | I will test on many other computers to make sure that it can be opened on different devices                                                                                                                                       |
+| 2   | user can understand how to do game                   | I will do a brief play through to show how the game is supposed to be played but I will also include built in hints through out it                                                                                                |
+| 3   | user can complete game                               | I will get peers to test the difficulty of the game throughout my making stages                                                                                                                                                   |
+| 4   | user enjoys playing it                               | I will make sure that I get a lot of feedback on it from different people so that I can improve it and make it enjoyable for the end user                                                                                         |
+| 5   | user understood how I wanted the game to come across | I will ask questions to be people throughout the whole proccess to make sure that what I designed was what my game was meant to be and I will make hints to help people understand its purpose if they don't initially understand | 
+| 6   | user enjoyed playing my game                         | I will ask my user to give me feedback on the game and what they liked about it so that I can make sure that it is enjoyable. I will also ask them to rate the game.                                                              |
+
 
 # Game Setting
 
@@ -73,7 +73,7 @@ A brown speckled barn owl was flying around one crisp blue day, when suddenly a 
 "Why must you be so rude fledgling? I was only enquiring after your health." The grey owl asked "It looked as if you might have needed assistance."
 "No!" The brown owl shouted "I am in need of no assistance from you old owl, you disgust me. Your feathers are matted and dirty and your wings are so small and shriveled, I wouldn't want to catch a disease from you, lest you ruin my beautiful feathers with your disgust!"
 The old grey owl was heartbroken from the horrible words of the younger owl and decided that this owl needed to be brought back down to earth from its high perch and learn to fight for its wings that it oh so loved very much.
-"Fine, if you do not wish to accept my concern for you, you will instead accept my wrath." The older owl said calmly. "Because you love your feathers and wings so much I will have to take them from you, so that you can learn how to have some gratitude for those things that are always there to carry you across the great sea in the sky. And because of how rude you were to a lowly owl like me, I  am condemning  you to this place where you will learn what I have had to endure so that before you judge my appearance, you understand what having no wings to rely on can make you become."
+"Fine, if you do not wish to accept my concern for you, you will instead accept my wrath." The older owl said calmly. "Because you love your feathers and wings so much I will have to take them from you, so that you can learn how to have some gratitude for those things that are always there to carry you across the great sea in the sky. And because of how rude you were to a lowly owl like me, I  am condemning  you to this place where you will learn what I have had to endure so that before you judge my appearance, you understand what having no flight to rely on can make you become."
 The brown owl shrieked as it tried to fly away and realized that its ability to fly was gone. It tried again and again but it could not catch wind under its wings. It crawled across the floor to the grey owl and asked it what it must do to regain its ability to fly......
 
 
@@ -135,25 +135,28 @@ What things exist in your world? Are there collectables, keys, spikes or moveabl
 - Speed_boost("......"), sets the characters speed to a higher amount for a certain period of time
 - Feathers, coins that the player can collect and use to increase there score and complete the game
 - Trees, grass, shrubs, grass, bushes, adds depth to the game and usually wont be interactable except acting as a wall
-- Enemy, something that will track the player and can make them die
+- Enemy, something that will track the player and can make them die 
 - Signs, notes, help guide the player as to what's ahead and what to expect
 
 ## Actions
 What does your player do? Do they interact with anything? If so, what and how?
 ...
+My player will run around and interact with coins and damaging items. It will also need to be able to avoid enemies (mosquitos). The player can make the  character jump and run with the WASD keys. the character will also be able to interact with certain items that make speech appear
 
-## Combat
+## Combat  
 Are there enemies in your game? How do they move? How do they hurt the player? How does the player overcome them? Do they respond to the player or simply act in a predefined way?
 ...
+I have enemies that are stationary in the sense that they are solid items that when the character does to them they will get damaged. I also have moving enemies that actually follow the character no matter what and damage it to the point of death. The enemies are coded to track the player and I can adjust their speeds to increase or decrease the difficulty.
 
 ## Talking
 Do your characters communicate? Is it through audio or text? What key plot elements are represented through dialogue?
 ...
-
+The only talking that happens during my game is when my character interacts with an object or an npc and that is the thing that talks, and gives advice or hints.
 
 ## UI elements
 How does the player know what is going on in the game? What key aspects of the state of the game need to be communicated to the player? Is there a menu or an inventory? Is there a tutorial? How will the player know how to interact with your game? 
 ...
+The player will have to go to the npc and read what it says. They will also be able to pick up hints about how to play the game from the signs that I put around the maps.
 
 # Technical Requirements
 ## Required Technologies
@@ -161,35 +164,54 @@ How will your project be developed, what language will you use, what libraries w
 for using in your project. 
 What requirements will your end user have to run the game? How will you distribute it to them? 
 
+I will give them either a zip file or I will ask them to come to me and they can play it on my computer. My game will be made using python, and the library called Python Arcade. I used Python Arcade because it was easy to use and had so many different components available for me, so that I can make a game that I am proud of. I will develop the art of the game and the code as I go along to make sure that it is as good as possible for my end users
+
 # Required Assets
 ## Art 
 ### Objects
+Trees, Grass, ground, water, signs, barbed wire, pits of fire, bridges, feathers, potions, bushes, dead bushes, teleportation stands, hint notes dead trees, mosquito trees, mosquitos, pilers, arch ways, wooded stumps, spiked water, coin feathers, wings. 
 
 ### Characters and Animations
 
 Character #1
-
 ...
+- Brown owl
+-Walk animation
+-Idle animation
 
-Character #2
-
+Enemy #1
 ...
-
-Character #3
-
-...
+- Mosquito
+-Vibrate animation
 
 ### Tiles
-
+- Tileset_1
+- Tileset_2
+- Tree_tileset
 ## Sounds
+- Jump sounds
+- Coin collection sounds
+- main game music sounds
 
 ### Sound effects
+- Jump sounds
+- Coin collection sounds
 
 ### Music
+- Main game music sounds
 
 ### Voice
-## Text
+- None. Except text dialogue
 
+## Text
+All the text in the game will be decided as I go along and I will have to develope it as I go:
+
+- Hello little owl... Your goal is too collect feathers throughout the levels and survive through all the levels or you will be forced to start over.
+- You must find at least 7 feathers like these to get your ability to fly back, and to escape from this place...
+- Congratulations
+- Owl escape, click to begin!
+- You died
+- Hint.. Hold and press space
 
 # Relevant Implications
 Choose 3 relevant implications. Discuss how you will ensure these are addressed. 
@@ -197,4 +219,10 @@ Choose 3 relevant implications. Discuss how you will ensure these are addressed.
 
 ## {Implication 1}
 
+Legal:
+I want to make sure that most of the work that I have will be made by me and the stuff that I take will be fully written and explained as to why I used it. I will make sure that I credit any source that I use and I will say if it isn't mine. I also want to keep track of everything that I make so that if questioned I can back up that it is mine that I designed it all myself. I will make sure that there is no harmful aspects of the game that could steal information of any kind that could be harmful to anyone. I will read through copy right statements of music examples and I will make sure that I am not ripping something off intentionally. 
+
 ## {Implication 2}
+
+Social:
+I want to make sure that my game has no negative effects on people outside of the obvious challenges that my game will make the player face. I also will make sure that I am doing stuff that I know is acceptable to other people and my potential end users so that it doesn't offend or upset anyone. I would also like my game to be fun and enjoyable so that people will want to play it so I will make sure that it engages people and doesn't make people feel uncomfortable or put them off.  I will also have my game be in English's as that is the language that my end users will know most.  It will also not include any controversial opinions or any points that would be against social "norms".

@@ -143,29 +143,32 @@ class GameView(arcade.View):
         # Text my npc will say about the point of the game, on my first level
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
-            arcade.draw_text("Hello adventurer! I am emmy,",
-             220, 550, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("Hello little owl....",
+             220, 550, arcade.color.BLACK, 20, 0)
             
             arcade.draw_text("your goal is too collect feathers",
-             220, 520, arcade.color.WHITE, 20, 0)
+             220, 520, arcade.color.BLACK, 20, 0)
             
-            arcade.draw_text("throughout the levels so that ",
-             220, 490, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("throughout the levels and survive ",
+             220, 490, arcade.color.BLACK, 20, 0)
             
-            arcade.draw_text("you can get your wings back!",
-             220, 460, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("through all the levels or you will ",
+             220, 460, arcade.color.BLACK, 20, 0)
+            
+            arcade.draw_text("be forced to start over. ",
+             220, 430, arcade.color.BLACK, 20, 0)
 
         # Text my npc will say about the point of feathers
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
         if colliding:
-            arcade.draw_text("You must find Feathers like these,",
-             770, 550, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("You must find at least 7 feathers like these,",
+             770, 550, arcade.color.BLACK, 20, 0)
             
-            arcade.draw_text("collect all feathers to unlock wings",
-             770, 520, arcade.color.WHITE, 20, 0)
+            arcade.draw_text("to be get your ability to fly back,",
+             770, 520, arcade.color.BLACK, 20, 0)
             
-            arcade.draw_text("and be free.",
-             770, 490, arcade.color.WHITE, 20, 0)
+            arcade.draw_text(" to escape from this place and be free....",
+             770, 490, arcade.color.BLACK, 20, 0)
 
 
 
@@ -301,9 +304,11 @@ class GameView(arcade.View):
 
         # When colliding with Winner tile "Win_view" will appear
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
-        if colliding:
-            self.window.show_view(self.window.win_view)
-            self.setup()
+        
+        if self.level == 3 and self.score >= 7:
+            if colliding:
+                self.window.show_view(self.window.win_view)
+
 
         for enemy in self.scene["Enemies"]:
             enemy.set_target(self.player.center_x, self.player.center_y)
