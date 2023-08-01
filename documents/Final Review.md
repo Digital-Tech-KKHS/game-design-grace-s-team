@@ -20,4 +20,4 @@ Overall I believe that testing and trialing lead my game to be developed to as h
 
 Given the opportunity to develop this game again, what parts of the *process* would you change and why?
 ... 
-Firstly I would have managed my time better, although I am happy with how I did end up managing it I would like to maybe plan what I needed to do better instead of coming up with a completely different plot and perspective. I also would like to have perhaps spent more time on 
+Firstly I would have managed my time better, although I am happy with how I did end up managing it I would like to maybe plan what I needed to do better instead of coming up with a completely different plot and perspective. I also would like to have perhaps spent more time on what my game was going to end up looking like in the end so that I knew what I had to do to get there. It was good however having some surprises because it meant that I personally was excited to see  
