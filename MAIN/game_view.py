@@ -24,32 +24,15 @@ class GameView(arcade.View):
         self.background = None
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
-        
-        self.music_list = []
-        self.current_song_index = 0
-        self.current_song = None
-        self.music = None
 
+        self.music = arcade.Sound((ROOT_FOLDER.joinpath("Assets", "Main_Song.mp3")), streaming = True)
         self.setup()
-        self.play_song()
-
-    def advance_song(self):
-        "change song to next pne the list"
-        self.current_song_index += 1
-        if self.current_song_index >= len(self.music_list):
-            self.current_song_index = 0
-
+    
     def play_song(self):
-        "play hthh msuco"
-        if self.music:
-            self.music.stop(self.current_song)
-        self.music = arcade.Sound(self.music_list[self.current_song_index], streaming = True)
-        self.current_song = self.music.play(1)
-        time.sleep(0.005)
-    
-    # def on_game_view(self):
+        self.music.play(3,0,True)
+        
+    # def on_show_view(self):
     #     self.play_song()
-    
     
     
     
@@ -78,9 +61,7 @@ class GameView(arcade.View):
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         
-        # music
-        self.music_list = [(ROOT_FOLDER.joinpath("Assets", "Main_Song.mp3")),
-                            (ROOT_FOLDER.joinpath("Assets", "Main_Song.mp3"))]
+        
         
         self.current_song_index = 0
         
@@ -185,14 +166,7 @@ class GameView(arcade.View):
             self.physics_engine.update()
         self.scene.update()
 
-        # music
-        position = self.music.get_stream_position(self.current_song)
-        if not self.music:
-            self.play_song()
-
-        if position == 0.0:
-            self.advance_song()
-            self.play_song()
+        
        
         for coin in self.scene['Feather']:
             coin.on_update()

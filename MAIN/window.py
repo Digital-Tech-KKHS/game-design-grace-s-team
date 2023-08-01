@@ -16,3 +16,5 @@ class Window(arcade.Window):
         self.end_view = EndView()
         self.win_view = WINView()
         self.show_view(self.start_view)
+        self.game_view.play_song()
+
