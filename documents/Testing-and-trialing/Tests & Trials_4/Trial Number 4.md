@@ -20,8 +20,8 @@ Free moving enemies (able to seek out player) ^
 ![[Pasted image 20230714165120.png]]
 Enemies set on a specific path ^
 ## Results
-> - Everyone was able to see a clear difference between he two types of enemies patterns
-> - Gabby preferred the free moving enemy because it add a goofy sense to the game and it made the enemy seem more "alive"
+> - Everyone was able to see a clear difference between the two types of enemies patterns
+> - Gabby preferred the free moving enemy because it added a goofy sense to the game and it made the enemy seem more "alive"
 > - Some people were unsure about what the enemy would look like and if I would be able to make it seem like it was "hunting" the owl
 > - about 70% liked the idea of a predator chasing the owl, where as some liked the idea of a human chasing it
 > - Mr. Ward liked the idea of the "seeking" characteristic
@@ -31,6 +31,6 @@ Enemies set on a specific path ^
 > - I added a character place holder which was a snake so that you could see what the enemy could potentially end up looking like
 > - I implemented the free moving enemy 
 > - I made sure that the "enemies" seemed like enemies so that the end users would know to try and run away from them 
-> -  
-> - Fix Button bug
-> - Go with orange colour 
+> - I ended up exploiting the vibrate bug and I changed my enemy from a snake to a mosquito so that it could look like it was flying and buzzing up and down
+> - Increased the speed of the enemy after a potential end user said that the enemy was perhaps to slow and wasn't "scary" enough
+> - I changed how the enemy seeked so that it was the free moving one

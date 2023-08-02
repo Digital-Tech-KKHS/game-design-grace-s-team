@@ -226,3 +226,8 @@ I want to make sure that most of the work that I have will be made by me and the
 
 Social:
 I want to make sure that my game has no negative effects on people outside of the obvious challenges that my game will make the player face. I also will make sure that I am doing stuff that I know is acceptable to other people and my potential end users so that it doesn't offend or upset anyone. I would also like my game to be fun and enjoyable so that people will want to play it so I will make sure that it engages people and doesn't make people feel uncomfortable or put them off.  I will also have my game be in English's as that is the language that my end users will know most.  It will also not include any controversial opinions or any points that would be against social "norms".
+## {Implication 3}
+
+Usability:
+I wanted to make my game be as usably as possible. This means that I wanted anyone to be able to understand and enjoy it without any issues. This means that I made the controls of the game very obvious 
+

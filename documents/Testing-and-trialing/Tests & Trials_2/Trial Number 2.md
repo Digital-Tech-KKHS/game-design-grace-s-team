@@ -26,13 +26,13 @@ OBLIQUE^
 > - about 50% liked the oblique over the isometric design 
 > - Everyone understood that oblique would be easier and more practical to do in code and art
 > - They liked the idea of very earthy and natural themes that would help my story
-> - My teacher agreed that oblique would be easier to use to code my game in instead of isometiric
-> - Bug found when buttons are still active after being selected
+> - My teacher agreed that oblique would be easier to use to code my game in instead of isometric
+> - People thought that the character movement looked better in oblique
 
-## Breifly describe the changes you have made based on this trial
-> - Planning on changing button wording to "Placenames" and "1000 common words"  
-> - include a 'maori \ english' toggle switch
-> - Leaving the title as is
-> - Fix layout issue with different screen sizes
-> - Fix Button bug
-> - Go with orange colour
+## Briefly describe the changes you have made based on this trial
+> - I  made a lot of oblique art 
+> - I made a walking animation that suited my character walking in this perspective
+> - Didn't change any of the colours
+> - I changed my new idea about how my character would interact with the edge of water
+> - I asked people if they thought that my end user would be able to understand what type of angles I was going for
+> - Decided to add a jumping function

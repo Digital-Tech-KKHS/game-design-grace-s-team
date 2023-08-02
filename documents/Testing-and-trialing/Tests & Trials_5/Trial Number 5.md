@@ -1,34 +1,37 @@
 _Name:_ Grace McDonald
 
-_Date:_ 03/04/2023
+**Start Date:**
+17/07/2023
+**End Date:**
+04/08/2023
 
 Involved in the trial
->- Jimmy Jackson
->- Te Kahu
->- Mrs Teacher
+>- Gabby Smythe
+>- Sylvie McDonald
+>- Zane cooper
+>- Erin
 
 ## Trial goal:
-> To Ensure the main menu screen of our app was intuative to use and aesthetically pleasing, present two colour options. 
-
+> To figure out how many maps I was going to have and how they would follow after one another. Going into the trial I had a basic idea of how I wanted my maps to work but I wanted to get other peoples opinion on it as well incase I hadn't thought of a way to make it easier or more challenging. 
 
 ## Describe the trail
-> We loaded the main menu of our app and asked our 3 candidates to navigate to the game. After this we asked each candidate what they though each button did and if they liked the colour scheme. 
+> I firstly started off by explaining what I had in mind for my map path and what way the players can go. My first idea was a basic one where the player can go from map to map in series and there wouldn't be a a free choice option. I then thought of having player have the option of freely deciding which way they wanted to go while also ending up in the same place at the end of the game. I think that the trial was quite successful because it let me see my options more clearly and see the pros and cons in both designs.
 
-![main_menu](main_menu.png)
-![main_menu](menu_orange.png)
+![[First Idea 2.png]]
+First idea ^
 
+![[Second Idea.png]]
+Second idea ^
 ## Results
-> - Te Kahu resized the screen causing the image to be laid out in a less desireable layout. 
-> - Jimmy was unsure what the difference between the buttons were and was confused by the 3 options. 
-> - All candidates knew to push one of the buttons to proceed
-> - No one liked the blue colour
-> - Mrs Teacher did not understand the title
-> - Bug found when buttons are still active after being selected
-
-## Breifly describe the changes you have made based on this trial
-> - Planning on changing button wording to "Placenames" and "1000 common words"  
-> - include a 'maori \ english' toggle switch
-> - Leaving the title as is
-> - Fix layout issue with different screen sizes
-> - Fix Button bug
-> - Go with orange colour
+> - Everyone that I asked agreed that the second free choice one was more complex and added something extra to the game
+> - Gabby was curious as to how the second idea would work if the player didn't go to Map_1 first and just went to Map_2 so I explained that the player would just miss out on that level and that if they wanted to play again they would have the option to see that whole other level 
+> - Sylvie said that the first idea was good however because it meant that the player couldn't get confused with the directions and would be able to do the whole game in one go
+> - Zane wondered if the levels would have any variation and if the player would miss out on anything if they missed out on going to Map_1
+> - I came across a problem as I was making a third idea where I wanted to go from Map_0 to Map_1 to Map_2 and the other way around but that ended up making a forever loop and the last map was cut out.
+## Briefly describe the changes you have made based on this trial
+> - I implemented my first idea after I got a lot of good feedback about it  
+> - I put signs on my Map_0 in tilemap so that the player could see that there were two directional choices that they could choose to take.
+> - I changed my code to accommodate for the different paths in my maps
+> - I added tiles layers in my maps that I could connect to my code
+> - I made a new teleport station texture
+> - I stayed with 4 maps

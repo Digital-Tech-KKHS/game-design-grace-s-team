@@ -25,7 +25,7 @@ Involved in the trial
 > - Everyone thought that the colour of the trees suited the environment
 > - There was concerns on how I was gunna make my character seem like they were in front of the trees while also having them stop against them
 
-## Breifly describe the changes you have made based on this trial
+## Briefly describe the changes you have made based on this trial
 > - I changed my original idea of spending heaps of time on the trees and I would instead see if I had time later on in term to see if I could give them more detail  
 > - I have changed my second level to have these trees be the boarder instead of the plain water one
 > - Fixed how the character interacted with the trees after a few issues with the boundaries
