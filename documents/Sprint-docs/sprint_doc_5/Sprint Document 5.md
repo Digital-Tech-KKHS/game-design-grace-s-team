@@ -48,5 +48,9 @@ In this sprint I tested my game a lot on potential end users and class mates. I 
 
 
 ## **Notes for next time, future improvements**
-I do believe that one thing that I have learnt from the whole process was to manage my sprint docs as much as possible and make sure that they are up to date. That is something that I would definitely do different if I had to do the whole project again, I would take the warnings about running out of time more seriously.
+- I do believe that one thing that I have learnt from the whole process was to manage my sprint docs as much as possible and make sure that they are up to date. That is something that I would definitely do different if I had to do the whole project again, I would take the warnings about running out of time more seriously.
+- I also think that a way that I could improve my game would be if I was able to add more to do with the actual lore, so that it could feel deeper. 
+- If given enough time I would have also improved how the character interacted with wall blocks and other components of working in oblique.
+- I also would have liked as I said before to build on the lore and maybe have added a function that at the end of the game when you collect the wings (flying ability) the player was able to activate them and fly around for a bit, but I ran out of time.
+- I would also make a more comprehensive plan at the beginning so that I have a somewhat solid idea of what my final product will look like instead of just presuming.
    

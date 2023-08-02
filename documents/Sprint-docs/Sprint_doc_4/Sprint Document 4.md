@@ -28,8 +28,9 @@ In this sprint I got a lot of code work done. I got speech pop ups to work so th
 - I also got functioning enemies working which was a major achievement that I wanted to get done. Having enemies meant that I had to decide how I wanted them to run and so I ended up having them be free moving which was exactly what my game was missing because it meant that my end users would have to watch out for running into something dangerous AND watch their backs for an enemy coming up behind them.
 - I also added an extra map so that I would have 3 instead of 2 so that I could tick that box in the marking process.
 ## **Brief Description of your testing**
-- I tested having a speed property of my enemies, so that I could change there speed in tiled when I need too.
-- I also tested having my enemies track my player and so that they could follow them no matter what, and so my player would have to avoid them
+- I tested having a speed property for my enemies, so that I could change their speed in tiled when I need too. I also had a check so that if I added an enemy to a tiled map but I forgot to give it a speed property then a predetermined error message would arise that I made to make sure that I knew what the error was caused by when it pops up so that I could fix it easily.
+- I also tested having my enemies track my player and so that they could follow them no matter what, and so my player would have to avoid them or die, I tested having the enemies be locked in a path or be free moving. The center_x and center_y of the enemy would track the targets center_x and center_y (target being the character).
+- I also tested how text would appear when I collided with a specific tile called "text" I had to put in the co ordinates that I wanted the words to be at so that I could make it look good when comparing to the the character
 ## **Link to testing results/tables**
 
 
