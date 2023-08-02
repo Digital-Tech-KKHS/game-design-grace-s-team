@@ -118,31 +118,31 @@ class GameView(arcade.View):
         self.HUD_camera.use()
         self.HUD.draw()
         
-        arcade.draw_text(f"Feathers: {self.score}", WIDTH-150, HEIGHT-50)
+        arcade.draw_text(f"Feathers: {self.score}", WIDTH-150, HEIGHT-50, arcade.color.WHITE, 18, 0, "left", "arial", True)
         
 
         # Text my npc will say about the point of the game, on my first level
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
             arcade.draw_text("Hello little owl....",
-             220, 550, arcade.color.BLACK, 20, 0)
+             220, 550, arcade.color.WHITE, 22, 0,"left", "calibri", True)
             
-            arcade.draw_text("your goal is too collect feathers",
-             220, 520, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("Your goal is too collect feathers",
+             220, 520, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("throughout the levels and survive ",
-             220, 490, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("throughout the levels and survive. ",
+             220, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("through all the levels or you will ",
-             220, 460, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("If you die little owl,",
+             220, 460, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("be forced to start over. ",
-             220, 430, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("you will be forced to start over... ",
+             220, 430, arcade.color.WHITE, 22, 0, "left", "calibri", True)
 
         # Text my npc will say about the point of feathers
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
         if colliding:
-            arcade.draw_text("You must find at least 7 feathers like these,",
+            arcade.draw_text("You must find... at least 7 feathers like these,",
              770, 550, arcade.color.BLACK, 20, 0)
             
             arcade.draw_text("to be get your ability to fly back,",
@@ -182,6 +182,12 @@ class GameView(arcade.View):
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
         
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Bonus_feather'])
+        for coin in colliding:
+            coin.kill()
+            self.score += 5
+            self.collect_coin_sound.play()
+
         # Draws shadow on characters center
         self.shaddow.center_x = self.player.center_x + 20
         if not self.player.jumping:

@@ -31,6 +31,5 @@ Enemies set on a specific path ^
 > - I added a character place holder which was a snake so that you could see what the enemy could potentially end up looking like
 > - I implemented the free moving enemy 
 > - I made sure that the "enemies" seemed like enemies so that the end users would know to try and run away from them 
-> - I ended up exploiting the vibrate bug and I changed my enemy from a snake to a mosquito so that it could look like it was flying and buzzing up and down
 > - Increased the speed of the enemy after a potential end user said that the enemy was perhaps to slow and wasn't "scary" enough
 > - I changed how the enemy seeked so that it was the free moving one

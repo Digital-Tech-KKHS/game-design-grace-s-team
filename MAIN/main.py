@@ -1,6 +1,6 @@
 
 
-# Different plugins
+# Different plugins 
 import arcade
 import random
 from pathlib import Path
