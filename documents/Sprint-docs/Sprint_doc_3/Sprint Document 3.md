@@ -24,9 +24,9 @@ In this sprint I tested going to different levels and I tested how trees would b
 ## **Briefly describe other team members contributions**
 - No team-mates
 ## **Major Changes and Achievements Described**
-I changed my map and some of my art, and also was able to get a jumping function working to an extent.
+ - I changed my map and some of my art, and also was able to get a jumping function working to an extent.
 ## **Brief Description of your testing**
-I tested how my character would jump and land, I tested how it would get damaged against my barbed wire. I also tested how I wanted my character to jump backwards once damaged
+- I tested how my character would jump and land, I tested how it would get damaged against my barbed wire. I also tested how I wanted my character to jump backwards once damaged
 
 ## **Link to testing results/tables**
 

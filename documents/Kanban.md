@@ -6,27 +6,10 @@ kanban-plugin: basic
 
 ## To do
 
-- [ ] Make more levels
-- [ ] Map design
-- [ ] Working on extra features of map
-- [ ] Make enemy art
-- [ ] Finish sprint doc 1, 2, 3, 4, 5
-- [ ] Finish test 1, 2, 3, 4, 5
-- [ ] finish trail 1, 2, 3, 4, 5
-- [ ] finish game design document
-- [ ] finish final review document
-- [ ] Do final hand in statement
-- [ ] Do art for the different views
-- [ ] make win function
 
 
 ## Doing
 
-- [ ] making kanban
-- [ ] making art for game
-- [ ] make enemies functions and damage
-- [ ] Getting write up, up too date
-- [ ] finishing up components
 
 
 ## Testing \ Trialing
@@ -49,7 +32,24 @@ kanban-plugin: basic
 - [ ] Adding second level
 - [ ] Making oblique art
 - [ ] Deciding how I want my game to be designed
+- [ ] Getting write up, up too date
 - [ ] Make character idle animation
+- [ ] Make enemy art
+- [ ] Make more levels
+- [ ] finishing up components
+- [ ] make enemies functions and damage
+- [ ] Map design
+- [ ] Working on extra features of map
+- [ ] Do art for the different views
+- [ ] make win function
+- [ ] Do final hand in statement
+- [ ] finish final review document
+- [ ] finish game design document
+- [ ] Finish sprint doc 1, 2, 3, 4, 5
+- [ ] finish trail 1, 2, 3, 4, 5
+- [ ] Finish test 1, 2, 3, 4, 5
+- [ ] making art for game
+- [ ] making kanban
 
 
 ## 

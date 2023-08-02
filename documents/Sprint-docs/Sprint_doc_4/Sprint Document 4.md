@@ -24,12 +24,12 @@ In this sprint I got a lot of code work done. I got speech pop ups to work so th
 ## **Briefly describe other team members contributions**
 - No team-mates
 ## **Major Changes and Achievements Described**
-I changed how my character idled, meaning that I implemented code that would make it so that when the character was stationary and not moving at all, an idle animation would play.
-I also got functioning enemies working which was a major achievement that I wanted to get done. Having enemies meant that I had to decide how I wanted them to run and so I ended up having them be free moving which was exactly what my game was missing because it meant that my end users would have to watch out for running into something dangerous AND watch their backs for an enemy coming up behind them.
-I also added an extra map so that I would have 3 instead of 2 so that I could tick that box in the marking process.
+- I changed how my character idled, meaning that I implemented code that would make it so that when the character was stationary and not moving at all, an idle animation would play.
+- I also got functioning enemies working which was a major achievement that I wanted to get done. Having enemies meant that I had to decide how I wanted them to run and so I ended up having them be free moving which was exactly what my game was missing because it meant that my end users would have to watch out for running into something dangerous AND watch their backs for an enemy coming up behind them.
+- I also added an extra map so that I would have 3 instead of 2 so that I could tick that box in the marking process.
 ## **Brief Description of your testing**
-I tested having a speed property of my enemies, so that I could change there speed in tiled when I need too.
-I also tested having my enemies track my player and so that they could follow them no matter what, and so my player would have to avoid them
+- I tested having a speed property of my enemies, so that I could change there speed in tiled when I need too.
+- I also tested having my enemies track my player and so that they could follow them no matter what, and so my player would have to avoid them
 ## **Link to testing results/tables**
 
 
