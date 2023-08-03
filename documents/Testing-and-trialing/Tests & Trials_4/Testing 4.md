@@ -5,13 +5,13 @@ Date: 07/06/2023
 
 
 
-| Test Data                           | Expected                                         | Observed                                                                                                         |
-| ----------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| Enemy speed                         | Enemy speed changes when set to different number | I was able to see that the code worked and that there was a clear difference in speed when I changed it in tiled |
-| No speed property                   | Key Error raised                                 |                                                                                                                  |
-| additional property set             |                                                  |                                                                                                                  |
-| Class called not from tilemap token | print my predetermined error message                                               |                                                                                                                  |
-| No properties                       | Key Error raised                                                 |                                                                                                                  |
+| Test Data                           | Expected                                                 | Observed                                                                                                         |
+| ----------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Enemy speed                         | Enemy speed changes when set to different number         | I was able to see that the code worked and that there was a clear difference in speed when I changed it in tiled |
+| No speed property                   | Key Error raised                                         | As expected                                                                                                      |
+| Additional property set             | Property inexistant in tilemap, property not found error | Error occurs                                                                                                     |
+| Class called not from tilemap token | Print my predetermined error message                     | As expected                                                                                                                 |
+| No properties                       | Key Error raised                                         | Predetermined error message made                                                                                 | 
 
 ```python
 class Enemy(Entity):
@@ -36,9 +36,13 @@ class Enemy(Entity):
 Date: 23/06/2023
 
 
-| Test Data    | Expected                                        | Observed                        |
-| -------------| ------------------------------------------------| ------------------------------- |
-| Enemy tracking | Enemy to track player as it moves along, changing both x, and y co-ordinates| I was able to see that the code worked and that there was a clear difference in speed when I changed it in tiled
+| Test Data                    | Expected                                                                     | Observed                                                                                                         |
+| ---------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Enemy tracking               | Enemy to track player as it moves along, changing both x, and y co-ordinates | I was able to see that the code worked and that there was a clear difference in speed when I changed it in tiled |
+| Enemy center_x - targert > 0 | Enemy doesnt go towards player                                               | as expected                                                                                                      |
+| Enemy has no chance x or y   | No movement                                                                  | Enemy doesnt follow player                                                                                       |
+| No postive direction         | Enemy moves in one direction                                                 | As expected                                                                                                      |
+| No speed property            | Error raised                                                                 | Error raised                                                                                                     | 
 
 
 
@@ -46,21 +50,12 @@ Date: 23/06/2023
 
 ```
     def update(self):
-
         super().update()
-
         if self.center_x - self.target[0] < 0:
-
             self.change_x = self.speed
-
         if self.center_x - self.target[0] > 0:
-
             self.change_x = -self.speed
-
         if self.center_y - self.target[1] < 0:
-
             self.change_y = self.speed
-
         if self.center_y - self.target[1] > 0:
-
             self.change_y = -self.speed

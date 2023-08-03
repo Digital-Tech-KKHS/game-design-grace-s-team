@@ -34,20 +34,23 @@ Date: 26/04/2023
 Date: 08/05/2023
 
 ```python
-if arcade.check_for_collisions_with_list(player, enemies):
-	player.health -= 1
-	if player.health <= 0:
-		player.kill()
-		Game.restart()
-```
+def on_key_press(self, symbol:int, modifiers:int):
+        if symbol == arcade.key.ENTER:
+            game_view = GameView()
+            game_view.setup()
+            self.window.show_view(game_view)
+    def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
+        game_view = GameView()
+        game_view.setup()
+        self.window.show_view(game_view)```
+        
 
 | Test Data                  | Expected                        | Observed                        |
 | -------------------------- | ------------------------------- | ------------------------------- |
-| Player not touching enemy  | nothing                         | nothing                         |
-| Player touching health = 3 | health set to 2, heart disapear | health became 2, heart remained |
-| Player touching health = 1 | Game restarts                   | As expected                     |
-|                            |                                 |                                 |
-|                            |                                 |                                 |
+| Player not touching any keys  | nothing                  | nothing                         |
+| Player presses enter | View changes to GameView | View changed |
+| Mouse key pressed  | GameView drawn up                 | As expected                     |
+| Key "y" pressed         | nothing          | Start screen remains                            |                     |                                 |                                 |
 
 
 

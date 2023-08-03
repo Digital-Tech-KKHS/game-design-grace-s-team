@@ -27,16 +27,30 @@ Date: 15/05/2023
 Date: 02/06/2023
 
 ```python
-
+    def jump(self):
+        self.jumping = True
+        self.change_y = PLAYER_JUMP_SPEED
+        self.acc_y = GRAVITY
+        self.start_jump_y = self.center_y
+    def update(self):
+        super().update()
+        if self.jumping:
+            self.change_y += self.acc_y
+            if self.center_y <= self.start_jump_y:
+                self.jumping = False
+                self.can_jump = True
+                self.change_y = 0
+                self.acc_y = 0
+                self.start_jump_y = None
 ```
 
-| Test Data                  | Expected                        | Observed                        |
-| -------------------------- | ------------------------------- | ------------------------------- |
-| Player not touching enemy  | nothing                         | nothing                         |
-| Player touching health = 3 | health set to 2, heart disapear | health became 2, heart remained |
-| Player touching health = 1 | Game restarts                   | As expected                     |
-|                            |                                 |                                 |
-|                            |                                 |                                 |
+| Test Data                             | Expected                                               | Observed                          |
+| ------------------------------------- | ------------------------------------------------------ | --------------------------------- |
+| Character jumping                     | Character moves vertical with predetermined jump speed | As expected                       |
+| Character jumps but gravity = 1       | Error raised                                           | Error seen                        |
+| self.jumping = true                   | Character jumps                                        | Character moves vertical          |
+| self.center <= self.start_jump_y      | No jump, no acceleration                               | As expected                       |
+| self.change_y doesnt equal an integer | Error raised                                           | Game dosen't load and error occurs | 
 
 
 

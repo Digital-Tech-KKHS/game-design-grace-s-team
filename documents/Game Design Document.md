@@ -1,36 +1,36 @@
 # {Owl escape}
 
 # Elevator pitch
- I am developing an open world RPG game that is set in the mediaeval time with aspects of real time. The gameplay is story driven and is centered around an owl, and its journey to redeem itself and learn quality of life without everything being handed to you.
+ I am developing an open world RPG game that is set in the medieval time with aspects of real time. The gameplay is story driven and is centered around an owl, and its journey to redeem itself and learn qualities of life without everything being handed to you.
  
 # Concept Overview
-The beginning concept of the game was for there to be an owl that has its ability to fly taken away from it by some magical force, and so it ventures to get its "wings" back, its ability to fly. Along the way it will face challenges and obstacles that it must face and avoid to continue onwards. The way the levels will work is that it is up to the player which way they go but eventually all the levels will lead back to either the beginning level or the end level.
+The beginning concept of the game was for there to be an owl that has its ability to fly taken away from it by some magical force, and so it ventures to get its "wings" back, its ability to fly. Along the way it will face challenges and obstacles that it must face and avoid to continue onwards. The way the levels will work is that it is up to the player which way they go but eventually all the levels will lead to the end level.
 
 ### Genre: Open-world RPG / Action:
-the genre is a type of good vs evil and journey type experience that is highly based on man vs nature and man vs self. It will have aspects of action and journey.
+The genre is a type of good vs evil and journey type experience that is highly based on man vs nature and man vs self. It will have aspects of action and journey.
 
 ### Target audience:
 
 > Age: 15-30
 > (Teens)
-> Gender: Male/Female
+> Gender: Any
 > People that are interested in animal games, or fantasy and adventure
 > People that want a game with cute graphics and characters
 
 # Theme and setting
 
-The theme of the game is that it is an adventure type RPG and you travel across the lands to reclaim something that you once took for granted. The setting of the game is natural with ocean and forests.  It also has sections of desserts and Tundra's. I wanted to make it so that throughout the nature there are hints of man made items that don't look like they belong or like they are trashed there and the owl has to avoid them because it can get caught in it and die. I wanted the theme to be not only be adventure but also mystery in a way so that the player can search unknown territories and find new things.
+The theme of the game is that it is an adventure type RPG and you travel across the lands to reclaim something that you once took for granted. The setting of the game is natural with ocean and forests.  It also has sections of deserts. I wanted to make it so that throughout the nature there are hints of man made items that don't look like they belong or like they are trashed there and the owl has to avoid them because it can get caught in it and die. I wanted the theme to be not only adventure but also mystery in a way so that the player can search unknown territories and find new things.
 
 # Project scope
 The project will be a game that I will design and make art for.
 
 ## Our team
-I am on a team by myself but will listen to what my classmates and teacher have to offer and what advice I can get from them
+I am on a team by myself but will listen to what my classmates and teacher have to offer and what advice I can get from them.
 
 
 # Timeline
-The project should take around 2 terms and will start from week 5 term 1 to week 9 term 3 
-The timeline for my game is from around medieval time. The game relies heavily on the art and story so I have to make sure that I allow enough time for those aspects to be to be completed to the best of my ability and to a quality that I am happy with
+The project should take around 2 terms and will start from week 5 term 1 to week 4 term 3.
+The timeline for my game is from around medieval time. The game relies heavily on the art and story so I have to make sure that I allow enough time for those aspects to be completed to the best of my ability and to a quality that I am happy with.
 
 
 # Success Criteria
@@ -39,22 +39,22 @@ What evidence will you use to measure each criteria?
 
 |     | Criteria                                             | Evidence                                                                                                                                                                                                                          |
 | --- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | user can instal game and run it                      | I will test on many other computers to make sure that it can be opened on different devices                                                                                                                                       |
+| 1   | user can install game and run it                      | I will test on many other computers to make sure that it can be opened on different devices                                                                                                                                       |
 | 2   | user can understand how to do game                   | I will do a brief play through to show how the game is supposed to be played but I will also include built in hints through out it                                                                                                |
 | 3   | user can complete game                               | I will get peers to test the difficulty of the game throughout my making stages                                                                                                                                                   |
 | 4   | user enjoys playing it                               | I will make sure that I get a lot of feedback on it from different people so that I can improve it and make it enjoyable for the end user                                                                                         |
-| 5   | user understood how I wanted the game to come across | I will ask questions to be people throughout the whole proccess to make sure that what I designed was what my game was meant to be and I will make hints to help people understand its purpose if they don't initially understand | 
+| 5   | user understood how I wanted the game to come across | I will ask questions to people throughout the whole proccess to make sure that what I designed was what my game was meant to be and I will make hints to help people understand its purpose if they don't initially understand | 
 | 6   | user enjoyed playing my game                         | I will ask my user to give me feedback on the game and what they liked about it so that I can make sure that it is enjoyable. I will also ask them to rate the game.                                                              |
 
 
 # Game Setting
 
-The game is set in the mediaeval time and is based somewhere in the British isles, it would be an island that is secluded and alone and isn't accessible easily. it is set in a normal summer day and has many trees and natural items, as well as desserts and man made items that don't seem to belong there.
+The game is set in medieval time and is based somewhere in the British Isles, it would be an island that is secluded and alone and isn't accessible easily. It is set in a normal summer day and has many trees and natural items, as well as deserts and man made items that don't seem to belong there.
 
 ## The Isolated Isle 
 General description:
 
-The isolated isle is a place of isolation. It is a place of loneliness and perhaps sadness. It has buzzing bugs that chase you and dare you to get close only for them to kill you. The trees sway in the breeze that comes in from the ocean and they watch as a lonely owl makes its way through them. It has pits and bits of metal that would hurt a flightless owl. Animals call to each other from afar and observe all that goes on, waiting for a meal to wander by. Feathers are littered all about as if picked up by the wind and tossed at random, the owner of the feathers is out of place in such an area, it should be high in the tree tops away from random cliffs and pits that lead to a deadly ocean and burning fires. The land seems to be almost poisoned itself because of how grass meets sand, in a fight to win similar to the inhabitants of such a place that have to fight to be remembered.
+The isolated isle is a place of isolation. It is a place of loneliness and perhaps sadness. It has buzzing bugs that chase you and dare you to get close only for them to kill you. The trees sway in the breeze that comes in from the ocean and they watch as a lonely owl makes its way through them. It has pits and bits of metal that would hurt a flightless owl. Animals call to each other from afar and observe all that goes on, waiting for a meal to wander by. Feathers are littered all about as if picked up by the wind and tossed at random, the owner of the feathers is out of place in such an area, it should be high in the tree tops away from random cliffs and pits that lead to deadly oceans and burning fires. The land seems to be almost poisoned, because of how grass meets sand, in a fight to win similar to the inhabitants of such a place that have to fight to be remembered.
 ...
 
 Inspiration:
@@ -73,7 +73,7 @@ A brown speckled barn owl was flying around one crisp blue day, when suddenly a 
 "Why must you be so rude fledgling? I was only enquiring after your health." The grey owl asked "It looked as if you might have needed assistance."
 "No!" The brown owl shouted "I am in need of no assistance from you old owl, you disgust me. Your feathers are matted and dirty and your wings are so small and shriveled, I wouldn't want to catch a disease from you, lest you ruin my beautiful feathers with your disgust!"
 The old grey owl was heartbroken from the horrible words of the younger owl and decided that this owl needed to be brought back down to earth from its high perch and learn to fight for its wings that it oh so loved very much.
-"Fine, if you do not wish to accept my concern for you, you will instead accept my wrath." The older owl said calmly. "Because you love your feathers and wings so much I will have to take them from you, so that you can learn how to have some gratitude for those things that are always there to carry you across the great sea in the sky. And because of how rude you were to a lowly owl like me, I  am condemning  you to this place where you will learn what I have had to endure so that before you judge my appearance, you understand what having no flight to rely on can make you become."
+"Fine, if you do not wish to accept my concern for you, you will instead accept my wrath." The older owl said calmly. "Because you love your feathers and flight so much I will have to take them from you, so that you can learn how to have some gratitude for those things that are always there to carry you across the great sea in the sky. And because of how rude you were to a lowly owl like me, I  am condemning  you to this place where you will learn what I have had to endure so that before you judge my appearance, you understand what having no flight to rely on can make you become."
 The brown owl shrieked as it tried to fly away and realized that its ability to fly was gone. It tried again and again but it could not catch wind under its wings. It crawled across the floor to the grey owl and asked it what it must do to regain its ability to fly......
 
 
@@ -220,7 +220,7 @@ Choose 3 relevant implications. Discuss how you will ensure these are addressed.
 ## {Implication 1}
 
 Legal:
-I want to make sure that most of the work that I have will be made by me and the stuff that I take will be fully written and explained as to why I used it. I will make sure that I credit any source that I use and I will say if it isn't mine. I also want to keep track of everything that I make so that if questioned I can back up that it is mine that I designed it all myself. I will make sure that there is no harmful aspects of the game that could steal information of any kind that could be harmful to anyone. I will read through copy right statements of music examples and I will make sure that I am not ripping something off intentionally. 
+I want to make sure that most of the work that I have will be made by me and the stuff that I take will be fully written and explained as to why I used it. I will make sure that I credit any source that I use and I will say if it isn't mine. I also want to keep track of everything that I make so that if questioned I can back up that it is mine and that I designed it all myself. I will make sure that there is no harmful aspects of the game that could steal information of any kind that could be harmful to anyone. I will read through copy right statements of music examples and I will make sure that I am not ripping something off intentionally. 
 
 ## {Implication 2}
 
@@ -229,5 +229,5 @@ I want to make sure that my game has no negative effects on people outside of th
 ## {Implication 3}
 
 Usability:
-I wanted to make my game be as usably as possible. This means that I wanted anyone to be able to understand and enjoy it without any issues. This means that I made the controls of the game very obvious 
+I wanted to make my game be as usably as possible. This means that I wanted anyone to be able to understand and enjoy it without any issues. This means that I made the controls of the game very obvious and consistent while also including flexibility for the user to make their own way around it. I also made the controls easy to use so that anyone could play my game if they wanted and it wouldn't take them long to figure out what to do. I also tried my best to make the game be bug free and not have any issues that would intervene with the playability of it. Because all the work I have been doing on it gets committed to GitHub at the end of each session, I don't need to worry about loss of work, and it can be recovered easily for the end users to play again if it does become missing.
 

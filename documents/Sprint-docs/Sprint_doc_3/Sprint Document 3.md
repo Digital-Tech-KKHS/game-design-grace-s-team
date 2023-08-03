@@ -24,9 +24,16 @@ In this sprint I tested going to different levels and I tested how trees would b
 ## **Briefly describe other team members contributions**
 - No team-mates
 ## **Major Changes and Achievements Described**
- - I changed my map and some of my art, and also was able to get a jumping function working to an extent.
+ - I changed my maps a bit and added an extra on 1 to 2, so that I was slowly moving towards the goal of having 3 maps
+ - Making the player jump was a massive achievement because it meant that I was able to add in jumps in to my game and it allowed me to make a shadow underneath my player which gave it almost a realistic affect
+ - Adding a damage sprite was good as well because it meant that I had added more challenge to the game and it was something that my peers had asked if I would do and suggested for it.
+ - Temporarily had a red shape around my character that symbolized the owls hit box and so when I took that away it really showed how much my game had developed from the very early designs which was an awesome achievement to see.
 ## **Brief Description of your testing**
-- I tested how my character would jump and land, I tested how it would get damaged against my barbed wire. I also tested how I wanted my character to jump backwards once damaged
+- I tested how my character would jump and land, this meant that I needed to have a gravity component that allowed me to be able to lift from the ground in a straight vertical way and return back to that spot. This was actually quite challenging because it meant that I had to enable a gravity function but I couldn't have gravity normally in my game because it was a top down game. So I had to make my character have states when it was 1. jumping, and 2. Not jumping this meant that the gravity function would be secluded specifically to when the character was jumping.
+- I also tested the issue that I had with collisions and I was able to solve it because it was caused when on the tilemap I had placed a ghost tile accidently, meaning that there wasn't actually anything on the tile, and so when the game tried to load it up it would crash because it was trying to draw something that wasn't there.
+- I also tested how my character would get damaged and so I made a collision tile that would make the player "-health" each time that it collided with it
+- I wanted to add a function that meant that when the character did get hurt, instead of staying in the same place and getting instant killed it would force the player to move backwards (-x, -y) away from the danger so that they player could keep going after the interaction
+- I added a shadow onto the player so that when it jumped you could follow the characters path better instead of it just looking like the player was moving up the map, I drew the shadow onto the players center_x, and center_y and made it have a scale so that when my character jumped the shadow would shrink and when it would land it would have a larger shadow that was the size of the owls body
 
 ## **Link to testing results/tables**
 

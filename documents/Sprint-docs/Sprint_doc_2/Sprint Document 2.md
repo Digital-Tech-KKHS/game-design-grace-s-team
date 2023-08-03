@@ -19,17 +19,18 @@ Grace McDonald
 ![[Pasted image 20230501143318.png]]
 # Sprint Summary
 ## **Sprint Reflection and summary**
-In this sprint I did a bit of testing and trialing. Over the holidays I did most of the art that I originally that I would use, and I tested how my character would move on my isometric map. I also changed my code in a way so that when I pressed the "D" button it would move my character in a diagonal way that is parallel to the sides of the ground. I also ran into a lot of issues trying to make my character able to "hit" walls or collide with them and then stop moving all together. By the end of the entire sprint I decided that I would make my game be oblique instead of isometric so that it would make my game easier to manage. After doing my own research I found that I was one of the only people that had ever tried to make a game with python arcade in a isometric format so I was basically on my own when it came to how it works and how I would implement different code, so the change to oblique made sense. By changing my perspective for my game AGAIN it meant that I had to restart the art making process.
+In this sprint I did a bit of testing and trialing. Over the holidays I did most of the art that I originally that I would use, and I tested how my character would move on my isometric map. I also changed my code in a way so that when I pressed the "D" button it would move my character in a diagonal way that is parallel to the sides of the ground. I also ran into a lot of issues trying to make my character able to "hit" walls or collide with them and then stop moving all together. By the end of the entire sprint I decided that I would make my game be oblique instead of isometric so that it would make my game easier to manage. After doing my own research I found that I was one of the only people that had ever tried to make a game with python arcade in a isometric format so I was basically on my own when it came to how it works and how I would implement different code, so the change to oblique made sense. By changing my perspective for my game AGAIN it meant that I had to restart the art making process. I also did work on loading up the different class windows and what would be on each one.
 ## **Briefly describe other team members contributions**
 - No team-mates
 ## **Major Changes and Achievements Described**
-I changed my game from isometric to oblique and I therefore had to change all of my art that I had previously done. I achieved getting my walls working and I also made my art compatible with the rest of my code.
-I changed plan on what the game was going to entail as well in the sense that I added more lore to make the game deeper
+- I changed my game from isometric to oblique and I therefore had to change all of my art that I had previously done. I achieved getting my walls working and I also made my art compatible with the rest of my code.
+- I changed plan on what the game was going to entail as well in the sense that I added more lore to make the game deeper
 ## **Brief Description of your testing**
-I tested how how my character would interact with walls and whether it would be stopped by them or simply pass through. 
-I looked at how the character moved, and I changed it in my code so that it moved with my game in an isometric manner instead of being completely flat and horizontal. However because I ended up changing my game to oblique I had to change the controls of the character again and used WASD keys to do that.
-Because I wasn't doing a 2D game it meant that I had to get rid of gravity in a sense but also make sure that my character could fall and rise when it was needed.
-I tested how my character would change levels and so I had to implement a function that allowed me to go to a different level when I collided with it.
+- I tested how how my character would interact with walls and whether it would be stopped by them or simply pass through, I added walls to sprite list and made the gravity constant 0.
+- I looked at how the character moved, and I changed it in my code so that it moved with my game in an isometric manner instead of being completely flat and horizontal. However because I ended up changing my game to oblique I had to change the controls of the character again and used WASD keys to do that.
+- Because I wasn't doing a 2D game it meant that I had to get rid of gravity in a sense but also make sure that my character could fall and rise when it was needed.
+- I tested how my character would change levels and so I had to implement a function that allowed me to go to a different level when I collided with it.
+- I tested how my StartView would change to my GameView, this was important because it was the first thing that the character would come into contact with when my game starts 
 ## **Link to testing results/tables**
 
 
