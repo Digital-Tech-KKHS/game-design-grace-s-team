@@ -48,7 +48,7 @@ In this sprint I tested my game a lot on potential end users and class mates. I 
 ![[Pasted image 20230802211333.png]]
 ## Link to **Video of the game at the end of the sprint**
 
-!![[screen-capture (1).webm]]
+
 ## **Notes for next time, future improvements**
 - I do believe that one thing that I have learnt from the whole process was to manage my sprint docs as much as possible and make sure that they are up to date. That is something that I would definitely do different if I had to do the whole project again, I would take the warnings about running out of time more seriously.
 - I also think that a way that I could improve my game would be if I was able to add more to do with the actual lore, so that it could feel deeper. 
