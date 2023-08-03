@@ -14,7 +14,6 @@ class GameView(arcade.View):
         self.tilemap = None
         self.enemy = None
         self.scene = None
-        # self.walls = None
         self.HUD = None
         self.physics_engine = None
         self.camera = None
@@ -30,17 +29,8 @@ class GameView(arcade.View):
     
     def play_song(self):
         self.music.play(3,0,True)
-        
-    # def on_show_view(self):
-    #     self.play_song()
-    
-    
-    
-    # Game set up 
-    
     
     def setup(self):
-        
         # where the character spawns in and which map it uses
         self.player = Player()
         self.player.center_x = 100
@@ -61,10 +51,7 @@ class GameView(arcade.View):
         self.collect_coin_sound = arcade.load_sound(':resources:sounds/coin4.wav')
         self.jump_sound = arcade.load_sound(':resources:sounds/phaseJump1.wav')
         
-        
-        
         self.current_song_index = 0
-        
         
         self.scene.move_sprite_list_after('Foreground', 'player',)
         self.scene.add_sprite_list('shadows')
@@ -72,13 +59,11 @@ class GameView(arcade.View):
         self.bullet_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
         
-
         self.shaddow = arcade.Sprite(ROOT_FOLDER.joinpath(  'Character' , 'shaddow.png'))
         self.scene.add_sprite_list_before('shaddow', 'player')
         self.scene.add_sprite_list_before('Enemies', 'player')
 
         self.scene.add_sprite('shaddow', self.shaddow)
-
 
         # Adds in health and my health bar icons that I made
         for i in range(STARTING_HEALTH):
@@ -87,7 +72,6 @@ class GameView(arcade.View):
             health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
             self.HUD['health'].append(health)
             # health = [0, 1, 2, 3, 4]
-
         
         # Enemy in scene in tile map
         for enemy in self.scene["Enemy_tokens"]:
@@ -119,7 +103,6 @@ class GameView(arcade.View):
         self.HUD.draw()
         
         arcade.draw_text(f"Feathers: {self.score}", WIDTH-150, HEIGHT-50, arcade.color.WHITE, 18, 0, "left", "arial", True)
-        
 
         # Text my npc will say about the point of the game, on my first level
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
@@ -142,14 +125,17 @@ class GameView(arcade.View):
         # Text my npc will say about the point of feathers
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
         if colliding:
-            arcade.draw_text("You must find... at least 7 feathers like these,",
-             770, 550, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("You must find...",
+             770, 580, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+            
+            arcade.draw_text("At least 7 feathers like these,",
+             770, 550, arcade.color.WHITE, 22, 0, "left", "calibri", True)
             
             arcade.draw_text("to be get your ability to fly back,",
-             770, 520, arcade.color.BLACK, 20, 0)
+             770, 520, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text(" to escape from this place and be free....",
-             770, 490, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("and to escape from this place and be free....",
+             770, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
 
 
 
