@@ -150,6 +150,18 @@ class GameView(arcade.View):
             
             arcade.draw_text("to escape from this place and be free....",
              780, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+            
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Bonus_Feather_Text'])
+        if colliding:
+            arcade.draw_text("Be on the look out for a bonus feather, ",
+             400, 750, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+            
+            arcade.draw_text("it gives you a heart and 5 feathers.... ",
+            
+             400, 720, arcade.color.WHITE, 22, 0, "left", "calibri", True)
+            
+            arcade.draw_text("However its quite well hidden... ",
+             400, 690, arcade.color.BLACK, 22, 0, "left", "calibri", True)
 
 
 
