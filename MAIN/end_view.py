@@ -16,7 +16,7 @@ class EndView(arcade.View):
         self.clear()
         self.texture.draw_sized(WIDTH / 2, HEIGHT / 2,
                                 WIDTH, HEIGHT)
-        arcade.draw_text("Click to begin!", 500, 500, arcade.color.BLACK,20,0,"left","arial",True)
+        
         
         # Switches to "GameView"
     def on_mouse_press(self, _x, _y, _button, _modifiers):
