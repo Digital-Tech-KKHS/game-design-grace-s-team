@@ -33,15 +33,15 @@ Date: 17/07/2023
 ```python
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
 
-        if self.level == 3 and self.score >= 7:
+        if self.level == 3 and self.score >= 10:
             if colliding:
                 self.window.show_view(self.window.win_view)
 ```
 
 | Test Data                             | Expected                                             | Observed                                   |
 | ------------------------------------- | ---------------------------------------------------- | ------------------------------------------ |
-| Self.score <= 7                       | Collison but no change to win_view                   | As expected                                |
-| Self.score >= 7                       | Collides and show_view changes to win_view           | Change occurs                              |
+| Self.score <= 10                       | Collison but no change to win_view                   | As expected                                |
+| Self.score >= 10                       | Collides and show_view changes to win_view           | Change occurs                              |
 | self.level = 2                        | No change                                            | As expected                                |
 | No check for collision_with tile list | No collsion will occur because it wasn't checked for | Tile stays the same with no extra features |                                      |                                                      |                                            |
 

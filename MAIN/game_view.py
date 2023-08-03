@@ -3,6 +3,7 @@ from constants import *
 from player import Player
 from enemy import Enemy
 import time
+import math
 
 # Making main class "Gameview"
 class GameView(arcade.View): 
@@ -101,6 +102,20 @@ class GameView(arcade.View):
             self.scene["Enemies"].append(new_enemy)
             enemy.kill()
 
+        # # For enemy seek
+        # for enemy in self.scene['Enemy_tokens']:
+        #     dx = self.player.center_x - enemy.center_x
+        #     dy = self.player.center_y - enemy.center_y
+        #     theta = math.atan2(dy,dx)
+            
+        #     if math.dist(self.player.position, enemy.position) < 100:
+        #         enemy.change_x = math.cos(theta)*enemy.speed
+        #         enemy.change_y = math.sin(theta)*enemy.speed
+        #     else: 
+        #         enemy.change_x = 0
+        #         enemy.change_y = 0
+                                
+
         # Background
     def on_show_view(self):
         self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background2.png'))
@@ -142,7 +157,7 @@ class GameView(arcade.View):
             arcade.draw_text("You must find... ",
              780, 580, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("At least 7 feathers like these,",
+            arcade.draw_text("At least 10 feathers like these,",
              780, 550, arcade.color.WHITE, 22, 0, "left", "calibri", True)
             
             arcade.draw_text("to get your ability to fly back,",
@@ -156,11 +171,11 @@ class GameView(arcade.View):
             arcade.draw_text("Be on the look out for a bonus feather, ",
              400, 750, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("it gives you a heart and 5 feathers.... ",
+            arcade.draw_text("it fills your hearts up and adds an extra one, ",
             
              400, 720, arcade.color.WHITE, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("However its quite well hidden... ",
+            arcade.draw_text("as well as 5 feathers..However it's quite well hidden.. ",
              400, 690, arcade.color.BLACK, 22, 0, "left", "calibri", True)
 
 
@@ -197,7 +212,7 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Bonus_feather'])
         for coin in colliding:
             coin.kill()
-            self.score = 5
+            self.score += 5
             STARTING_HEALTH + 1
             health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x= 326, center_y=960)
             self.HUD['health'].append(health)
@@ -218,7 +233,6 @@ class GameView(arcade.View):
                 self.player.change_x *= -1
                 self.player.change_y *= -1
                 self.HUD['health'][-1].kill()
-                    
         # if health == EndView / ending screen will appear
         if self.player.center_y <0:
             self.HUD['health'][-1].kill()  
@@ -258,12 +272,17 @@ class GameView(arcade.View):
         # Player collides with an enemy and loses "health"
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Enemies'])
         if colliding:
-            if colliding:
-                self.HUD['health'][-1].kill()
+            if colliding: 
                 self.player.change_x *= -2
                 self.player.change_y *= -2
-                
-            
+                self.HUD['health'][-1].kill()
+        # if health == EndView / ending screen will appear        
+        if self.player.center_y <0:
+            self.HUD['health'][-1].kill()  
+            self.player.center_x = 40
+            self.player.center_y = 1000
+        if len(self.HUD['health']) == 0:
+                self.window.show_view(self.window.end_view)
 
         # Player finishes levels and goes to "WinView"
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Next_level'])
