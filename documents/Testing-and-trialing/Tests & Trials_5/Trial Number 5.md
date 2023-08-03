@@ -17,7 +17,7 @@ Involved in the trial
 ## Describe the trail
 > I firstly started off by explaining what I had in mind for my map path and what way the players can go. My first idea was a basic one where the player can go from map to map in series and there wouldn't be a a free choice option. I then thought of having player have the option of freely deciding which way they wanted to go while also ending up in the same place at the end of the game. I think that the trial was quite successful because it let me see my options more clearly and see the pros and cons in both designs.
 
-![[First Idea 2.png]]
+![[First Idea.png]]
 First idea ^
 
 ![[Second Idea.png]]

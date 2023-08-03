@@ -8,8 +8,6 @@ import time
 class GameView(arcade.View): 
     def __init__(self):
         super().__init__()
-        # arcade.set_background_color(arcade.color.BURNT_UMBER)
-        # def on_show_view(self):
         self.player = None
         self.tilemap = None
         self.enemy = None
@@ -86,7 +84,6 @@ class GameView(arcade.View):
             y = HEIGHT - 40
             health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x=x, center_y=y)
             self.HUD['health'].append(health)
-            # health = [0, 1, 2, 3, 4]
 
         
         # Enemy in scene in tile map
@@ -125,31 +122,34 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Text'])
         if colliding:
             arcade.draw_text("Hello little owl....",
-             220, 550, arcade.color.WHITE, 22, 0,"left", "calibri", True)
+             200, 550, arcade.color.WHITE, 22, 0,"left", "calibri", True)
             
             arcade.draw_text("Your goal is too collect feathers",
-             220, 520, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+             200, 520, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
             arcade.draw_text("throughout the levels and survive. ",
-             220, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+             200, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
             arcade.draw_text("If you die little owl,",
-             220, 460, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+             200, 460, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
             arcade.draw_text("you will be forced to start over... ",
-             220, 430, arcade.color.WHITE, 22, 0, "left", "calibri", True)
+             200, 430, arcade.color.WHITE, 22, 0, "left", "calibri", True)
 
         # Text my npc will say about the point of feathers
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Feather_Text'])
         if colliding:
-            arcade.draw_text("You must find... at least 7 feathers like these,",
-             770, 550, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("You must find... ",
+             780, 580, arcade.color.BLACK, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text("to be get your ability to fly back,",
-             770, 520, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("At least 7 feathers like these,",
+             780, 550, arcade.color.WHITE, 22, 0, "left", "calibri", True)
             
-            arcade.draw_text(" to escape from this place and be free....",
-             770, 490, arcade.color.BLACK, 20, 0)
+            arcade.draw_text("to get your ability to fly back,",
+             780, 520, arcade.color.BLACK, 22, 0, "left", "calibri", True)
+            
+            arcade.draw_text("to escape from this place and be free....",
+             780, 490, arcade.color.BLACK, 22, 0, "left", "calibri", True)
 
 
 
@@ -182,11 +182,14 @@ class GameView(arcade.View):
             if len(self.HUD['health']) == 0:
                 self.window.show_view(self.window.end_view)
         
-        # colliding = arcade.check_for_collision_with_list(self.player, self.scene['Bonus_feather'])
-        # for coin in colliding:
-        #     coin.kill()
-        #     self.score += 5
-        #     self.collect_coin_sound.play()
+        colliding = arcade.check_for_collision_with_list(self.player, self.scene['Bonus_feather'])
+        for coin in colliding:
+            coin.kill()
+            self.score = 5
+            STARTING_HEALTH + 1
+            health = arcade.Sprite(ROOT_FOLDER.joinpath("Assets",'health.png'), 0.5, center_x= 326, center_y=960)
+            self.HUD['health'].append(health)
+            self.collect_coin_sound.play()
 
         # Draws shadow on characters center
         self.shaddow.center_x = self.player.center_x + 20

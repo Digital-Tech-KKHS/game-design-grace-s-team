@@ -17,7 +17,7 @@ class StartView(arcade.View):
     
     # loads background
     def on_show_view(self):
-        self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'background.png'))
+        self.background = arcade.load_texture(ROOT_FOLDER.joinpath("Assets",'Startscreen.png'))
         # arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
    
     # starts game from game veiw when symbol enter is pressed
