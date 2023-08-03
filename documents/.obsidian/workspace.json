@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
+                "file": "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
+                "file": "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
+                "file": "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md"
+                "file": "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md"
               }
             }
           },
@@ -170,12 +170,31 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "142bab3bdf18bf97",
+  "active": "25223841cc13ad21",
   "lastOpenFiles": [
-    "screen-capture (1).webm",
-    "2023-08-04 04-20-23.mkv",
+    "Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
+    "Screenshotspam/sprint_4.webm",
+    "Screenshotspam/sprint_3.webm",
+    "Screenshotspam/Second Idea.png",
+    "Screenshotspam/Pasted image 20230802222252.png",
+    "Screenshotspam/Pasted image 20230802212137.png",
+    "Screenshotspam/Pasted image 20230802211333.png",
+    "Screenshotspam/Pasted image 20230730214723.png",
+    "Screenshotspam/Pasted image 20230716124641.png",
+    "Screenshotspam/Pasted image 20230716122919.png",
+    "Screenshotspam/Pasted image 20230714165120.png",
+    "Screenshotspam/Pasted image 20230714165002.png",
+    "Screenshotspam/Pasted image 20230714124804.png",
+    "Screenshotspam/Pasted image 20230626144129.png.md",
+    "Screenshotspam/Pasted image 20230403145738.png.md",
+    "Screenshotspam/Pasted image 20230403144207.png.md",
+    "Screenshotspam/![[Pasted image 20230510102112.png.md",
+    "Screenshotspam",
+    "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
     "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
     "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
+    "screen-capture (1).webm",
+    "2023-08-04 04-20-23.mkv",
     "Testing-and-trialing/Tests & Trials_5/Testing 5.md",
     "Testing-and-trialing/Tests & Trials_5/Trial Number 5.md",
     "Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
@@ -186,24 +205,10 @@
     "Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
     "Testing-and-trialing/Tests & Trials_1/Trial Number 1.md",
     "Testing-and-trialing/Tests & Trials_1/Testing 1.md",
-    "Testing-and-trialing/Example Tests and Trials/main_menu.png",
-    "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
-    "Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
     "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
-    "Screenshotspam/sprint_4.webm",
-    "Screenshotspam/sprint_3.webm",
     "sprint_4.webm",
     "sprint_3.webm",
-    "Screenshotspam/Pasted image 20230324125201.png",
-    "Screenshotspam/Pasted image 20230324125130.png",
-    "Pasted image 20230324125201.png",
-    "Pasted image 20230324125130.png",
-    "Screenshotspam/Pasted image 20230730214723.png",
-    "Pasted image 20230730214723.png",
-    "Screenshotspam/First Idea.png",
     "First Idea 2.png.md",
-    "First Idea.png",
-    "Screenshotspam/Second Idea.png",
     "Final Hand in statement .md",
     "Final Review.md",
     "Game Design Document.md",
@@ -211,12 +216,6 @@
     "Sprint-docs/Sprint_doc_3/sprint_3.webm",
     "Sprint-docs/Sprint_doc_4/sprint_4.webm",
     "Sprint-docs/Sprint_doc_examples/Sprint Document template.md",
-    "First Idea.kra",
-    "Testing-and-trialing/Example Tests and Trials/Trialing Example.md",
-    "screen-capture.webm.md",
-    "making art for oblique.md",
-    "Testing-and-trialing/Example Tests and Trials/testing.md",
-    "Testing-and-trialing/Tests & Trials_5",
-    "Untitled"
+    "First Idea.kra"
   ]
 }
