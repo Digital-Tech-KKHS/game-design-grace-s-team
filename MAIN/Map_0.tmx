@@ -1139,13 +1139,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="24" name="Interactables">
-  <properties>
-   <property name="on_interact" value="toggle_lever"/>
-   <property name="toggled" value=""/>
-   <property name="type" value="lever"/>
-  </properties>
- </objectgroup>
  <objectgroup id="18" name="Enemy_tokens">
   <object id="47" gid="48" x="12686" y="119" width="128" height="128">
    <properties>

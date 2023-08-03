@@ -16,7 +16,8 @@ class WINView(arcade.View):
         self.clear()
         self.texture.draw_sized(WIDTH / 2, HEIGHT / 2,
                                 WIDTH, HEIGHT)
-        
+        arcade.draw_text("You are free little owl...for now...", 500, 500, arcade.color.BLACK,20,0,"left","arial",True)
+
         # Switches to StartView"
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         start_view = StartView()

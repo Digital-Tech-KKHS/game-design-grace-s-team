@@ -319,7 +319,7 @@ class GameView(arcade.View):
         # When colliding with Winner tile "Win_view" will appear
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
         
-        if self.level == 3 and self.score >= 7:
+        if self.level == 3 and self.score >= 10:
             if colliding:
                 self.window.show_view(self.window.win_view)
 
@@ -363,26 +363,6 @@ class GameView(arcade.View):
                 self.player.change_x = -2.8
             if symbol == arcade.key.D:
                 self.player.change_x = 2.8
-        
-    #    INTERACTABLES.....
-        if symbol == arcade.key.ENTER:
-            self.handle_interact()
-
-    def handle_interact(self):
-        interactables = arcade.check_for_collision_with_list(self.player, self.scene["interactables"])
-        for interactable in interactables:
-            getattr(self, interactable.properties["on_interact"])(interactable)
-
-    def toggle_lever(self, interactable):
-        levers = (l for l in self.scene["interactables"] if l.properties["type"] == "lever")
-        toggled = not interactable.properties["toggled"]
-        for lever in levers:
-            lever.properties["toggled"] = toggled
-            if toggled:
-                    lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"LeverLeft.png"))
-            else:
-                    lever.texture = arcade.load_texture(ROOT_FOLDER.joinpath("Assets", f"Leverright.png"))
-
             
         # When a key is released the character will stop moving
     def on_key_release(self, symbol: int, modifiers: int):
