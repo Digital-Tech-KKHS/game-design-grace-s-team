@@ -1,15 +1,15 @@
-**Name:**    
-**Date submitted:**     
+**Name:** Grace McDonald
+**Date submitted:** 04/08/2023 
 **Final Git Hash:**
 
 # Requirements
 **Code works with the following versions**
 
-**Python version:**  
+**Python version:**  3.11.4
 
-**Arcade version:**
+**Arcade version:** 2.6.15
 
-**Aditional Libraries:**
+**Additional Libraries:**
 - Python Arcade
 
 # Copyright information

@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "f312de897c1c5b96",
+        "id": "27790e55c708d1e0",
         "type": "tabs",
         "children": [
           {
-            "id": "25223841cc13ad21",
+            "id": "a310a288aa5df4f8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Sprint-docs/sprint_doc_5/Sprint Document 5.md"
-              }
+              "state": {}
             }
           },
           {
@@ -170,22 +162,27 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "25223841cc13ad21",
+  "active": "a310a288aa5df4f8",
   "lastOpenFiles": [
-    "screen-capture (1).webm",
+    "Sprint-docs/Sprint_doc_4/sprint_4.webm",
     "Sprint-docs/Sprint_doc_4/Sprint Document 4.md",
     "Sprint-docs/Sprint_doc_3/Sprint Document 3.md",
     "Sprint-docs/Sprint_doc_2/Sprint Document 2.md",
     "Sprint-docs/Sprint_doc_1/Sprint Doc 1.md",
-    "Sprint-docs/Sprint_doc_4/sprint_4.webm",
-    "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
-    "Final Hand in statement .md",
+    "Game Design Document.md",
+    "Sprint-docs/sprint_doc_5/sprint_5.webm",
+    "Sprint-docs/sprint_5.webm",
+    "sprint_5.webm",
+    "screen-capture (1).webm",
+    "Sprint_5.webm",
+    "Kanban.md",
     "Final Review.md",
+    "Final Hand in statement .md",
+    "Sprint-docs/sprint_doc_5/Sprint Document 5.md",
     "Sprint-docs/Sprint_doc_3/sprint_3.webm",
     "Sprint-docs/sprint_3.webm",
     "Sprint-docs/sprint_4.webm",
     "Screenshotspam/sprint_4.webm",
-    "Screenshotspam/sprint_3.webm",
     "Screenshotspam/Second Idea.png",
     "Screenshotspam/Pasted image 20230802222252.png",
     "Screenshotspam/Pasted image 20230802212137.png",
@@ -200,8 +197,6 @@
     "Screenshotspam/Pasted image 20230403145738.png.md",
     "Screenshotspam/Pasted image 20230403144207.png.md",
     "Screenshotspam/![[Pasted image 20230510102112.png.md",
-    "Screenshotspam",
-    "2023-08-04 04-20-23.mkv",
     "Testing-and-trialing/Tests & Trials_5/Testing 5.md",
     "Testing-and-trialing/Tests & Trials_5/Trial Number 5.md",
     "Testing-and-trialing/Tests & Trials_4/Trial Number 4.md",
@@ -212,10 +207,7 @@
     "Testing-and-trialing/Tests & Trials_2/Trial Number 2.md",
     "Testing-and-trialing/Tests & Trials_1/Trial Number 1.md",
     "Testing-and-trialing/Tests & Trials_1/Testing 1.md",
-    "sprint_4.webm",
     "First Idea 2.png.md",
-    "Game Design Document.md",
-    "Kanban.md",
     "Sprint-docs/Sprint_doc_examples/Sprint Document template.md"
   ]
 }
