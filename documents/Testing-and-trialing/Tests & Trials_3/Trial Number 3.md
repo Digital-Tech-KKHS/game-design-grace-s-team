@@ -11,7 +11,7 @@ Involved in the trial
 >- (Others from around the class)
 
 ## Trial goal:
->The goal of this trial was to determine whether I would use trees as a block on for stopping my character from walking off the edge or if I would use just a normal water block
+>The goal of this trial was to determine whether I would use trees as a block for stopping my character from walking off the edge or if I would use just a normal water block.
 
 ## Describe the trail
 >I got people from my class to decide what one they preferred more  and which one they believed would be more practical for my end users to understand and use.

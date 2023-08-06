@@ -1,4 +1,4 @@
-   _Name:_ Grace McDonald
+_Name:_ Grace McDonald
 # Getting user input
 
 Date: 15/05/2023

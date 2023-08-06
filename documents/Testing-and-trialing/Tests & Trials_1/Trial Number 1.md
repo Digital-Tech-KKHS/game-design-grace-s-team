@@ -14,10 +14,10 @@ Involved in the trial
 >- Mr Ward
 
 ## Trial goal:
->The goal for this trial was to determine whether or not  I would do my game in isometric or in 2D I got multiple peoples ideas and I asked them which style they preferred. I hoped that everyone would collectively agree on a style and they all did. They preferred the 3D isometric style game then the 2D flat game.
+>The goal for this trial was to determine whether or not I would do my game in isometric or in 2D.
 
 ## Describe the trail
-
+ I got multiple peoples ideas and I asked them which style they preferred. I hoped that everyone would collectively agree on a style and they all did. They preferred the 3D isometric style game then the 2D flat game.
 
 ![[Pasted image 20230508145014.png]]
 Isometric ^

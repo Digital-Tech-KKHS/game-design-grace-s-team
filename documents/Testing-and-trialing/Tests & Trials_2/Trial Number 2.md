@@ -8,15 +8,15 @@ _Name:_ Grace McDonald
 Involved in the trial
 >- Gabby Smythe
 >- Sylvie McDonald
->- Charley kate
->- josiah beale
->- jasper sharp
+>- Charley Kate
+>- Josiah Beale
+>- Jasper Sharp
 
 ## Trial goal:
-This trial was to determine weather or not my game would benefit from the art being made in a isometric angle or an oblique angle.
+This trial was to determine whether or not my game would benefit from the art being made in a isometric angle or an oblique angle.
 
 ## Describe the trail
->The trail consisted of me getting feedback from my peers and 
+>The trail consisted of me getting feedback from my peers and classmates on what perspective my game should be made in. I made two quick mock ups of what the two different styles would look like and I got people to decide on which one would be easier to do but also still look good.
 ![[Pasted image 20230616124456.png]]
 ISOMETRIC ^
 ![[Pasted image 20230616124321.png]]

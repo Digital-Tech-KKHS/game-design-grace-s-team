@@ -1,4 +1,4 @@
-## Test 1 EXAMPLE:
+_Name:_ Grace McDonald
 # Getting user input
 
 Date: 17/07/2023

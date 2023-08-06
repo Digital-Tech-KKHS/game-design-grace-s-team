@@ -7,19 +7,17 @@ class Enemy(Entity):
         super().__init__("Enemy", "enemy")
        
         # Making speed properties of enemy
-        # print(properties)
         if properties is not None:
             for key, value in properties.items():
                 setattr(self, key, value)
 
         try:
             self.speed
-        except: # fix this!
+        except:
             raise KeyError("enemy without speed custom property found. Check tilemap")
         self.target = (0, 0)
 
         self.in_bounds = True
-        # self.shaddow.texture. add opacity...
 
     @property
     def out_of_bounds(self):
