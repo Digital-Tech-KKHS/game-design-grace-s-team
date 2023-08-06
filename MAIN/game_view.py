@@ -48,7 +48,7 @@ class GameView(arcade.View):
         self.tilemap = arcade.load_tilemap(ROOT_FOLDER.joinpath(F'Map_{self.level}.tmx'))
         self.scene = arcade.Scene.from_tilemap(self.tilemap)
         
-        self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, walls=self.scene["Water"], gravity_constant=0)
+        
         
         self.camera = arcade.Camera()
         self.HUD_camera = arcade.Camera()
@@ -78,6 +78,14 @@ class GameView(arcade.View):
 
         self.scene.add_sprite('shaddow', self.shaddow)
 
+        # self.physics_engine = arcade.PhysicsEnginePlatformer(self.player, , gravity_constant=0)
+
+        self.physics_engine = arcade.PhysicsEnginePlatformer(
+            self.player, walls=self.scene["Water"],
+            platforms=self.scene[LAYER_NAME_MOVING_PLATFORMS],
+            gravity_constant= 0,
+            ladders=self.scene[LAYER_NAME_LADDERS],
+        )
 
         # Adds in health and my health bar icons that I made
         for i in range(STARTING_HEALTH):
@@ -193,6 +201,8 @@ class GameView(arcade.View):
             self.physics_engine.update()
         self.scene.update()
 
+# Update walls, used with moving platforms
+        self.scene.update([LAYER_NAME_MOVING_PLATFORMS])
         
        
         for coin in self.scene['Feather']:
@@ -288,7 +298,7 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Next_level'])
         if colliding:
             self.level += 1
-            self.setup()
+            self.setup(  )
 
 
             
@@ -314,7 +324,7 @@ class GameView(arcade.View):
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Original_layer'])
         if colliding:
             self.level = 0
-            self.setup()
+            self.setup() 
 
         # When colliding with Winner tile "Win_view" will appear
         colliding = arcade.check_for_collision_with_list(self.player, self.scene['Winner'])
